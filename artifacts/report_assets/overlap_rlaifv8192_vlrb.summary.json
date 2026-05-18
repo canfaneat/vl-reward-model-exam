@@ -1,0 +1,14 @@
+{
+  "train_n": 8192,
+  "bench_n": 1247,
+  "exact_query_overlap_pair_n": 24404,
+  "unique_exact_query_overlap_n": 73,
+  "image_md5_overlap_n": 0,
+  "dhash_near_threshold": 4,
+  "dhash_near_overlap_n": 147,
+  "outputs": {
+    "query_overlap": "artifacts/report_assets/overlap_rlaifv8192_vlrb.query_overlap.csv",
+    "image_md5_overlap": "artifacts/report_assets/overlap_rlaifv8192_vlrb.image_md5_overlap.csv",
+    "dhash_near": "artifacts/report_assets/overlap_rlaifv8192_vlrb.dhash_near.csv"
+  }
+}

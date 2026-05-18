@@ -39,6 +39,7 @@ artifacts/report_assets/*.md
 artifacts/report_assets/*_live.*
 artifacts/report_assets/*wrong_examples*
 artifacts/report_assets/*.exclude_indices.txt
+artifacts/report_assets/overlap_rlaifv*_vlrb.*.csv
 
 # Model/data directories should live outside the repository.
 models/

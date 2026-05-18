@@ -92,6 +92,7 @@ def main() -> None:
         default="/root/private_data/datasets/reward-model-exam/VL-RewardBench/data/test-00000-of-00001.parquet",
     )
     parser.add_argument("--train-limit", type=int, default=1024)
+    parser.add_argument("--shard-limit", type=int, default=1)
     parser.add_argument("--near-threshold", type=int, default=4)
     parser.add_argument("--output-prefix", default="artifacts/report_assets/overlap_rlaifv1024_vlrb")
     args = parser.parse_args()
@@ -100,7 +101,21 @@ def main() -> None:
     if not train_files:
         raise SystemExit(f"No train parquet files found under {args.train_dir}")
 
-    train = pd.read_parquet(train_files[0]).head(args.train_limit)
+    frames = []
+    remaining = args.train_limit
+    offset = 0
+    for file in train_files[: args.shard_limit]:
+        df = pd.read_parquet(file)
+        df = df.copy()
+        df["_global_idx"] = range(offset, offset + len(df))
+        offset += len(df)
+        if remaining is not None and remaining > 0:
+            df = df.head(remaining)
+            remaining -= len(df)
+        frames.append(df)
+        if remaining is not None and remaining <= 0:
+            break
+    train = pd.concat(frames, ignore_index=True)
     bench = pd.read_parquet(args.bench_path)
 
     bench_query = {}
@@ -125,7 +140,8 @@ def main() -> None:
     image_md5_overlaps = []
     dhash_near = []
 
-    for train_idx, row in train.iterrows():
+    for _, row in train.iterrows():
+        train_idx = int(row.get("_global_idx", row.name))
         prompt = message_text(row["prompt"])
         train_query = norm_text(prompt)
         for bench_row in bench_query.get(train_query, []):

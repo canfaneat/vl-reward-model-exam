@@ -30,6 +30,7 @@ def main() -> None:
     parser.add_argument("--dhash-near", default="artifacts/report_assets/overlap_rlaifv1024_vlrb.dhash_near.csv")
     parser.add_argument("--mode", choices=["query", "dhash", "union"], default="union")
     parser.add_argument("--output-prefix", default="artifacts/report_assets/dedup_rlaifv1024_vlrb")
+    parser.add_argument("--train-limit", type=int, default=1024)
     args = parser.parse_args()
 
     query_indices = read_indices(Path(args.query_overlap))
@@ -51,7 +52,8 @@ def main() -> None:
         "query_overlap_unique_train_idx": len(query_indices),
         "dhash_near_unique_train_idx": len(dhash_indices),
         "exclude_indices_n": len(sorted_indices),
-        "kept_in_first_1024": 1024 - len([i for i in sorted_indices if 0 <= i < 1024]),
+        "train_limit": args.train_limit,
+        "kept_after_exclude": args.train_limit - len([i for i in sorted_indices if 0 <= i < args.train_limit]),
         "exclude_indices_path": str(txt_path),
     }
     json_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
