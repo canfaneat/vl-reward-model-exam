@@ -1,0 +1,31 @@
+{
+  "n": 5,
+  "accuracy": 0.6,
+  "score_head": "outputs/checkpoints/lora_sanity_4/score_head_final.pt",
+  "lora_adapter": "outputs/checkpoints/lora_sanity_4/lora_final",
+  "max_tiles": 1,
+  "elapsed_sec": 21.84148859977722,
+  "cuda_max_mem_gb": 4.792111396789551,
+  "by_query_source": {
+    "COCO": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "LCS-558K": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "LRVInstruction": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "TextVQA": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "sharegpt4v-web-landmark": {
+      "n": 1,
+      "accuracy": 1.0
+    }
+  }
+}

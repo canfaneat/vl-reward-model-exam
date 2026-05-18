@@ -1,0 +1,17 @@
+train_idx,hamming,bench_id,bench_query_source,bench_query,train_prompt
+85,0,RLAIF-V-64297,OK-VQA,Is this veggies or fruits?,Is this veggies or fruits?
+100,0,RLAIF-V-77170,LCS-558K,What are the main elements in this image? Describe them thoroughly.,What are the main elements in this image? Describe them thoroughly.
+245,0,RLAIF-V-82325,COCO,Detail the image's components with particular focus on each entity.,What kitchen appliance is she reaching into?
+270,0,RLAIF-V-41506,sharegpt4v-wikiart,"Give a comprehensive description of this artwork, from its visual elements to its conceptual meaning.","Give a comprehensive description of this artwork, from its visual elements to its conceptual meaning."
+346,0,RLAIF-V-77853,VQAv2,What has cut into this heart?,What has cut into this heart?
+401,1,RLAIF-V-2163,COCO,Detail the image's components with particular focus on each entity.,Detail the image's components with particular focus on each entity.
+476,0,RLAIF-V-59369,OK-VQA,What is the brand of the red plastic cup?,What is the brand of the red plastic cup?
+480,0,RLHF-V-3339,vqav2,How many tracks can be seen in the snow?,How many tracks can be seen in the snow?
+576,0,RLAIF-V-42319,LCS-558K,Detail the image's components with particular focus on each entity.,Detail the image's components with particular focus on each entity.
+613,0,RLAIF-V-30232,OK-VQA,What kind of cars are in the photo?,What kind of cars are in the photo?
+724,0,hallucination_pair-3392,POVID_preference_data_for_VLLMs,How many people are feeding the giraffe in the image?,What are the key features you observe in the image?
+725,0,RLAIF-V-3983,COCO,"Tell me what catches your eye in the image, and describe those elements in depth.","Tell me what catches your eye in the image, and describe those elements in depth."
+733,0,RLAIF-V-78397,COCO,Detail the image's components with particular focus on each entity.,Detail the image's components with particular focus on each entity.
+774,0,RLAIF-V-3611,OK-VQA,What are you suppose to never do with the image in this picture?,What are you suppose to never do with the image in this picture?
+837,0,RLAIF-V-70363,LCS-558K,Explain the elements of the image with thorough attention to detail.,Explain the elements of the image with thorough attention to detail.
+1006,0,RLAIF-V-40849,OK-VQA,What is the name of the park these benches reside in?,What is the name of the park these benches reside in?

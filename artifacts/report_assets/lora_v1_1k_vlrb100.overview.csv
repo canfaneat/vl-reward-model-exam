@@ -1,0 +1,8 @@
+item,value
+n,100
+accuracy,0.81
+accuracy_percent,81.0
+elapsed_sec,314.7408983707428
+cuda_max_mem_gb,5.250916004180908
+score_head,outputs/checkpoints/lora_v1_1k/score_head_final.pt
+lora_adapter,outputs/checkpoints/lora_v1_1k/lora_final

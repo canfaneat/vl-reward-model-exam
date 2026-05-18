@@ -1,0 +1,9 @@
+setting,n,parsed,parse_rate,accuracy,accuracy_percent,max_tiles,model_path,short_output,score_head,lora_adapter,summary_path
+lora_v1_1k_vlrb_full,1247,,,0.7465918203688853,74.65918203688852,2,,,outputs/checkpoints/lora_v1_1k/score_head_final.pt,outputs/checkpoints/lora_v1_1k/lora_final,outputs/eval/lora_v1_1k_vlrb_full_summary.json
+lora_v2_dedup_1k_vlrb_full,1247,,,0.5284683239775461,52.8468323977546,2,,,outputs/checkpoints/lora_v2_dedup_1k/score_head_final.pt,outputs/checkpoints/lora_v2_dedup_1k/lora_final,outputs/eval/lora_v2_dedup_1k_vlrb_full_summary.json
+reward_head_v0_128_vlrb_full,1247,,,0.47794707297514033,47.79470729751403,2,,,outputs/checkpoints/reward_head_v0_128/score_head_final.pt,,outputs/eval/reward_head_v0_128_vlrb_full_summary.json
+base_internvl2_5_2b_vlrb_full_short,1247,1040,0.8340016038492382,0.46511627906976744,46.51162790697674,2,/root/private_data/models/reward-model-exam/OpenGVLab/InternVL2_5-2B,True,,,outputs/eval/base_internvl2_5_2b_vlrb_full_short_summary.json
+lora_v1_1k_vlrb100,100,,,0.81,81.0,2,,,outputs/checkpoints/lora_v1_1k/score_head_final.pt,outputs/checkpoints/lora_v1_1k/lora_final,outputs/eval/lora_v1_1k_vlrb100_summary.json
+reward_head_v0_128_vlrb50,50,,,0.64,64.0,2,,,outputs/checkpoints/reward_head_v0_128/score_head_final.pt,,outputs/eval/reward_head_v0_128_vlrb50_summary.json
+reward_head_overfit8_vlrb10,10,,,0.6,60.0,2,,,outputs/checkpoints/reward_head_overfit_8/score_head_final.pt,,outputs/eval/reward_head_overfit8_vlrb10_summary.json
+lora_sanity_4_vlrb5,5,,,0.6,60.0,1,,,outputs/checkpoints/lora_sanity_4/score_head_final.pt,outputs/checkpoints/lora_sanity_4/lora_final,outputs/eval/lora_sanity_4_vlrb5_summary.json

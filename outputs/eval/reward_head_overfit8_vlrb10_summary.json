@@ -1,0 +1,38 @@
+{
+  "n": 10,
+  "accuracy": 0.6,
+  "score_head": "outputs/checkpoints/reward_head_overfit_8/score_head_final.pt",
+  "max_tiles": 2,
+  "elapsed_sec": 49.74201202392578,
+  "cuda_max_mem_gb": 5.0967583656311035,
+  "by_query_source": {
+    "COCO": {
+      "n": 2,
+      "accuracy": 0.5
+    },
+    "GQA": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "LCS-558K": {
+      "n": 3,
+      "accuracy": 0.3333333333333333
+    },
+    "LRVInstruction": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "TextVQA": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "sharegpt4v-web-celebrity": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "sharegpt4v-web-landmark": {
+      "n": 1,
+      "accuracy": 1.0
+    }
+  }
+}

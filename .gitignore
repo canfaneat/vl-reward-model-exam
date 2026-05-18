@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and caches
+.env
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Secrets
+*.token
+*.key
+*.pem
+.huggingface/
+.netrc
+
+# Large or generated experiment files
+outputs/checkpoints/
+outputs/hf_upload/
+outputs/eval/*.jsonl
+outputs/logs/tmux_*.log
+outputs/logs/*.jsonl
+outputs/logs/*.log
+
+# Local/private source documents
+*.docx
+参考.md
+docx_extracted/
+docs/
+TASKS.md
+artifacts/report/
+artifacts/figures/
+artifacts/report_assets/*.md
+artifacts/report_assets/*_live.*
+artifacts/report_assets/*wrong_examples*
+artifacts/report_assets/*.exclude_indices.txt
+
+# Model/data directories should live outside the repository.
+models/
+datasets/
+cache/
+
+# Keep report screenshots locally. Public repo should not include private exam
+# document screenshots unless we explicitly decide to publish the report assets.
+artifacts/screenshots/*.png

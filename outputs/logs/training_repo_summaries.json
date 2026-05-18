@@ -1,0 +1,22 @@
+[
+  {
+    "repo_id": "MMInstruction/VLFeedback",
+    "repo_type": "dataset",
+    "error": "ProxyError('503 Service Unavailable')"
+  },
+  {
+    "repo_id": "trl-lib/rlaif-v",
+    "repo_type": "dataset",
+    "error": "ProxyError('503 Service Unavailable')"
+  },
+  {
+    "repo_id": "openbmb/RLAIF-V-Dataset",
+    "repo_type": "dataset",
+    "error": "ProxyError('503 Service Unavailable')"
+  },
+  {
+    "repo_id": "openbmb/RLHF-V-Dataset",
+    "repo_type": "dataset",
+    "error": "ProxyError('503 Service Unavailable')"
+  }
+]

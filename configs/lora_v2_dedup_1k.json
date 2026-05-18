@@ -1,0 +1,23 @@
+{
+  "model_path": "/root/private_data/models/reward-model-exam/OpenGVLab/InternVL2_5-2B",
+  "data_dir": "/root/private_data/datasets/reward-model-exam/rlaif-v",
+  "training_data": "trl-lib/rlaif-v",
+  "benchmark": "MMInstruction/VL-RewardBench",
+  "limit": 1024,
+  "epochs": 1,
+  "lr": 0.0001,
+  "max_tiles": 2,
+  "margin": 0.0,
+  "seed": 42,
+  "use_lora": true,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "lora_target_modules": ["wqkv", "wo", "w1", "w2", "w3"],
+  "exclude_indices": "artifacts/report_assets/dedup_rlaifv1024_vlrb.union.exclude_indices.txt",
+  "exclude_indices_n": 476,
+  "limit_after_exclude": true,
+  "effective_dataset_size": 1024,
+  "output_dir": "outputs/checkpoints/lora_v2_dedup_1k",
+  "log_path": "outputs/logs/train_lora_v2_dedup_1k.jsonl"
+}

@@ -1,0 +1,59 @@
+{
+  "n": 100,
+  "accuracy": 0.81,
+  "score_head": "outputs/checkpoints/lora_v1_1k/score_head_final.pt",
+  "lora_adapter": "outputs/checkpoints/lora_v1_1k/lora_final",
+  "max_tiles": 2,
+  "elapsed_sec": 314.7408983707428,
+  "cuda_max_mem_gb": 5.250916004180908,
+  "by_query_source": {
+    "COCO": {
+      "n": 24,
+      "accuracy": 0.7916666666666666
+    },
+    "GQA": {
+      "n": 16,
+      "accuracy": 0.75
+    },
+    "Google-Landmark": {
+      "n": 4,
+      "accuracy": 0.5
+    },
+    "LCS-558K": {
+      "n": 12,
+      "accuracy": 0.8333333333333334
+    },
+    "LRVInstruction": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "MovieNet": {
+      "n": 2,
+      "accuracy": 1.0
+    },
+    "OCR-VQA": {
+      "n": 2,
+      "accuracy": 1.0
+    },
+    "OK-VQA": {
+      "n": 11,
+      "accuracy": 1.0
+    },
+    "TextVQA": {
+      "n": 9,
+      "accuracy": 0.7777777777777778
+    },
+    "VQAv2": {
+      "n": 14,
+      "accuracy": 0.7857142857142857
+    },
+    "sharegpt4v-web-celebrity": {
+      "n": 3,
+      "accuracy": 1.0
+    },
+    "sharegpt4v-web-landmark": {
+      "n": 2,
+      "accuracy": 0.5
+    }
+  }
+}

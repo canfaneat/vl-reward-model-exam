@@ -1,0 +1,13 @@
+item,value
+n,1247
+parsed,
+parse_rate,
+accuracy,0.5284683239775461
+accuracy_percent,52.8468323977546
+elapsed_sec,3227.4720771312714
+cuda_max_mem_gb,5.998102188110352
+model_path,
+short_output,
+max_new_tokens,
+score_head,outputs/checkpoints/lora_v2_dedup_1k/score_head_final.pt
+lora_adapter,outputs/checkpoints/lora_v2_dedup_1k/lora_final

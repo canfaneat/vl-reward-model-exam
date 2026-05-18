@@ -1,0 +1,8 @@
+{
+  "mode": "union",
+  "query_overlap_unique_train_idx": 475,
+  "dhash_near_unique_train_idx": 16,
+  "exclude_indices_n": 476,
+  "kept_in_first_1024": 548,
+  "exclude_indices_path": "artifacts/report_assets/dedup_rlaifv1024_vlrb.union.exclude_indices.txt"
+}

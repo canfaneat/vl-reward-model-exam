@@ -1,0 +1,15 @@
+{
+  "model_path": "/root/private_data/models/reward-model-exam/OpenGVLab/InternVL2_5-2B",
+  "data_dir": "/root/private_data/datasets/reward-model-exam/rlaif-v",
+  "training_data": "trl-lib/rlaif-v",
+  "benchmark": "MMInstruction/VL-RewardBench",
+  "limit": 128,
+  "epochs": 1,
+  "lr": 0.001,
+  "max_tiles": 2,
+  "margin": 0.0,
+  "seed": 42,
+  "use_lora": false,
+  "output_dir": "outputs/checkpoints/reward_head_v0_128",
+  "log_path": "outputs/logs/train_reward_head_v0_128.jsonl"
+}

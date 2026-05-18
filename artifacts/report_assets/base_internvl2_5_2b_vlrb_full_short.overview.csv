@@ -1,0 +1,13 @@
+item,value
+n,1247
+parsed,1040
+parse_rate,0.8340016038492382
+accuracy,0.46511627906976744
+accuracy_percent,46.51162790697674
+elapsed_sec,1962.1889414787292
+cuda_max_mem_gb,7.700228691101074
+model_path,/root/private_data/models/reward-model-exam/OpenGVLab/InternVL2_5-2B
+short_output,True
+max_new_tokens,32
+score_head,
+lora_adapter,
