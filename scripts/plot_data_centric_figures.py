@@ -17,7 +17,8 @@ CYAN = "#21D4E8"
 MINT = "#36D39A"
 LILAC = "#A78BFA"
 CORAL = "#FF7A90"
-AMBER = "#FFC857"
+AMBER = "#FFD76A"
+PALE_YELLOW = "#FFE89A"
 LIME = "#A6E22E"
 ROSE = "#F65AAD"
 INDIGO = "#5E7CFF"
@@ -117,7 +118,7 @@ def plot_accuracy_vs_prompt_mass(df: pd.DataFrame, output_dir: Path) -> None:
         "raw_first_1024": CORAL,
         "strict_query_image_4096": LILAC,
         "image_only_refined_4096": INDIGO,
-        "promptcap20_imageonly_4096": MINT,
+        "promptcap20_imageonly_4096": AMBER,
         "promptcap50_nobench_4096": SKY,
         "promptcap20_nobench_4096": ROSE,
         "promptcap10_nobench_4096": CYAN,
@@ -146,7 +147,7 @@ def plot_accuracy_vs_prompt_mass(df: pd.DataFrame, output_dir: Path) -> None:
             color=INK if is_main else TEXT,
             weight="bold" if is_main else "normal",
         )
-    ax.axhspan(70, 75.8, color="#EAF7FF", alpha=0.65, zorder=0)
+    ax.axhspan(70, 75.8, color="#FFF8DA", alpha=0.72, zorder=0)
     ax.axvspan(0, 25, color="#F0FFF9", alpha=0.5, zorder=0)
     ax.set_xlabel("Top-20 prompt mass (%)")
     ax.set_ylabel("VLRewardBench acc. (%)")
@@ -177,7 +178,7 @@ def plot_promptcap_curve(df: pd.DataFrame, output_dir: Path) -> None:
     cap_df = pd.DataFrame(rows).sort_values("cap", ascending=False)
     fig, ax1 = plt.subplots(figsize=(6.85, 3.75))
     ax1.set_facecolor("#FFFFFF")
-    ax1.axhspan(70, 73.5, color="#EAF7FF", alpha=0.7, zorder=0)
+    ax1.axhspan(70, 73.5, color="#FFF8DA", alpha=0.76, zorder=0)
     line1 = ax1.plot(
         cap_df["cap"],
         cap_df["accuracy_percent"],
@@ -269,23 +270,23 @@ def plot_source_accuracy(output_dir: Path) -> None:
     x = range(len(pivot))
     width = 0.17
     model_order = [col for col in ["Raw 1k", "PromptCap50", "PromptCap10", "PromptCap20"] if col in pivot.columns]
-    colors = [CORAL, SKY, TEAL, ROSE]
+    colors = [CORAL, SKY, AMBER, ROSE]
     for offset, (model, color) in enumerate(zip(model_order, colors)):
         xs = [i + (offset - (len(model_order) - 1) / 2) * width for i in x]
         bars = ax.bar(xs, pivot[model], width=width, label=model, color=color, alpha=0.94)
-        if model in {"Raw 1k", "PromptCap50"}:
-            for bar in bars:
-                value = bar.get_height()
-                ax.text(
-                    bar.get_x() + bar.get_width() / 2,
-                    value + 1.4,
-                    f"{value:.0f}",
-                    ha="center",
-                    va="bottom",
-                    fontsize=7.1,
-                    color=TEXT,
-                    rotation=0,
-                )
+        for bar in bars:
+            value = bar.get_height()
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                value + 1.25,
+                f"{value:.0f}",
+                ha="center",
+                va="bottom",
+                fontsize=6.75,
+                color=INK if model == "PromptCap50" else TEXT,
+                weight="bold" if model == "PromptCap50" else "normal",
+                rotation=0,
+            )
     ax.set_xticks(list(x))
     ax.set_xticklabels(labels, rotation=20, ha="right")
     ax.set_ylabel("Accuracy (%)")
@@ -340,7 +341,7 @@ def plot_benchmark_style_table(output_dir: Path) -> None:
                 cell.set_facecolor("#DFFBF3")
                 cell.set_text_props(weight="bold", color=INK)
             elif rows[r - 1][3] == "reference":
-                cell.set_facecolor("#FFF6D8")
+                cell.set_facecolor("#FFF3BE")
             elif rows[r - 1][3] == "Score_base":
                 cell.set_facecolor("#EDF7FF")
     ax.set_title("VLRewardBench result table", fontsize=11.5, color=INK, pad=5)
