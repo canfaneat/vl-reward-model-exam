@@ -1,0 +1,147 @@
+{
+  "selection": "prompt_cap_50",
+  "candidate_limit": 8192,
+  "target_size": 4096,
+  "prompt_cap": 50,
+  "exclude_indices": "",
+  "exclude_indices_n": 0,
+  "selected_n": 4096,
+  "min_idx": 0,
+  "max_idx": 5273,
+  "mean_idx": 2331.823486328125,
+  "unique_prompt_n": 2132,
+  "top20_prompt_mass": 0.236328125,
+  "prompt_word_mean": 9.5576171875,
+  "chosen_len_mean": 393.58203125,
+  "rejected_len_mean": 392.169189453125,
+  "skipped_excluded_before_target": 0,
+  "skipped_prompt_cap_before_target": 1178,
+  "top_selected_prompts": [
+    [
+      "Detail the image's components with particular focus on each entity.",
+      50
+    ],
+    [
+      "What are the key features you observe in the image?",
+      50
+    ],
+    [
+      "Explain the elements of the image with thorough attention to detail.",
+      50
+    ],
+    [
+      "Tell me what catches your eye in the image, and describe those elements in depth.",
+      50
+    ],
+    [
+      "Explain the image's various components in depth.",
+      50
+    ],
+    [
+      "Can you point out the details that make this image unique?",
+      50
+    ],
+    [
+      "Describe the key features of the image in great detail.",
+      50
+    ],
+    [
+      "Provide an intricate description of every entity in the image.",
+      50
+    ],
+    [
+      "What are the main elements in this image? Describe them thoroughly.",
+      50
+    ],
+    [
+      "Identify and describe each object in the image in detail.",
+      50
+    ],
+    [
+      "Explain what's happening in the image with as much detail as possible.",
+      50
+    ],
+    [
+      "What is the setting or environment in which the image takes place?",
+      50
+    ],
+    [
+      "Itemize the elements you identify in the image and describe them thoroughly.",
+      50
+    ],
+    [
+      "What are the main objects or subjects in the image? Please describe them in detail.",
+      50
+    ],
+    [
+      "How do the elements in the image relate to each other in terms of positioning or composition?",
+      50
+    ],
+    [
+      "Convey the specifics of the image with meticulous attention to detail.",
+      50
+    ],
+    [
+      "Give a thorough description of the image, focusing on the landmark it shows.",
+      45
+    ],
+    [
+      "Please describe this artwork thoroughly.",
+      44
+    ],
+    [
+      "Inspect this image and provide a detailed description of the setting and any objects or characters.",
+      41
+    ],
+    [
+      "Create a detailed description describing the contents of the given art image. Include the objects, colors, art style, art genre, etc.",
+      38
+    ]
+  ],
+  "index_bucket_counts": [
+    [
+      "0-511",
+      512
+    ],
+    [
+      "512-1023",
+      512
+    ],
+    [
+      "1024-1535",
+      506
+    ],
+    [
+      "1536-2047",
+      473
+    ],
+    [
+      "2048-2559",
+      386
+    ],
+    [
+      "3584-4095",
+      339
+    ],
+    [
+      "2560-3071",
+      328
+    ],
+    [
+      "3072-3583",
+      322
+    ],
+    [
+      "4608-5119",
+      322
+    ],
+    [
+      "4096-4607",
+      316
+    ],
+    [
+      "5120-5631",
+      80
+    ]
+  ]
+}

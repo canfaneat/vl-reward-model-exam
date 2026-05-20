@@ -19,8 +19,8 @@ def copy_tree(src: Path, dst: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--checkpoint-dir", default="outputs/checkpoints/lora_v1_1k")
-    parser.add_argument("--model-card", default="docs/HF_MODEL_CARD_DRAFT.md")
+    parser.add_argument("--checkpoint-dir", default="outputs/checkpoints/D_PromptCap50NoBench_4k_Linear")
+    parser.add_argument("--model-card", default="model_cards/internvl2-5-2b-vl-reward-model.md")
     parser.add_argument("--output-dir", default="outputs/hf_upload/internvl2-5-2b-vl-reward-model")
     args = parser.parse_args()
 
@@ -40,9 +40,15 @@ def main() -> None:
         "lora_adapter": "lora_final",
         "pooling": "final_valid_token",
         "max_tiles": 2,
-        "training_data": "trl-lib/rlaif-v first 1024 preference pairs",
+        "training_data": "trl-lib/rlaif-v PromptCap50 4096 preference pairs",
+        "selection": "PromptCap50 over RLAIF-V prompts; VLRewardBench fields are not used for final subset selection",
         "benchmark": "MMInstruction/VL-RewardBench",
-        "vlrewardbench_full_accuracy": 0.7465918203688853,
+        "vlrewardbench_full_accuracy": 0.7169206094627105,
+        "score_head_type": "linear",
+        "lora_r": 8,
+        "lora_alpha": 16,
+        "lora_dropout": 0.05,
+        "seed": 42,
     }
     (output_dir / "config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
     print(output_dir)

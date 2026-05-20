@@ -31,6 +31,10 @@ def main() -> None:
     parser.add_argument('--summary', default='outputs/eval/reward_head_eval_summary.json')
     parser.add_argument('--limit', type=int, default=20)
     parser.add_argument('--max-tiles', type=int, default=2)
+    parser.add_argument('--score-head-type', choices=['linear', 'mlp'], default='linear')
+    parser.add_argument('--pooling', choices=['final', 'mean', 'final_mean_concat'], default='final')
+    parser.add_argument('--mlp-hidden-ratio', type=float, default=0.25)
+    parser.add_argument('--mlp-dropout', type=float, default=0.1)
     args = parser.parse_args()
 
     output = Path(args.output)
@@ -43,7 +47,15 @@ def main() -> None:
         df = df.head(args.limit)
     print(f'eval_rows={len(df)} max_tiles={args.max_tiles}', flush=True)
 
-    model = InternVLRewardModel(args.model_path, freeze_backbone=True, use_flash_attn=False).cuda().eval()
+    model = InternVLRewardModel(
+        args.model_path,
+        freeze_backbone=True,
+        use_flash_attn=False,
+        score_head_type=args.score_head_type,
+        pooling=args.pooling,
+        mlp_hidden_ratio=args.mlp_hidden_ratio,
+        mlp_dropout=args.mlp_dropout,
+    ).cuda().eval()
     if args.lora_adapter:
         model.load_lora_adapter(args.lora_adapter, trainable=False)
         model.cuda().eval()
@@ -95,6 +107,10 @@ def main() -> None:
         'score_head': args.score_head,
         'lora_adapter': args.lora_adapter,
         'max_tiles': args.max_tiles,
+        'score_head_type': args.score_head_type,
+        'pooling': args.pooling,
+        'mlp_hidden_ratio': args.mlp_hidden_ratio,
+        'mlp_dropout': args.mlp_dropout,
         'elapsed_sec': time.time() - start,
         'cuda_max_mem_gb': torch.cuda.max_memory_allocated() / 1024**3,
         'by_query_source': by_source,

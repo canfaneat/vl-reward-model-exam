@@ -32,6 +32,7 @@ def main() -> None:
     parser.add_argument('--log-path', default='outputs/logs/train_reward_head_overfit.jsonl')
     parser.add_argument('--limit', type=int, default=32)
     parser.add_argument('--shard-limit', type=int, default=1)
+    parser.add_argument('--include-indices', default='', help='Optional JSON/JSONL/TXT file with RLAIF-V global train indices to keep.')
     parser.add_argument('--exclude-indices', default='', help='Optional JSON/JSONL/TXT file with RLAIF-V global train indices to skip.')
     parser.add_argument(
         '--limit-after-exclude',
@@ -48,6 +49,10 @@ def main() -> None:
     parser.add_argument('--lora-r', type=int, default=8)
     parser.add_argument('--lora-alpha', type=int, default=16)
     parser.add_argument('--lora-dropout', type=float, default=0.05)
+    parser.add_argument('--score-head-type', choices=['linear', 'mlp'], default='linear')
+    parser.add_argument('--pooling', choices=['final', 'mean', 'final_mean_concat'], default='final')
+    parser.add_argument('--mlp-hidden-ratio', type=float, default=0.25)
+    parser.add_argument('--mlp-dropout', type=float, default=0.1)
     args = parser.parse_args()
 
     set_seed(args.seed)
@@ -56,24 +61,36 @@ def main() -> None:
     log_path = Path(args.log_path)
     log_path.parent.mkdir(parents=True, exist_ok=True)
 
+    def read_index_file(path_text: str) -> set[int]:
+        if not path_text:
+            return set()
+        path = Path(path_text)
+        text = path.read_text(encoding='utf-8').strip()
+        if not text:
+            return set()
+        if path.suffix == '.json':
+            data = json.loads(text)
+            if isinstance(data, dict):
+                data = data.get('indices', data.get('include_indices', data.get('exclude_indices', [])))
+            return {int(item) for item in data}
+        return {int(line.strip()) for line in text.splitlines() if line.strip()}
+
+    include_indices = set()
+    if args.include_indices:
+        include_indices = read_index_file(args.include_indices)
+        print(f'include_indices={len(include_indices)} path={Path(args.include_indices)}', flush=True)
+
     exclude_indices = set()
     if args.exclude_indices:
         exclude_path = Path(args.exclude_indices)
-        text = exclude_path.read_text(encoding='utf-8').strip()
-        if text:
-            if exclude_path.suffix == '.json':
-                data = json.loads(text)
-                if isinstance(data, dict):
-                    data = data.get('exclude_indices', [])
-                exclude_indices = {int(item) for item in data}
-            else:
-                exclude_indices = {int(line.strip()) for line in text.splitlines() if line.strip()}
+        exclude_indices = read_index_file(args.exclude_indices)
         print(f'exclude_indices={len(exclude_indices)} path={exclude_path}', flush=True)
 
     dataset = RLAIFVPreferenceDataset(
         args.data_dir,
         limit=args.limit,
         shard_limit=args.shard_limit,
+        include_indices=include_indices,
         exclude_indices=exclude_indices,
         limit_after_exclude=args.limit_after_exclude,
     )
@@ -88,6 +105,10 @@ def main() -> None:
         lora_r=args.lora_r,
         lora_alpha=args.lora_alpha,
         lora_dropout=args.lora_dropout,
+        score_head_type=args.score_head_type,
+        pooling=args.pooling,
+        mlp_hidden_ratio=args.mlp_hidden_ratio,
+        mlp_dropout=args.mlp_dropout,
     ).cuda().train()
     print('params', model.trainable_parameters_summary(), flush=True)
     optimizer = AdamW([p for p in model.parameters() if p.requires_grad], lr=args.lr)
@@ -142,6 +163,8 @@ def main() -> None:
         'max_tiles': args.max_tiles,
         'margin': args.margin,
         'seed': args.seed,
+        'include_indices': args.include_indices,
+        'include_indices_n': len(include_indices),
         'exclude_indices': args.exclude_indices,
         'exclude_indices_n': len(exclude_indices),
         'limit_after_exclude': args.limit_after_exclude,
@@ -150,6 +173,10 @@ def main() -> None:
         'lora_r': args.lora_r,
         'lora_alpha': args.lora_alpha,
         'lora_dropout': args.lora_dropout,
+        'score_head_type': args.score_head_type,
+        'pooling': args.pooling,
+        'mlp_hidden_ratio': args.mlp_hidden_ratio,
+        'mlp_dropout': args.mlp_dropout,
         'elapsed_sec': time.time() - start,
         'cuda_max_mem_gb': torch.cuda.max_memory_allocated() / 1024**3,
     }

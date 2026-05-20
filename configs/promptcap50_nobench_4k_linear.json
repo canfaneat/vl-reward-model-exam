@@ -1,0 +1,21 @@
+{
+  "name": "D_PromptCap50NoBench_4k_Linear",
+  "base_model": "OpenGVLab/InternVL2_5-2B",
+  "model_path": "/root/private_data/models/reward-model-exam/OpenGVLab/InternVL2_5-2B",
+  "train_data": "trl-lib/rlaif-v",
+  "include_indices": "artifacts/report_assets/rlaifv_promptcap50_nobench_4k.indices.txt",
+  "epochs": 1,
+  "lr": 0.0001,
+  "max_tiles": 2,
+  "margin": 0.0,
+  "seed": 42,
+  "use_lora": true,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "score_head_type": "linear",
+  "pooling": "final",
+  "output_dir": "outputs/checkpoints/D_PromptCap50NoBench_4k_Linear",
+  "eval_summary": "outputs/eval/D_PromptCap50NoBench_4k_Linear_vlrb_full_summary.json",
+  "vlrewardbench_full_accuracy": 0.7169206094627105
+}

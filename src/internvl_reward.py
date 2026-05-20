@@ -128,6 +128,7 @@ class RLAIFVPreferenceDataset(Dataset):
         data_dir: str | Path,
         limit: int | None = None,
         shard_limit: int | None = None,
+        include_indices: set[int] | None = None,
         exclude_indices: set[int] | None = None,
         limit_after_exclude: bool = False,
     ):
@@ -136,7 +137,8 @@ class RLAIFVPreferenceDataset(Dataset):
         if shard_limit is not None:
             files = files[:shard_limit]
         frames = []
-        remaining = limit
+        remaining = None if include_indices else limit
+        max_include_idx = max(include_indices) if include_indices else None
         offset = 0
         for file in files:
             df = pd.read_parquet(file)
@@ -149,7 +151,11 @@ class RLAIFVPreferenceDataset(Dataset):
             frames.append(df)
             if remaining is not None and not limit_after_exclude and remaining <= 0:
                 break
+            if max_include_idx is not None and offset > max_include_idx:
+                break
         self.df = pd.concat(frames, ignore_index=True)
+        if include_indices:
+            self.df = self.df[self.df['_global_idx'].isin(include_indices)].reset_index(drop=True)
         if exclude_indices:
             self.df = self.df[~self.df['_global_idx'].isin(exclude_indices)].reset_index(drop=True)
         if limit is not None and limit_after_exclude:
@@ -174,6 +180,10 @@ class InternVLRewardModel(nn.Module):
         lora_alpha: int = 16,
         lora_dropout: float = 0.05,
         lora_target_modules: tuple[str, ...] = ("wqkv", "wo", "w1", "w2", "w3"),
+        score_head_type: str = "linear",
+        pooling: str = "final",
+        mlp_hidden_ratio: float = 0.25,
+        mlp_dropout: float = 0.1,
     ):
         super().__init__()
         self.model_path = str(model_path)
@@ -189,7 +199,21 @@ class InternVLRewardModel(nn.Module):
             local_files_only=True,
         )
         hidden_size = self.backbone.config.llm_config.hidden_size
-        self.score_head = nn.Linear(hidden_size, 1)
+        self.pooling = pooling
+        pooled_size = hidden_size * 2 if pooling == "final_mean_concat" else hidden_size
+        if score_head_type == "linear":
+            self.score_head = nn.Linear(pooled_size, 1)
+        elif score_head_type == "mlp":
+            mlp_hidden = max(1, int(pooled_size * mlp_hidden_ratio))
+            self.score_head = nn.Sequential(
+                nn.LayerNorm(pooled_size),
+                nn.Linear(pooled_size, mlp_hidden),
+                nn.GELU(),
+                nn.Dropout(mlp_dropout),
+                nn.Linear(mlp_hidden, 1),
+            )
+        else:
+            raise ValueError(f"Unsupported score_head_type: {score_head_type}")
         self.dtype = dtype
         self.img_context_token_id = self.tokenizer.convert_tokens_to_ids(IMG_CONTEXT_TOKEN)
         self.backbone.img_context_token_id = self.img_context_token_id
@@ -264,7 +288,18 @@ class InternVLRewardModel(nn.Module):
         )
         hidden = outputs.hidden_states[-1]
         last_idx = attention_mask.sum(dim=1).long() - 1
-        pooled = hidden[torch.arange(hidden.shape[0], device=device), last_idx]
+        final_pooled = hidden[torch.arange(hidden.shape[0], device=device), last_idx]
+        if self.pooling == "final":
+            pooled = final_pooled
+        elif self.pooling == "mean":
+            mask = attention_mask.unsqueeze(-1).to(hidden.dtype)
+            pooled = (hidden * mask).sum(dim=1) / mask.sum(dim=1).clamp_min(1)
+        elif self.pooling == "final_mean_concat":
+            mask = attention_mask.unsqueeze(-1).to(hidden.dtype)
+            mean_pooled = (hidden * mask).sum(dim=1) / mask.sum(dim=1).clamp_min(1)
+            pooled = torch.cat([final_pooled, mean_pooled], dim=-1)
+        else:
+            raise ValueError(f"Unsupported pooling: {self.pooling}")
         score = self.score_head(pooled).squeeze(-1)
         return score
 
