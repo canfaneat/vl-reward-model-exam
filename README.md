@@ -13,6 +13,7 @@ The main model is an InternVL2.5-2B based reward model trained on RLAIF-V prefer
 | Raw RLAIF-V 1k reward model | first 1024 pairs | 74.66% |
 | Strict query+image audit ablation | 4096 pairs | 70.17% |
 | PromptCap50 reward model | RLAIF-V 4096 pairs | 71.69% |
+| PromptCap50 reward model, seed 123 | same data/config | 61.27% |
 
 The recommended submitted checkpoint is:
 
@@ -35,6 +36,8 @@ It uses:
 - seed: 42
 
 VLRewardBench is used only for evaluation and analysis. Its samples, human rankings, and candidate responses are not used as reward-model training samples.
+
+The seed-123 rerun uses the same PromptCap50 data and hyperparameters but does not form a stable reward scale: the final 512 training steps have mean `score_chosen - score_rejected` of `0.0008` and positive-gap rate of `50.98%`. This is kept as a stability note; the submitted checkpoint is the seed-42 run.
 
 ## Method
 
@@ -219,4 +222,4 @@ outputs/hf_upload/internvl2-5-2b-vl-reward-model/lora_final/adapter_model.safete
 
 ## Notes
 
-The high raw RLAIF-V result should be interpreted as strong in-domain reward adaptation, not as a claim of zero-shot generalization. The final PromptCap50 checkpoint is selected because it gives a cleaner data-selection story while retaining strong VLRewardBench performance.
+The high raw RLAIF-V result should be interpreted as strong in-domain reward adaptation, not as a claim of broad cross-domain generalization. The final PromptCap50 checkpoint is selected because it gives a cleaner data-selection story while retaining strong VLRewardBench performance. Further work should prioritize optimization stability, including lower learning rates, warmup, gradient clipping, checkpoint selection, and multi-seed validation.

@@ -14,6 +14,8 @@ def copy_file(src: Path, dst: Path) -> None:
 def copy_tree(src: Path, dst: Path) -> None:
     if dst.exists():
         shutil.rmtree(dst)
+        if dst.exists():
+            raise RuntimeError(f"Failed to remove existing directory: {dst}")
     shutil.copytree(src, dst)
 
 

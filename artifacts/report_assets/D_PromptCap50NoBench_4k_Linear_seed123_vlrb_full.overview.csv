@@ -1,0 +1,13 @@
+item,value
+n,1247
+parsed,
+parse_rate,
+accuracy,0.6126704089815558
+accuracy_percent,61.26704089815558
+elapsed_sec,3413.4633033275604
+cuda_max_mem_gb,5.998102188110352
+model_path,
+short_output,
+max_new_tokens,
+score_head,outputs/checkpoints/D_PromptCap50NoBench_4k_Linear_seed123/score_head_final.pt
+lora_adapter,outputs/checkpoints/D_PromptCap50NoBench_4k_Linear_seed123/lora_final

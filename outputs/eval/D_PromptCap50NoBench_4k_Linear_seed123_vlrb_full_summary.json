@@ -1,0 +1,123 @@
+{
+  "n": 1247,
+  "accuracy": 0.6126704089815558,
+  "score_head": "outputs/checkpoints/D_PromptCap50NoBench_4k_Linear_seed123/score_head_final.pt",
+  "lora_adapter": "outputs/checkpoints/D_PromptCap50NoBench_4k_Linear_seed123/lora_final",
+  "max_tiles": 2,
+  "score_head_type": "linear",
+  "pooling": "final",
+  "mlp_hidden_ratio": 0.25,
+  "mlp_dropout": 0.1,
+  "elapsed_sec": 3413.4633033275604,
+  "cuda_max_mem_gb": 5.998102188110352,
+  "by_query_source": {
+    "": {
+      "n": 317,
+      "accuracy": 0.526813880126183
+    },
+    "COCO": {
+      "n": 63,
+      "accuracy": 0.7301587301587301
+    },
+    "GQA": {
+      "n": 26,
+      "accuracy": 0.46153846153846156
+    },
+    "Google-Landmark": {
+      "n": 4,
+      "accuracy": 0.75
+    },
+    "LCS-558K": {
+      "n": 41,
+      "accuracy": 0.8048780487804879
+    },
+    "LRVInstruction": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "MovieNet": {
+      "n": 2,
+      "accuracy": 1.0
+    },
+    "OCR-VQA": {
+      "n": 4,
+      "accuracy": 0.5
+    },
+    "OK-VQA": {
+      "n": 32,
+      "accuracy": 0.6875
+    },
+    "POVID_preference_data_for_VLLMs": {
+      "n": 448,
+      "accuracy": 0.6339285714285714
+    },
+    "TextVQA": {
+      "n": 14,
+      "accuracy": 0.7857142857142857
+    },
+    "VQAv2": {
+      "n": 35,
+      "accuracy": 0.5428571428571428
+    },
+    "coco": {
+      "n": 40,
+      "accuracy": 0.5
+    },
+    "jailbreak-Fraud": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "jailbreak-typo-EconomicHarm": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "jailbreak-typo-HateSpeech": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "jailbreak-typo-Illegal_Activitiy": {
+      "n": 2,
+      "accuracy": 1.0
+    },
+    "jailbreak-typo-Malware_Generation": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "jailbreak-typo-Physical_Harm": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "politics-Gov_Decision": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "sharegpt4v-textvqa": {
+      "n": 3,
+      "accuracy": 0.3333333333333333
+    },
+    "sharegpt4v-web-celebrity": {
+      "n": 7,
+      "accuracy": 0.7142857142857143
+    },
+    "sharegpt4v-web-landmark": {
+      "n": 5,
+      "accuracy": 1.0
+    },
+    "sharegpt4v-wikiart": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "svit-complex_reasoning": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "vqav2": {
+      "n": 24,
+      "accuracy": 0.5416666666666666
+    },
+    "wildvision-battle": {
+      "n": 171,
+      "accuracy": 0.6432748538011696
+    }
+  }
+}

@@ -66,8 +66,9 @@ VLRewardBench full set, 1247 examples:
 | Raw RLAIF-V 1k reward model | 74.66% |
 | Strict query+image audit ablation, 4096 pairs | 70.17% |
 | PromptCap50 reward model, 4096 pairs | 71.69% |
+| PromptCap50 reward model, seed 123 | 61.27% |
 
-The uploaded checkpoint is the PromptCap50 reward model.
+The uploaded checkpoint is the PromptCap50 seed-42 reward model.
 
 Source-level highlights for the uploaded checkpoint:
 
@@ -98,9 +99,11 @@ python -u scripts/eval_reward_head.py \
 
 ## Limitations
 
-This model is a research assessment artifact. RLAIF-V and VLRewardBench are in the same broad multimodal preference ecosystem, so the score should be interpreted as in-domain reward-model adaptation rather than proof of broad zero-shot generalization.
+This model is a research assessment artifact. RLAIF-V and VLRewardBench are in the same broad multimodal preference ecosystem, so the score should be interpreted as in-domain reward-model adaptation rather than proof of broad cross-domain generalization.
 
 Data auditing found no direct use of VLRewardBench samples or labels as training samples, but prompt templates and task types are naturally similar across public multimodal preference datasets. This is why the repository includes data similarity audits and PromptCap sampling experiments.
+
+A seed-123 rerun with the same PromptCap50 data and hyperparameters reached 61.27%. Its final 512 training steps had mean `score_chosen - score_rejected` of `0.0008` and positive-gap rate of `50.98%`, indicating that this run did not form a stable reward scale. Future work should prioritize learning-rate scheduling, warmup, gradient clipping, checkpoint selection, and multi-seed validation before adding more complex score heads.
 
 ## Files
 
