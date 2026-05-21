@@ -2,7 +2,14 @@
 
 This repository contains the code and public experiment artifacts for a 2026-05 research assessment on vision-language reward modeling.
 
-The main model is an InternVL2.5-2B based reward model trained on RLAIF-V preference pairs and evaluated on VLRewardBench. It keeps the base VLM frozen, trains LoRA adapters on the language-model linear layers, and adds a scalar score head for pairwise response ranking.
+The main model is an InternVL2.5-2B based reward model trained on RLAIF-V preference pairs and evaluated on VLRewardBench. It keeps the base VLM frozen, trains LoRA adapters on the language-model linear layers, and adds a linear numeric score head for pairwise response ranking.
+
+## Deliverables
+
+- Final Chinese report: [`reports/VL_REWARD_MODEL_REPORT_CN.pdf`](reports/VL_REWARD_MODEL_REPORT_CN.pdf)
+- LaTeX source for the report: [`reports/VL_REWARD_MODEL_REPORT_CN.tex`](reports/VL_REWARD_MODEL_REPORT_CN.tex)
+- Hugging Face model repo: <https://huggingface.co/canfaneat/internvl2-5-2b-vl-reward-model>
+- GitHub code repo: <https://github.com/canfaneat/vl-reward-model-exam>
 
 ## Main Result
 
@@ -27,7 +34,7 @@ It uses:
 - training data: `trl-lib/rlaif-v`
 - sample selection: PromptCap50 over RLAIF-V prompts
 - LoRA: `r=8`, `alpha=16`, `dropout=0.05`
-- score head: linear scalar head
+- score head: linear numeric score head
 - pooling: final valid token
 - training pairs: 4096
 - epochs: 1
@@ -48,7 +55,7 @@ image + question + candidate response
   -> InternVL2.5-2B backbone
   -> final valid-token hidden state
   -> Linear(hidden_size, 1)
-  -> scalar reward score
+  -> reward score
 ```
 
 For each RLAIF-V preference pair, the model computes:
@@ -108,7 +115,6 @@ GPU: NVIDIA A800 80GB PCIe
 Activate the environment:
 
 ```bash
-cd "/root/private_data/projects/reward model"
 source scripts/activate_env.sh
 python scripts/check_env.py
 ```
@@ -116,9 +122,9 @@ python scripts/check_env.py
 Expected local paths:
 
 ```text
-/root/private_data/models/reward-model-exam/OpenGVLab/InternVL2_5-2B
-/root/private_data/datasets/reward-model-exam/rlaif-v
-/root/private_data/datasets/reward-model-exam/VL-RewardBench
+models/reward-model-exam/OpenGVLab/InternVL2_5-2B
+datasets/reward-model-exam/rlaif-v
+datasets/reward-model-exam/VL-RewardBench
 ```
 
 Download helper:
@@ -167,7 +173,7 @@ python -u scripts/train_reward_head.py \
 Long runs were launched in `tmux`, for example:
 
 ```bash
-tmux new-session -d -s train_D_PromptCap50NoBench_4k_Linear "bash -lc 'cd /root/private_data/projects/reward\\ model && source scripts/activate_env.sh && python -u scripts/train_reward_head.py ...'"
+tmux new-session -d -s train_D_PromptCap50NoBench_4k_Linear "bash -lc 'cd /path/to/vl-reward-model-exam && source scripts/activate_env.sh && python -u scripts/train_reward_head.py ...'"
 ```
 
 ## Evaluate
@@ -223,3 +229,5 @@ outputs/hf_upload/internvl2-5-2b-vl-reward-model/lora_final/adapter_model.safete
 ## Notes
 
 The high raw RLAIF-V result should be interpreted as strong in-domain reward adaptation, not as a claim of broad cross-domain generalization. The final PromptCap50 checkpoint is selected because it gives a cleaner data-selection story while retaining strong VLRewardBench performance. Further work should prioritize optimization stability, including lower learning rates, warmup, gradient clipping, checkpoint selection, and multi-seed validation.
+
+Large checkpoints, original datasets, full training logs, and private assessment documents are intentionally not stored in this GitHub repository. The submitted model weights are hosted in the Hugging Face model repository listed above.

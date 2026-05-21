@@ -14,12 +14,12 @@ tags:
 
 This repository contains a LoRA-based vision-language reward model for pairwise response ranking.
 
-The model is built from `OpenGVLab/InternVL2_5-2B`. It adds a scalar score head on the final valid-token hidden state and trains LoRA adapters on the language-model linear layers. The uploaded files contain only the LoRA adapter, score head, training metadata, and configuration. The base model weights are not duplicated.
+The model is built from `OpenGVLab/InternVL2_5-2B`. It adds a linear numeric score head on the final valid-token hidden state and trains LoRA adapters on the language-model linear layers. The uploaded files contain only the LoRA adapter, score head, training metadata, and configuration. The base model weights are not duplicated.
 
 ## Model
 
 - Base model: `OpenGVLab/InternVL2_5-2B`
-- Reward head: linear scalar score head
+- Reward head: linear numeric score head
 - Pooling: final valid-token hidden state
 - Adapter: LoRA on language-model linear modules
 - LoRA r: 8

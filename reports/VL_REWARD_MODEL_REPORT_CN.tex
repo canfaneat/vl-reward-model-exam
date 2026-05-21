@@ -1,0 +1,472 @@
+% Compile with XeLaTeX.
+\documentclass[11pt,a4paper]{ctexart}
+\usepackage[margin=2.05cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{listings}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{SimSun}{\setCJKmainfont{SimSun}}{}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\setlength{\parskip}{0.42em}
+\setlength{\parindent}{2em}
+\renewcommand{\arraystretch}{1.16}
+\ctexset{section={format=\Large\bfseries},subsection={format=\large\bfseries}}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible,frame=single,rulecolor=\color{gray!30},backgroundcolor=\color{blue!2}}
+\begin{document}
+\begin{center}\LARGE\bfseries InternVL2.5-2B 多模态奖励模型训练与数据选择\end{center}
+
+\section*{摘要}
+\addcontentsline{toc}{section}{摘要}
+
+本项目面向多模态奖励模型训练任务，选用 InternVL2.5-2B 作为基础视觉语言模型，在模型后端加入用于输出数值分数的线性 score head，并借助 RLAIF-V 中的图文偏好数据进行训练。原始 InternVL2.5-2B 以生成式 judge 的形式在 VLRewardBench 上得到 46.51\% 的 Score\_base；训练后的主模型在 VLRewardBench full set 上得到 71.69\% 的 Score\_reward。
+
+考核第一天晚间，raw RLAIF-V 1024 条样本已经得到 74.66\% 的 full benchmark accuracy。由于这个分数较高，后续实验重点转向数据审计和数据选择：检查 RLAIF-V 与 VLRewardBench 之间的显式图像重复、近似图像、query 文本重合、response 文本重合以及 prompt 模板集中度，并设计 PromptCap 数据选择策略。最终主模型使用 RLAIF-V 内部 prompt 频率限制得到的 4096 条训练样本，不使用 VLRewardBench 的样本、标签或候选回答作为训练内容。PromptCap50 在保持 70\% 以上 full benchmark accuracy 的同时，降低了训练子集的高频 prompt 模板集中度。
+
+\section{任务理解与完成情况}
+
+考核要求是以 Qwen2-VL 或 InternVL2.5-VL 系列模型为 base model，通过在模型后端添加 score head 的方式训练 reward model，并在 VLRewardBench 上得到 Score\_base 和 Score\_reward。同时需要保存模型权重，撰写实验报告，后续上传代码到 GitHub、上传权重到 Hugging Face。
+
+本项目完成情况如下。
+
+\begin{center}\small
+\begin{longtable}{p{0.29\linewidth} p{0.65\linewidth}}
+\toprule
+要求 & 本项目完成情况 \\
+\midrule
+选择推荐基础模型 & 使用 InternVL2.5-2B，模型规模小于 3B \\
+得到 Score\_base & 原始 InternVL2.5-2B 生成式 judge：46.51\% \\
+添加 score head 并训练 reward model & 实现 InternVL2.5-2B + LoRA + linear score head \\
+得到 Score\_reward & 主模型 full VLRewardBench accuracy：71.69\% \\
+保存模型权重 & 保存 LoRA adapter、score\_head\_final.pt、training\_meta.json \\
+实验报告 & 本文整理了方法、数据处理、训练参数、实验发现和问题分析 \\
+不使用 VLRewardBench 数据训练 & 训练样本来自 RLAIF-V；VLRewardBench 只用于评测和审计分析 \\
+不抄袭已有项目 & 核心训练、评测、数据选择和审计脚本为本项目实现 \\
+\bottomrule
+\end{longtable}\end{center}
+
+训练采用参数高效微调路线。基础 VLM 的原始权重保持冻结，训练 LoRA 参数和新增的 score head，将模型输出形式从生成回答转为候选回答质量打分。
+
+整个实验从环境准备开始推进：先在 SCNet 超算互联网平台上整理 InternVL2.5-2B、RLAIF-V 和 VLRewardBench 的本地路径，跑通 base judge 与 head-only 小样本链路，再扩展到 LoRA reward 训练、数据审计、PromptCap 数据选择、结构消融和稳定性诊断。最终结果既包含可提交权重，也包含对分数来源、数据边界和训练稳定性的复查。
+
+\section{相关工作与实验动机}
+
+多模态 reward model 的核心目标是判断已有图文回答的质量。InternLM-XComposer2.5-Reward [2] 提供了一个直接参考：它基于视觉语言模型训练多模态 reward model，并用于强化学习监督信号、候选回答选择以及数据过滤等场景。该工作说明，保留 VLM 的图文表征能力，再通过偏好数据训练 reward 头，是一条实际可行的路线。
+
+另一条对本项目更重要的线索来自 Skywork-Reward [1]。该工作强调 reward modeling 中的数据筛选、清洗和混合策略会显著影响最终效果。本项目的早期实验也给出同样信号：raw RLAIF-V 1024 条样本可以得到很高分数，同时该子集的 prompt 模板集中度也很高。随后，实验主线转向训练数据审计和选择，并以结构消融作为辅助验证。
+
+RLAIF-V [4] 关注开放模型反馈和多模态幻觉缓解，提供了包含图像、prompt、chosen response 和 rejected response 的偏好数据。VLRewardBench [3] 用于评测视觉语言生成式 reward model，覆盖一般多模态 query、视觉幻觉检测和复杂推理等场景。两者处在相近的多模态偏好判断生态中。本文的结果对应公开同域偏好数据下的 reward-model adaptation。
+
+\section{模型方法}
+
+\subsection{输入与输出}
+
+Reward model 每次只评价一个候选回答。输入由图像、问题和候选回答组成：
+
+\begin{lstlisting}
+image + question + candidate response
+\end{lstlisting}
+
+模型输出一个数值分数：
+
+\begin{lstlisting}
+reward_score = RM(image, question, candidate_response)
+\end{lstlisting}
+
+在 VLRewardBench 评测中，同一条样本有两个候选回答。模型分别计算两个回答的 reward score，分数更高的回答就是模型认为更优的回答。
+
+Score\_base 使用原始 InternVL2.5-2B 作为生成式 judge。评测时，将图像、问题和两个候选回答一起输入模型，prompt 要求模型从视觉准确性、完整性、清晰度和相关性几个方面判断哪一个回答更好，并输出类似 \texttt{Overall Judgment: Answer X is better.} 的结论。评测脚本会随机交换两个候选回答的展示顺序，再解析模型输出的 Answer 1 或 Answer 2，与 VLRewardBench 的 human\_ranking 对齐后计算准确率。本项目采用 short-output judge prompt、\texttt{max\_new\_tokens=32}、\texttt{max\_tiles=2}，在 full set 1247 条样本上得到 46.51\%。Score\_reward 使用训练后的 reward model 分别给两个候选回答打分，直接比较两个数值分数。
+
+\subsection{模型结构}
+
+主模型结构如下。
+
+\begin{lstlisting}
+image + question + candidate response
+    -> InternVL2.5-2B
+    -> final valid-token hidden state
+    -> Linear(hidden_size, 1)
+    -> reward score
+\end{lstlisting}
+
+InternVL2.5-2B 负责图像和文本的联合表征。score head 是一个线性层，把最后一个有效 token 的 hidden state 映射为一个数值 reward score。最终主模型采用 linear head，这一选择来自后续结构消融：在相同训练框架下，MLP head 的 full benchmark accuracy 只有 50.44\%，明显低于 linear head 对应结果。
+
+\subsection{训练目标}
+
+RLAIF-V 中每条训练样本包含 chosen response 和 rejected response。训练时分别计算：
+
+\begin{lstlisting}
+score_chosen = RM(image, question, chosen_response)
+score_rejected = RM(image, question, rejected_response)
+\end{lstlisting}
+
+损失函数采用 Bradley-Terry 形式的 pairwise preference loss：
+
+\begin{lstlisting}
+loss = -log sigmoid(score_chosen - score_rejected - margin)
+\end{lstlisting}
+
+主实验中 margin 设为 0。训练目标集中在 pairwise ranking：提高 chosen response 相对 rejected response 的分数。
+
+\subsection{训练参数}
+
+主提交模型配置如下。
+
+\begin{center}\small
+\begin{longtable}{p{0.29\linewidth} p{0.65\linewidth}}
+\toprule
+配置项 & 设置 \\
+\midrule
+base model & OpenGVLab/InternVL2\_5-2B \\
+训练方式 & 冻结原始权重，训练 LoRA adapter 和 score head \\
+LoRA r & 8 \\
+LoRA alpha & 16 \\
+LoRA dropout & 0.05 \\
+score head & linear \\
+pooling & final valid token \\
+training pairs & 4096 \\
+epochs & 1 \\
+learning rate & 1e-4 \\
+max image tiles & 2 \\
+seed & 42 \\
+实验平台 & SCNet 超算互联网平台，NVIDIA A800 80GB PCIe \\
+\bottomrule
+\end{longtable}\end{center}
+
+LoRA 采用 \texttt{r=8, alpha=16, dropout=0.05}，属于小模型参数高效微调中较常用的保守配置。\texttt{r=8} 控制新增参数规模，\texttt{alpha=16} 使 LoRA 分支保持适中的缩放强度，\texttt{dropout=0.05} 用于抑制小规模偏好数据上的过拟合。该设置使训练成本保持在可控范围内，也支持在考核时间内完成多轮数据和结构实验。
+
+\section{数据处理与相似性审计}
+
+\subsection{数据审计动机}
+
+考核第一天晚间，raw RLAIF-V 1024 条偏好样本已经在 full VLRewardBench 上得到 74.66\%。这个结果说明 RLAIF-V 对多模态偏好判断任务具有很强的训练价值，也提示后续实验需要继续追问分数来源。本文随后把工作重点转向训练子集和 benchmark 之间的任务相似性、显式重复风险以及 prompt 模板分布，以区分 reward model 训练范式、同域数据优势和训练子集内部模板分布带来的影响。
+
+考核明确禁止使用 VLRewardBench 的数据训练，但训练数据不受限制。因此，合理的边界应当分成三层来看。
+
+\begin{center}\small
+\begin{longtable}{p{0.22\linewidth} p{0.40\linewidth} p{0.30\linewidth}}
+\toprule
+层面 & 含义 & 本项目处理 \\
+\midrule
+硬性训练边界 & 是否把 VLRewardBench 的样本、标签或候选回答作为训练样本 & 没有使用 \\
+显式重复 & 是否存在相同图片、近似图片、完全相同 query 或 response & 做程序化审计 \\
+同域相似性 & 训练数据是否与 benchmark 属于相近任务生态 & 在结果解释和数据选择实验中单独讨论 \\
+\bottomrule
+\end{longtable}\end{center}
+
+这种分层有助于把合规边界和研究解释分开。视觉语言偏好数据中常见 “describe this image in detail” 之类通用 prompt，query 文本重合通常对应任务模板相似性，不能直接等同于训练样本重复。对于 reward model 来说，使用同域公开偏好数据是正常训练方式；本项目严格避免把 benchmark 样本、人工 ranking 或候选回答用于训练。
+
+数据处理的核心目的，是在公开同域偏好训练的前提下，让训练边界和分布特征能够被复查。raw first 1024 给出了很强的同域适配结果；后续的 strict query+image、image-only refined 和 PromptCap 系列实验，分别用于观察显式相似性、图像近重复过滤和 prompt 模板集中度对结果的影响。
+
+\subsection{审计指标}
+
+本文对 RLAIF-V 训练子集做了以下审计。
+
+\begin{center}\small
+\begin{longtable}{p{0.29\linewidth} p{0.65\linewidth}}
+\toprule
+指标 & 含义 \\
+\midrule
+image MD5 exact overlap & 检查是否存在完全相同图片 \\
+dHash near overlap & 用感知哈希检查近似图片 \\
+query overlap rate & 归一化后的 prompt/query 是否与 VLRewardBench query 完全相同 \\
+response exact overlap & chosen/rejected response 是否与 benchmark response 完全相同 \\
+unique prompt & 子集中不同 prompt 数量 \\
+effective prompt & 基于 entropy 的有效 prompt 数，数值越大表示 prompt 分布越分散 \\
+top20 prompt mass & 出现最多的 20 个 prompt 占训练子集比例 \\
+\bottomrule
+\end{longtable}\end{center}
+
+在前 8192 条 RLAIF-V 候选样本中，没有发现 image MD5 完全重合。dHash near overlap 只占少量样本，response exact overlap 极低。query overlap 较高，主要来自通用图像描述模板。这个结果支持两个判断：第一，审计中未发现训练集直接包含 VLRewardBench 样本；第二，RLAIF-V 与 VLRewardBench 在任务模板和领域上确实相近，因此最终结果需要结合数据分布一起解释。
+
+同时，RLAIF-V 前 8192 条样本的 prompt 分布并不均匀：最高频 prompt 可出现两百次以上，top20 prompt mass 约为 41\%。PromptCap 后续被引入，正是为了解决训练子集中少数高频模板占比过高的问题。PromptCap 不依赖 VLRewardBench 字段，只根据 RLAIF-V 内部 prompt 频率控制每类模板的最大样本数。
+
+\subsection{PromptCap 数据选择}
+
+为使最终训练子集选择只依赖训练集内部信息，本文设计了 PromptCap。它只使用 RLAIF-V 训练集内部的 prompt 频率，不读取 VLRewardBench 的样本内容来决定保留哪些训练样本。
+
+PromptCap50 的规则如下。
+
+\begin{enumerate}
+\item 按 RLAIF-V 原始顺序扫描样本。
+\item prompt 经过小写化和空白归一化后，完全相同的文本视为同一个 prompt。
+\item 同一个 prompt 最多保留 50 条样本。
+\item 达到 4096 条 preference pairs 后停止。
+\end{enumerate}
+
+PromptCap 的目标是在同域训练前提下控制模板集中度。raw 子集中少数高频 prompt 占比很高，模型容易被这些模板支配；PromptCap 通过训练集内部的频率限制降低模板集中度，同时保留足够的同域偏好信号。
+
+最终主模型选择 PromptCap50，没有直接使用 raw first 1024 的最高分结果。raw first 1024 更接近强同域适配上限，分数高，模板集中度也高；PromptCap50 将 top20 prompt mass 从 41.50\% 降到 23.63\%，effective prompt 从 216.31 提高到 811.89，同时仍保持 71.69\% 的 full benchmark accuracy。本文因此将 PromptCap50 作为主提交模型。
+
+\section{实验结果}
+
+实验部分按“先跑通、再审计、再选择、再消融”的顺序组织。第一步用 head-only 和 raw 1k LoRA 确认训练链路；第二步围绕 raw 1k 的高分做数据相似性和 prompt 分布审计；第三步比较 strict query+image、image-only refined 和 PromptCap 系列；第四步补充 pooling、MLP head 和 seed 诊断。这样可以同时回答三个问题：reward 训练是否有效，数据选择是否合理，结构改动是否真的带来收益。
+
+\subsection{总体结果}
+
+\begin{center}\small
+\begin{longtable}{p{0.26\linewidth} p{0.25\linewidth} p{0.17\linewidth} p{0.24\linewidth}}
+\toprule
+实验设置 & 训练数据策略 & VLRewardBench accuracy & 实验作用 \\
+\midrule
+InternVL2.5-2B base judge & 无 reward 训练 & 46.51\% & Score\_base，生成式 judge \\
+Head-only v0 & RLAIF-V 128 pairs & 47.79\% & 验证 score head 流程 \\
+Raw RLAIF-V 1k & 原始前 1024 条 & 74.66\% & 第一日晚间得到，促成后续数据审计 \\
+Image-only refined 4k & 近似图像过滤 & 66.72\% & 检查图像近重复过滤影响 \\
+Strict query+image 4k & query 与近图像审计过滤 & 70.17\% & 分析显式相似性影响 \\
+PromptCap50 4k & 训练集内部 prompt cap & 71.69\% & 主提交模型 \\
+PromptCap10 4k & 训练集内部 prompt cap & 70.73\% & 验证更强 prompt 分散化 \\
+PromptCap20 4k & 训练集内部 prompt cap & 60.63\% & 展示 prompt/source 组合的敏感性 \\
+MLP head PromptCap20 4k & MLP score head & 50.44\% & 结构复杂化未带来收益 \\
+\bottomrule
+\end{longtable}\end{center}
+
+主模型的 Score\_reward 为 71.69\%，相比 Score\_base 46.51\% 提升 25.18 个百分点，也高于考核文档中给出的 InternVL2.5-2B-Reward 参考值 64.8\%。结合前述数据审计，本文将这一分数解释为 InternVL2.5-2B 在公开同域偏好数据训练后，对 VLRewardBench 回答偏好判断任务的显著适配提升。
+
+这张表也反映了实验推进顺序。Head-only v0 用来验证 score head 流程是否可用；raw first 1024 在 5 月 18 日晚间给出 74.66\% 后，实验重心转向数据边界；image-only refined、strict query+image 和 PromptCap 系列用于拆分图像近重复、query 重合和模板集中度的影响；MLP head 与 pooling 消融用于判断结构复杂化是否值得继续投入。
+
+\subsection{数据选择实验}
+
+\begin{center}\small
+\begin{longtable}{p{0.25\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.16\linewidth}}
+\toprule
+数据策略 & effective prompt & top20 prompt mass & query overlap rate & accuracy \\
+\midrule
+raw first 1024 & 216.31 & 41.50\% & 46.39\% & 74.66\% \\
+image-only refined 4096 & 407.21 & 40.16\% & 44.95\% & 66.72\% \\
+strict query+image 4096 & 1768.71 & 16.67\% & 0.00\% & 70.17\% \\
+PromptCap50 4096 & 811.89 & 23.63\% & 30.88\% & 71.69\% \\
+PromptCap20 4096 & 1733.88 & 9.77\% & 16.04\% & 60.63\% \\
+PromptCap10 4096 & 2440.44 & 4.88\% & 8.96\% & 70.73\% \\
+\bottomrule
+\end{longtable}\end{center}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/prompt\_concentration\_vs\_accuracy.png}
+\caption{Prompt concentration and reward accuracy}
+\end{figure}
+
+这组结果表明，prompt 多样性和最终准确率不存在简单的单调关系。raw first 1024 的 prompt 集中度最高，同时分数也最高；PromptCap10 的 prompt 分布最分散，仍有 70.73\%；PromptCap20 则降到 60.63\%。这说明 reward model 对 prompt/source 组合比较敏感：高频模板能提供强同域信号，过度依赖高频模板会削弱结果解释的稳健性；cap 过强或命中 source 分布的关键位置时，也会改变重要任务类型的训练比例。
+
+PromptCap50 在数据分布和最终准确率之间取得了较好的平衡。它把 top20 prompt mass 从 raw first 1024 的 41.50\% 降到 23.63\%，effective prompt 从 216.31 提高到 811.89，同时仍能取得 71.69\%。相比 strict query+image 的 70.17\%，PromptCap50 的最终训练子集选择只依赖 RLAIF-V 内部统计，因此被选为主提交模型。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/promptcap\_strength\_curve.png}
+\caption{PromptCap strength curve}
+\end{figure}
+
+\subsection{Source-level 结果}
+
+VLRewardBench 的不同 source 难度差异明显。PromptCap50 在 POVID、COCO、OK-VQA 和 VQAv2 上表现较强，在 wildvision-battle 和空 source 上相对弱一些。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/data\_selection\_source\_accuracy.png}
+\caption{Source-level accuracy under data selections}
+\end{figure}
+
+source-level 结果进一步解释了不同数据策略之间的差异。raw 1k 在 POVID、OK-VQA、GQA 等 source 上很强，同时具有最高的 prompt 模板集中度，体现了强同域适配带来的上限效果。PromptCap50 在 POVID 上达到 81.03\%，COCO 为 82.54\%，OK-VQA 为 87.50\%，VQAv2 为 80.00\%，说明适度降低 prompt 集中度后，模型仍保留了对主要 source 的判断能力。PromptCap10 的总体分数接近 PromptCap50，但 source-level 分布更不均衡：POVID 达到 88.84\%，wildvision-battle 降到 52.05\%，OK-VQA 降到 62.50\%。这一结果说明，过强的 prompt cap 虽然仍能维持较高总体准确率，但会改变不同任务来源之间的性能分布。
+
+\subsection{结构消融}
+
+\begin{center}\small
+\begin{longtable}{p{0.26\linewidth} p{0.25\linewidth} p{0.17\linewidth} p{0.24\linewidth}}
+\toprule
+实验 & 数据 & accuracy & 结论 \\
+\midrule
+final-token pooling + linear head & PromptCap20 1k & 61.03\% & 取最后一个有效 token 的 hidden state \\
+final+mean concat pooling + linear head & PromptCap20 1k & 60.14\% & 拼接 final token 与文本 mean pooling \\
+MLP head & PromptCap20NoBench 4k & 50.44\% & 明显低于 linear head \\
+\bottomrule
+\end{longtable}\end{center}
+
+结构实验覆盖了两类改动：一类是 pooling，比较 final-token pooling 与 final+mean concat pooling；另一类是 score head，比较 linear head 与 MLP head。在当前数据规模和训练轮数下，复杂化 score head 没有带来收益。Reward model 的 score head 需要输出可比较的排序分数；当 head 表达能力增加而训练信号不足时，排序尺度更难稳定形成。linear head 更直接地利用了 backbone 的图文表征，因此成为最终主模型采用的结构。
+
+\subsection{训练稳定性诊断}
+
+为了检查单 epoch LoRA reward 训练对随机性的敏感程度，本文使用相同的 PromptCap50 indices 和相同训练配置，额外运行了一次 seed=123 诊断实验。该实验不作为主提交模型，只用于观察训练过程中的 reward scale 是否稳定形成。
+
+训练日志显示，该差异来自 reward scale 未能稳定形成，评测脚本和 source-level 统计未发现单点异常。
+
+\begin{center}\small
+\begin{longtable}{p{0.25\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.17\linewidth} p{0.16\linewidth}}
+\toprule
+训练 run & 最后 512 step 平均 score gap & 最后 512 step positive gap rate & 最后 512 step 平均 loss & full accuracy \\
+\midrule
+PromptCap50 seed=42 & 0.3411 & 63.67\% & 0.6208 & 71.69\% \\
+PromptCap50 seed=123 & 0.0008 & 50.98\% & 0.6975 & 61.27\% \\
+\bottomrule
+\end{longtable}\end{center}
+
+这里的 score gap 是 \texttt{score\_chosen - score\_rejected}。主模型在最后 512 step 仍保持正向 score gap；seed=123 诊断实验的 score gap 接近 0，说明该次从头训练没有形成稳定排序尺度。这个结果不改变已保存主模型 checkpoint 的推理结果，但提示后续从头重训时应加入 warmup、gradient clipping、checkpoint selection 和多 seed 验证。
+
+这一稳定性实验为后续改进提供了明确方向：当前 checkpoint 已经可以作为研究型可交付模型使用，单 epoch LoRA reward 训练仍存在优化敏感性。进一步提升模型时，优先工作应放在降低学习率、加入 warmup、使用 gradient clipping、保存中间 checkpoint 做选择以及多 seed 复现实验上。
+
+\section{结果来源分析}
+
+与文档中的 base model 和 reward model 参考结果相比，本项目 70\% 以上的结果主要来自任务形式、训练数据和基础模型能力三方面的共同作用。
+
+第一，Score\_base 和 Score\_reward 的任务形式不同。Score\_base 中，原始 VLM 需要生成自然语言判断结果；Score\_reward 中，训练后的 reward model 直接比较两个数值分数。数值打分形式更贴近回答排序任务。
+
+第二，训练数据是同域公开 preference data。RLAIF-V 和 VLRewardBench 都涉及视觉语言回答偏好、图像描述、视觉问答和幻觉相关判断。本文没有使用 VLRewardBench 的样本、标签或候选回答训练，但 RLAIF-V 与 benchmark 所在任务生态相近，这是模型提升的重要来源。
+
+第三，InternVL2.5-2B 已经具备较强图文理解能力。LoRA reward 训练把已有表征重新对齐到“比较两个回答质量”这个任务上。对于 2B 级 VLM 来说，reward scoring 是更直接的优化目标。
+
+综合来看，在不使用 VLRewardBench 训练样本和标签的前提下，基于 RLAIF-V 同域偏好数据训练出的 InternVL2.5-2B reward model，可以在 VLRewardBench 上取得较强的回答偏好判断效果。数据相似性、prompt/source 分布和训练随机性也会明显影响分数，这也是本文后续数据实验和稳定性实验的主要依据。
+
+\section{工程实现与实验组织}
+
+本项目从相对干净的远程环境开始，先完成模型、数据、依赖和代码路径的整理，再开展训练、评测和报告生成。最终目录约定如下。
+
+\begin{center}\small
+\begin{longtable}{p{0.29\linewidth} p{0.65\linewidth}}
+\toprule
+类型 & 路径 \\
+\midrule
+基础模型 & \texttt{/root/private\_data/models/reward-model-exam/OpenGVLab/InternVL2\_5-2B} \\
+RLAIF-V 数据 & \texttt{/root/private\_data/datasets/reward-model-exam/rlaif-v} \\
+VLRewardBench 数据 & \texttt{/root/private\_data/datasets/reward-model-exam/VL-RewardBench} \\
+项目代码 & \texttt{/root/private\_data/projects/reward model} \\
+主模型 checkpoint & \texttt{outputs/checkpoints/D\_PromptCap50NoBench\_4k\_Linear} \\
+评测 summary & \texttt{outputs/eval/D\_PromptCap50NoBench\_4k\_Linear\_vlrb\_full\_summary.json} \\
+报告图表 & \texttt{artifacts/figures/data\_centric/} \\
+\bottomrule
+\end{longtable}\end{center}
+
+实验在 SCNet 超算互联网平台的 NVIDIA A800 80GB 环境上完成。训练和 full benchmark 评测都通过 tmux 离线运行；长时间任务挂在后台后，可以同步开展数据分析、图表生成和报告整理。每个重要实验都保留了训练日志、评测 summary、数据选择 indices 和 CSV 汇总，后续能够直接追溯训练配置和评测结果。
+
+从时间组织上看，5 月 18 日先完成环境、base judge、head-only 和 raw 1k LoRA 实验；5 月 19 日至 20 日集中进行数据审计、PromptCap10/20/50 和结构消融；随后整理 source-level 结果、稳定性诊断、图表和权重包。这样的节奏使项目在早期就形成了可交付 checkpoint，后续实验继续补充结果解释和报告证据。
+
+核心代码文件如下。
+
+\begingroup
+\small
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.22}
+\begin{center}
+\begin{longtable}{>{\raggedright\arraybackslash\ttfamily\footnotesize}p{0.50\linewidth} >{\raggedright\arraybackslash}p{0.38\linewidth}}
+\toprule
+\normalfont 文件 & 作用 \\
+\midrule
+src/\allowbreak internvl\_\allowbreak reward.py & InternVL reward model 封装 \\
+scripts/\allowbreak train\_\allowbreak reward\_\allowbreak head.py & reward head / LoRA 训练 \\
+scripts/\allowbreak eval\_\allowbreak reward\_\allowbreak head.py & VLRewardBench 数值打分评测 \\
+scripts/\allowbreak build\_\allowbreak prompt\_\allowbreak cap\_\allowbreak indices.py & PromptCap 数据选择 \\
+scripts/\allowbreak data\_\allowbreak similarity\_\allowbreak and\_\allowbreak diversity\_\allowbreak audit.py & 数据相似性和多样性审计 \\
+scripts/\allowbreak plot\_\allowbreak data\_\allowbreak centric\_\allowbreak figures.py & 报告图表生成 \\
+\bottomrule
+\end{longtable}
+\end{center}
+\endgroup
+
+实验组织上，所有尝试被整理为三条线：
+
+\begin{center}\small
+\begin{longtable}{p{0.22\linewidth} p{0.40\linewidth} p{0.30\linewidth}}
+\toprule
+实验线 & 内容 & 作用 \\
+\midrule
+基础链路 & head-only、LoRA raw1k、base judge、full eval & 确认 reward model 训练和评测闭环 \\
+数据线 & overlap audit、strict query+image、PromptCap10/20/50、source-level 分析 & 解释高分来源，选择主提交模型 \\
+结构线 & MLP head、final+mean concat pooling、不同 seed & 判断复杂结构是否必要，检查训练稳定性 \\
+\bottomrule
+\end{longtable}\end{center}
+
+这样的组织方式使实验结论从最高分扩展到分数来源、数据边界和方法稳定性三个层面。
+
+\section{合规性说明}
+
+实验边界如下，便于复现和核查。
+
+\begin{enumerate}
+\item 训练样本来自 RLAIF-V，没有把 VLRewardBench 的样本、human ranking 或候选回答作为训练样本。
+\item benchmark-aware 的 strict query+image 过滤只作为审计消融，用来理解显式相似性影响；最终主提交模型 PromptCap50 的训练子集选择不依赖 VLRewardBench 字段。
+\item 没有抄袭网络上已有 reward model 项目代码；训练、评测、数据审计和图表脚本均为本项目实现。
+\item 使用公开基础模型和公开训练数据；提交权重为 LoRA adapter + score head，基础模型权重通过 OpenGVLab/InternVL2\_5-2B 加载。
+\item 低于预期的实验和稳定性分析也被整理进结果部分，用来呈现完整的实验链路和方法边界。
+\end{enumerate}
+
+\section{当前结论与展望}
+
+最终提交模型为 \texttt{D-PromptCap50NoBench-4k-Linear}。该模型的 Score\_reward 为 71.69\%，相比 Score\_base 46.51\% 有明显提升。raw RLAIF-V 1k 的 74.66\% 展示了强同域适配的上限效果；PromptCap50 则在保持较高分数的同时降低了 prompt 模板集中度，因此构成本文的主模型结果。
+
+实验中最清晰的一条线索来自数据分析。RLAIF-V 这类同域偏好数据对多模态 reward model 非常有效，但数据子集的 prompt 分布、source 结构和训练稳定性会显著影响结果。PromptCap50 在分数和可解释性之间取得了较好的平衡：训练子集构造只使用 RLAIF-V 内部统计，同时降低了 raw 子集的 prompt 集中度，并保持了 70\% 以上的 full benchmark accuracy。
+
+后续工作可以沿三个方向展开。首先是优化稳定性：基于当前诊断实验，进一步尝试 \texttt{5e-5} 学习率、warmup、gradient clipping、更多训练 epoch 和 checkpoint selection。其次是多 seed 验证：通过至少 3 个随机种子估计 PromptCap50 的平均分和方差，使最终结论更稳健。最后是数据配比分析：进一步统计不同 PromptCap 设置下的 source 变化，解释 PromptCap20 低点和 PromptCap10 source-level 不均衡现象。完成这些稳定性和数据问题分析后，再继续探索 margin loss、多 head 或 response-length calibration 等结构和训练 trick。
+
+\section*{参考文献}
+\addcontentsline{toc}{section}{参考文献}
+
+[1] Liu, C., et al. Skywork-Reward: Bag of Tricks for Reward Modeling in LLMs. arXiv:2410.18451, 2024. https://arxiv.org/abs/2410.18451
+
+[2] Zhang, P., et al. InternLM-XComposer2.5-Reward. arXiv:2501.12368, 2025. https://arxiv.org/abs/2501.12368
+
+[3] Li, L., et al. VLRewardBench: A Challenging Benchmark for Vision-Language Generative Reward Models. arXiv:2411.17451, 2024. https://arxiv.org/abs/2411.17451
+
+[4] Yu, T., et al. RLAIF-V: Aligning MLLMs through Open-Source AI Feedback for Super GPT-4V Trustworthiness. arXiv:2405.17220, 2024. https://arxiv.org/abs/2405.17220
+
+\section*{附录 A：主模型训练命令}
+
+\begin{lstlisting}
+cd "<project-root>"
+source scripts/activate_env.sh
+
+python -u scripts/train_reward_head.py \
+  --include-indices artifacts/report_assets/rlaifv_promptcap50_nobench_4k.indices.txt \
+  --epochs 1 \
+  --max-tiles 2 \
+  --lr 1e-4 \
+  --use-lora \
+  --lora-r 8 \
+  --lora-alpha 16 \
+  --lora-dropout 0.05 \
+  --score-head-type linear \
+  --pooling final \
+  --output-dir outputs/checkpoints/D_PromptCap50NoBench_4k_Linear \
+  --log-path outputs/logs/train_D_PromptCap50NoBench_4k_Linear.jsonl
+\end{lstlisting}
+
+\section*{附录 B：主模型评测命令}
+
+\begin{lstlisting}
+cd "<project-root>"
+source scripts/activate_env.sh
+
+python -u scripts/eval_reward_head.py \
+  --score-head outputs/checkpoints/D_PromptCap50NoBench_4k_Linear/score_head_final.pt \
+  --lora-adapter outputs/checkpoints/D_PromptCap50NoBench_4k_Linear/lora_final \
+  --limit 0 \
+  --max-tiles 2 \
+  --score-head-type linear \
+  --pooling final \
+  --output outputs/eval/D_PromptCap50NoBench_4k_Linear_vlrb_full.jsonl \
+  --summary outputs/eval/D_PromptCap50NoBench_4k_Linear_vlrb_full_summary.json
+\end{lstlisting}
+
+\section*{附录 C：Hugging Face 权重包}
+
+最终权重包已经整理为：
+
+\begin{lstlisting}
+outputs/hf_upload/internvl2-5-2b-vl-reward-model
+\end{lstlisting}
+
+其中包含：
+
+\begin{lstlisting}
+README.md
+config.json
+training_meta.json
+score_head_final.pt
+lora_final/adapter_config.json
+lora_final/adapter_model.safetensors
+\end{lstlisting}
+
+该权重包不包含完整基础模型，不能脱离 OpenGVLab/InternVL2\_5-2B 单独推理。使用时需要先加载基础模型，再加载 LoRA adapter 和 \texttt{score\_head\_final.pt}；完成这三部分加载后，可以用于 VLRewardBench 式的候选回答打分推理。
+\end{document}
