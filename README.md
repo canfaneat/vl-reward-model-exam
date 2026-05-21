@@ -1,1 +1,249 @@
-IyBWTCBSZXdhcmQgTW9kZWwgRXhhbQoKVGhpcyByZXBvc2l0b3J5IGNvbnRhaW5zIHRoZSBjb2RlIGFuZCBwdWJsaWMgZXhwZXJpbWVudCBhcnRpZmFjdHMgZm9yIGEgMjAyNi0wNSByZXNlYXJjaCBhc3Nlc3NtZW50IG9uIHZpc2lvbi1sYW5ndWFnZSByZXdhcmQgbW9kZWxpbmcuCgpUaGUgbWFpbiBtb2RlbCBpcyBhbiBJbnRlcm5WTDIuNS0yQiBiYXNlZCByZXdhcmQgbW9kZWwgdHJhaW5lZCBvbiBSTEFJRi1WIHByZWZlcmVuY2UgcGFpcnMgYW5kIGV2YWx1YXRlZCBvbiBWTFJld2FyZEJlbmNoLiBJdCBrZWVwcyB0aGUgYmFzZSBWTE0gZnJvemVuLCB0cmFpbnMgTG9SQSBhZGFwdGVycyBvbiB0aGUgbGFuZ3VhZ2UtbW9kZWwgbGluZWFyIGxheWVycywgYW5kIGFkZHMgYSBsaW5lYXIgbnVtZXJpYyBzY29yZSBoZWFkIGZvciBwYWlyd2lzZSByZXNwb25zZSByYW5raW5nLgoKIyMgRGVsaXZlcmFibGVzCgotIEZpbmFsIENoaW5lc2UgcmVwb3J0OiBbYHJlcG9ydHMvVkxfUkVXQVJEX01PREVMX1JFUE9SVF9DTi5wZGZgXShyZXBvcnRzL1ZMX1JFV0FSRF9NT0RFTF9SRVBPUlRfQ04ucGRmKQotIExhVGVYIHNvdXJjZSBmb3IgdGhlIHJlcG9ydDogW2ByZXBvcnRzL1ZMX1JFV0FSRF9NT0RFTF9SRVBPUlRfQ04udGV4YF0ocmVwb3J0cy9WTF9SRVdBUkRfTU9ERUxfUkVQT1JUX0NOLnRleCkKLSBFeHBlcmltZW50IHJlc3VsdCBzdW1tYXJ5OiBbYFJFU1VMVFMubWRgXShSRVNVTFRTLm1kKQotIEh1Z2dpbmcgRmFjZSBtb2RlbCByZXBvOiA8aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9jYW5mYW5lYXQvaW50ZXJudmwyLTUtMmItdmwtcmV3YXJkLW1vZGVsPgotIEdpdEh1YiBjb2RlIHJlcG86IDxodHRwczovL2dpdGh1Yi5jb20vY2FuZmFuZWF0L3ZsLXJld2FyZC1tb2RlbC1leGFtPgoKIyMgTWFpbiBSZXN1bHQKCnwgU2V0dGluZyB8IFRyYWluaW5nIGRhdGEgfCBWTFJld2FyZEJlbmNoIGZ1bGwgYWNjdXJhY3kgfAp8IC0tLSB8IC0tLSB8IC0tLTogfAp8IEludGVyblZMMi41LTJCIGJhc2UgZ2VuZXJhdGl2ZSBqdWRnZSB8IG5vbmUgfCA0Ni41MSUgfAp8IEhlYWQtb25seSBzYW5pdHkgbW9kZWwgfCBSTEFJRi1WIDEyOCBwYWlycyB8IDQ3Ljc5JSB8CnwgUmF3IFJMQUlGLVYgMWsgcmV3YXJkIG1vZGVsIHwgZmlyc3QgMTAyNCBwYWlycyB8IDc0LjY2JSB8CnwgU3RyaWN0IHF1ZXJ5K2ltYWdlIGF1ZGl0IGFibGF0aW9uIHwgNDA5NiBwYWlycyB8IDcwLjE3JSB8CnwgUHJvbXB0Q2FwNTAgcmV3YXJkIG1vZGVsIHwgUkxBSUYtViA0MDk2IHBhaXJzIHwgNzEuNjklIHwKfCBQcm9tcHRDYXA1MCByZXdhcmQgbW9kZWwsIHNlZWQgMTIzIHwgc2FtZSBkYXRhL2NvbmZpZyB8IDYxLjI3JSB8CgpUaGUgcmVjb21tZW5kZWQgc3VibWl0dGVkIGNoZWNrcG9pbnQgaXM6CgpgYGB0ZXh0Cm91dHB1dHMvY2hlY2twb2ludHMvRF9Qcm9tcHRDYXA1ME5vQmVuY2hfNGtfTGluZWFyCmBgYAoKSXQgdXNlczoKCi0gYmFzZSBtb2RlbDogYE9wZW5HVkxhYi9JbnRlcm5WTDJfNS0yQmAKLSB0cmFpbmluZyBkYXRhOiBgdHJsLWxpYi9ybGFpZi12YAotIHNhbXBsZSBzZWxlY3Rpb246IFByb21wdENhcDUwIG92ZXIgUkxBSUYtViBwcm9tcHRzCi0gTG9SQTogYHI9OGAsIGBhbHBoYT0xNmAsIGBkcm9wb3V0PTAuMDVgCi0gc2NvcmUgaGVhZDogbGluZWFyIG51bWVyaWMgc2NvcmUgaGVhZAotIHBvb2xpbmc6IGZpbmFsIHZhbGlkIHRva2VuCi0gdHJhaW5pbmcgcGFpcnM6IDQwOTYKLSBlcG9jaHM6IDEKLSBsZWFybmluZyByYXRlOiBgMWUtNGAKLSBtYXggaW1hZ2UgdGlsZXM6IDIKLSBzZWVkOiA0MgoKVkxSZXdhcmRCZW5jaCBpcyB1c2VkIG9ubHkgZm9yIGV2YWx1YXRpb24gYW5kIGFuYWx5c2lzLiBJdHMgc2FtcGxlcywgaHVtYW4gcmFua2luZ3MsIGFuZCBjYW5kaWRhdGUgcmVzcG9uc2VzIGFyZSBub3QgdXNlZCBhcyByZXdhcmQtbW9kZWwgdHJhaW5pbmcgc2FtcGxlcy4KClRoZSBzZWVkLTEyMyByZXJ1biB1c2VzIHRoZSBzYW1lIFByb21wdENhcDUwIGRhdGEgYW5kIGh5cGVycGFyYW1ldGVycyBidXQgZG9lcyBub3QgZm9ybSBhIHN0YWJsZSByZXdhcmQgc2NhbGU6IHRoZSBmaW5hbCA1MTIgdHJhaW5pbmcgc3RlcHMgaGF2ZSBtZWFuIGBzY29yZV9jaG9zZW4gLSBzY29yZV9yZWplY3RlZGAgb2YgYDAuMDAwOGAgYW5kIHBvc2l0aXZlLWdhcCByYXRlIG9mIGA1MC45OCVgLiBUaGlzIGlzIGtlcHQgYXMgYSBzdGFiaWxpdHkgbm90ZTsgdGhlIHN1Ym1pdHRlZCBjaGVja3BvaW50IGlzIHRoZSBzZWVkLTQyIHJ1bi4KCiMjIE1ldGhvZAoKVGhlIHJld2FyZCBtb2RlbCBzY29yZXMgb25lIGNhbmRpZGF0ZSByZXNwb25zZSBhdCBhIHRpbWU6CgpgYGB0ZXh0CmltYWdlICsgcXVlc3Rpb24gKyBjYW5kaWRhdGUgcmVzcG9uc2UKICAtPiBJbnRlcm5WTDIuNS0yQiBiYWNrYm9uZQogIC0+IGZpbmFsIHZhbGlkLXRva2VuIGhpZGRlbiBzdGF0ZQogIC0+IExpbmVhcihoaWRkZW5fc2l6ZSwgMSkKICAtPiByZXdhcmQgc2NvcmUKYGBgCgpGb3IgZWFjaCBSTEFJRi1WIHByZWZlcmVuY2UgcGFpciwgdGhlIG1vZGVsIGNvbXB1dGVzOgoKYGBgdGV4dApzY29yZV9jaG9zZW4gPSBSTShpbWFnZSwgcXVlc3Rpb24sIGNob3Nlbl9yZXNwb25zZSkKc2NvcmVfcmVqZWN0ZWQgPSBSTShpbWFnZSwgcXVlc3Rpb24sIHJlamVjdGVkX3Jlc3BvbnNlKQpgYGAKClRoZSB0cmFpbmluZyBsb3NzIGlzOgoKYGBgdGV4dApsb3NzID0gLWxvZyBzaWdtb2lkKHNjb3JlX2Nob3NlbiAtIHNjb3JlX3JlamVjdGVkIC0gbWFyZ2luKQpgYGAKClRoZSBtYWluIGV4cGVyaW1lbnRzIHVzZSBgbWFyZ2luPTAuMGAuCgojIyBEYXRhLUNlbnRyaWMgRXhwZXJpbWVudHMKClRoZSBwcm9qZWN0IGluY2x1ZGVzIGRhdGEgYXVkaXRpbmcgYW5kIHNhbXBsaW5nIGV4cGVyaW1lbnRzIGJlY2F1c2UgUkxBSUYtViBhbmQgVkxSZXdhcmRCZW5jaCBhcmUgaW4gdGhlIHNhbWUgYnJvYWQgbXVsdGltb2RhbCBwcmVmZXJlbmNlIGVjb3N5c3RlbS4gVGhlIG1haW4gY2hlY2tzIGFyZToKCi0gaW1hZ2UgTUQ1IGV4YWN0IG92ZXJsYXAKLSBpbWFnZSBkSGFzaCBuZWFyLW92ZXJsYXAKLSBub3JtYWxpemVkIHF1ZXJ5IGV4YWN0IG92ZXJsYXAKLSByZXNwb25zZSBleGFjdCBvdmVybGFwCi0gcHJvbXB0IGZyZXF1ZW5jeSBjb25jZW50cmF0aW9uCi0gZWZmZWN0aXZlIHByb21wdCBjb3VudCBiYXNlZCBvbiBlbnRyb3B5CgpUaGUgZmluYWwgbW9kZWwgdXNlcyBQcm9tcHRDYXA1MDogd2hlbiBzY2FubmluZyBSTEFJRi1WLCBubyBwcm9tcHQgaXMgYWxsb3dlZCB0byBjb250cmlidXRlIG1vcmUgdGhhbiA1MCBzYW1wbGVzIGJlZm9yZSB0aGUgNDA5Ni1wYWlyIHN1YnNldCBpcyBmb3JtZWQuIFRoaXMgc2VsZWN0aW9uIHVzZXMgUkxBSUYtViBpbnRlcm5hbCBwcm9tcHQgZnJlcXVlbmN5IG9ubHk7IGJlbmNobWFyayBmaWVsZHMgYXJlIG5vdCB1c2VkIHRvIGNob29zZSB0aGUgZmluYWwgdHJhaW5pbmcgc3Vic2V0LgoKUmVwb3J0IGZpZ3VyZXMgYXJlIGdlbmVyYXRlZCBieToKCmBgYGJhc2gKcHl0aG9uIHNjcmlwdHMvcGxvdF9kYXRhX2NlbnRyaWNfZmlndXJlcy5weQpgYGAKCkdlbmVyYXRlZCBsb2NhbCBmaWd1cmVzOgoKYGBgdGV4dAphcnRpZmFjdHMvZmlndXJlcy9kYXRhX2NlbnRyaWMvYmVuY2htYXJrX3N0eWxlX3RhYmxlLnBuZwphcnRpZmFjdHMvZmlndXJlcy9kYXRhX2NlbnRyaWMvcHJvbXB0X2NvbmNlbnRyYXRpb25fdnNfYWNjdXJhY3kucG5nCmFydGlmYWN0cy9maWd1cmVzL2RhdGFfY2VudHJpYy9wcm9tcHRjYXBfc3RyZW5ndGhfY3VydmUucG5nCmFydGlmYWN0cy9maWd1cmVzL2RhdGFfY2VudHJpYy9kYXRhX3NlbGVjdGlvbl9zb3VyY2VfYWNjdXJhY3kucG5nCmBgYAoKIyMgRW52aXJvbm1lbnQKClRoZSBsb2NhbCBlbnZpcm9ubWVudCB1c2VkIGZvciB0aGUgZXhwZXJpbWVudHM6CgpgYGB0ZXh0ClB5dGhvbiAzLjEwLjIwClB5VG9yY2ggMi43LjArY3UxMjYKVHJhbnNmb3JtZXJzIDQuNDYuMwpHUFU6IE5WSURJQSBBODAwIDgwR0IgUENJZQpgYGAKCkFjdGl2YXRlIHRoZSBlbnZpcm9ubWVudDoKCmBgYGJhc2gKc291cmNlIHNjcmlwdHMvYWN0aXZhdGVfZW52LnNoCnB5dGhvbiBzY3JpcHRzL2NoZWNrX2Vudi5weQpgYGAKCkV4cGVjdGVkIGxvY2FsIHBhdGhzOgoKYGBgdGV4dAptb2RlbHMvcmV3YXJkLW1vZGVsLWV4YW0vT3BlbkdWTGFiL0ludGVyblZMMl81LTJCCmRhdGFzZXRzL3Jld2FyZC1tb2RlbC1leGFtL3JsYWlmLXYKZGF0YXNldHMvcmV3YXJkLW1vZGVsLWV4YW0vVkwtUmV3YXJkQmVuY2gKYGBgCgpEb3dubG9hZCBoZWxwZXI6CgpgYGBiYXNoCnNvdXJjZSBzY3JpcHRzL2FjdGl2YXRlX2Vudi5zaApleHBvcnQgSEZfRU5EUE9JTlQ9aHR0cHM6Ly9oZi1taXJyb3IuY29tCnB5dGhvbiBzY3JpcHRzL2Rvd25sb2FkX2Fzc2V0cy5weSAtLWFzc2V0cyBtb2RlbCBiZW5jaG1hcmsgLS1tYXgtd29ya2VycyA4CmBgYAoKIyMgQnVpbGQgUHJvbXB0Q2FwIEluZGljZXMKCmBgYGJhc2gKc291cmNlIHNjcmlwdHMvYWN0aXZhdGVfZW52LnNoCnB5dGhvbiBzY3JpcHRzL2J1aWxkX3Byb21wdF9jYXBfaW5kaWNlcy5weSBcCiAgLS1jYXAgNTAgXAogIC0tbGltaXQgNDA5NiBcCiAgLS1vdXRwdXQtcHJlZml4IGFydGlmYWN0cy9yZXBvcnRfYXNzZXRzL3JsYWlmdl9wcm9tcHRjYXA1MF9ub2JlbmNoXzRrCmBgYAoKVGhlIHJlc3VsdGluZyBpbmRpY2VzIGZpbGUgaXM6CgpgYGB0ZXh0CmFydGlmYWN0cy9yZXBvcnRfYXNzZXRzL3JsYWlmdl9wcm9tcHRjYXA1MF9ub2JlbmNoXzRrLmluZGljZXMudHh0CmBgYAoKIyMgVHJhaW4KCmBgYGJhc2gKc291cmNlIHNjcmlwdHMvYWN0aXZhdGVfZW52LnNoCnB5dGhvbiAtdSBzY3JpcHRzL3RyYWluX3Jld2FyZF9oZWFkLnB5IFwKICAtLWluY2x1ZGUtaW5kaWNlcyBhcnRpZmFjdHMvcmVwb3J0X2Fzc2V0cy9ybGFpZnZfcHJvbXB0Y2FwNTBfbm9iZW5jaF80ay5pbmRpY2VzLnR4dCBcCiAgLS1lcG9jaHMgMSBcCiAgLS1tYXgtdGlsZXMgMiBcCiAgLS1sciAxZS00IFwKICAtLXVzZS1sb3JhIFwKICAtLWxvcmEtciA4IFwKICAtLWxvcmEtYWxwaGEgMTYgXAogIC0tbG9yYS1kcm9wb3V0IDAuMDUgXAogIC0tc2NvcmUtaGVhZC10eXBlIGxpbmVhciBcCiAgLS1wb29saW5nIGZpbmFsIFwKICAtLW91dHB1dC1kaXIgb3V0cHV0cy9jaGVja3BvaW50cy9EX1Byb21wdENhcDUwTm9CZW5jaF80a19MaW5lYXIgXAogIC0tbG9nLXBhdGggb3V0cHV0cy9sb2dzL3RyYWluX0RfUHJvbXB0Q2FwNTBOb0JlbmNoXzRrX0xpbmVhci5qc29ubApgYGAKCkxvbmcgcnVucyB3ZXJlIGxhdW5jaGVkIGluIGB0bXV4YCwgZm9yIGV4YW1wbGU6CgpgYGBiYXNoCnRtdXggbmV3LXNlc3Npb24gLWQgLXMgdHJhaW5fRF9Qcm9tcHRDYXA1ME5vQmVuY2hfNGtfTGluZWFyICJiYXNoIC1sYyAnY2QgL3BhdGgvdG8vdmwtcmV3YXJkLW1vZGVsLWV4YW0gJiYgc291cmNlIHNjcmlwdHMvYWN0aXZhdGVfZW52LnNoICYmIHB5dGhvbiAtdSBzY3JpcHRzL3RyYWluX3Jld2FyZF9oZWFkLnB5IC4uLiciCmBgYAoKIyMgRXZhbHVhdGUKCmBgYGJhc2gKc291cmNlIHNjcmlwdHMvYWN0aXZhdGVfZW52LnNoCnB5dGhvbiAtdSBzY3JpcHRzL2V2YWxfcmV3YXJkX2hlYWQucHkgXAogIC0tc2NvcmUtaGVhZCBvdXRwdXRzL2NoZWNrcG9pbnRzL0RfUHJvbXB0Q2FwNTBOb0JlbmNoXzRrX0xpbmVhci9zY29yZV9oZWFkX2ZpbmFsLnB0IFwKICAtLWxvcmEtYWRhcHRlciBvdXRwdXRzL2NoZWNrcG9pbnRzL0RfUHJvbXB0Q2FwNTBOb0JlbmNoXzRrX0xpbmVhci9sb3JhX2ZpbmFsIFwKICAtLWxpbWl0IDAgXAogIC0tbWF4LXRpbGVzIDIgXAogIC0tc2NvcmUtaGVhZC10eXBlIGxpbmVhciBcCiAgLS1wb29saW5nIGZpbmFsIFwKICAtLW91dHB1dCBvdXRwdXRzL2V2YWwvRF9Qcm9tcHRDYXA1ME5vQmVuY2hfNGtfTGluZWFyX3ZscmJfZnVsbC5qc29ubCBcCiAgLS1zdW1tYXJ5IG91dHB1dHMvZXZhbC9EX1Byb21wdENhcDUwTm9CZW5jaF80a19MaW5lYXJfdmxyYl9mdWxsX3N1bW1hcnkuanNvbgpgYGAKCiMjIFN1bW1hcmllcwoKR2VuZXJhdGUgY29tcGFjdCBDU1Ygc3VtbWFyaWVzOgoKYGBgYmFzaApweXRob24gc2NyaXB0cy9zdW1tYXJpemVfZXZhbF9zdW1tYXJ5LnB5IFwKICAtLXN1bW1hcnkgb3V0cHV0cy9ldmFsL0RfUHJvbXB0Q2FwNTBOb0JlbmNoXzRrX0xpbmVhcl92bHJiX2Z1bGxfc3VtbWFyeS5qc29uIFwKICAtLW91dHB1dC1wcmVmaXggYXJ0aWZhY3RzL3JlcG9ydF9hc3NldHMvRF9Qcm9tcHRDYXA1ME5vQmVuY2hfNGtfTGluZWFyX3ZscmJfZnVsbAoKcHl0aG9uIHNjcmlwdHMvZGF0YV9zaW1pbGFyaXR5X2FuZF9kaXZlcnNpdHlfYXVkaXQucHkKYGBgCgojIyBIdWdnaW5nIEZhY2UgVXBsb2FkIFBhY2thZ2UKClRoZSB1cGxvYWQgcGFja2FnZSBjb250YWlucyB0aGUgTG9SQSBhZGFwdGVyLCBzY29yZSBoZWFkLCB0cmFpbmluZyBtZXRhZGF0YSwgYW5kIG1vZGVsIGNhcmQuIFRoZSBiYXNlIG1vZGVsIHdlaWdodHMgYXJlIG5vdCBkdXBsaWNhdGVkLgoKYGBgYmFzaApzb3VyY2Ugc2NyaXB0cy9hY3RpdmF0ZV9lbnYuc2gKcHl0aG9uIHNjcmlwdHMvcHJlcGFyZV9oZl91cGxvYWQucHkgXAogIC0tY2hlY2twb2ludC1kaXIgb3V0cHV0cy9jaGVja3BvaW50cy9EX1Byb21wdENhcDUwTm9CZW5jaF80a19MaW5lYXIgXAogIC0tbW9kZWwtY2FyZCBtb2RlbF9jYXJkcy9pbnRlcm52bDItNS0yYi12bC1yZXdhcmQtbW9kZWwubWQgXAogIC0tb3V0cHV0LWRpciBvdXRwdXRzL2hmX3VwbG9hZC9pbnRlcm52bDItNS0yYi12bC1yZXdhcmQtbW9kZWwKYGBgCgpFeHBlY3RlZCBwYWNrYWdlIGZpbGVzOgoKYGBgdGV4dApvdXRwdXRzL2hmX3VwbG9hZC9pbnRlcm52bDItNS0yYi12bC1yZXdhcmQtbW9kZWwvUkVBRE1FLm1kCm91dHB1dHMvaGZfdXBsb2FkL2ludGVybnZsMi01LTJiLXZsLXJld2FyZC1tb2RlbC9jb25maWcuanNvbgpvdXRwdXRzL2hmX3VwbG9hZC9pbnRlcm52bDItNS0yYi12bC1yZXdhcmQtbW9kZWwvdHJhaW5pbmdfbWV0YS5qc29uCm91dHB1dHMvaGZfdXBsb2FkL2ludGVybnZsMi01LTJiLXZsLXJld2FyZC1tb2RlbC9zY29yZV9oZWFkX2ZpbmFsLnB0Cm91dHB1dHMvaGZfdXBsb2FkL2ludGVybnZsMi01LTJiLXZsLXJld2FyZC1tb2RlbC9sb3JhX2ZpbmFsL2FkYXB0ZXJfY29uZmlnLmpzb24Kb3V0cHV0cy9oZl91cGxvYWQvaW50ZXJudmwyLTUtMmItdmwtcmV3YXJkLW1vZGVsL2xvcmFfZmluYWwvYWRhcHRlcl9tb2RlbC5zYWZldGVuc29ycwpgYGAKClRoZSBwdWJsaWMgSHVnZ2luZyBGYWNlIHJlcG9zaXRvcnkgaXMgdGhlIGV4cGVjdGVkIGxvY2F0aW9uIGZvciB0aGVzZSBjaGVja3BvaW50IGZpbGVzLiBJZiBhIG5ldHdvcmsgYmxvY2tzIEh1Z2dpbmcgRmFjZSBMRlMvUzMgdXBsb2FkcywgdGhlIHNhbWUgbG9jYWwgcGFja2FnZSBjYW4gYmUgdXBsb2FkZWQgZnJvbSBhbm90aGVyIG5ldHdvcmsgd2l0aDoKCmBgYGJhc2gKc291cmNlIHNjcmlwdHMvYWN0aXZhdGVfZW52LnNoCmh1Z2dpbmdmYWNlLWNsaSBsb2dpbgpoZiB1cGxvYWQgY2FuZmFuZWF0L2ludGVybnZsMi01LTJiLXZsLXJld2FyZC1tb2RlbCBcCiAgb3V0cHV0cy9oZl91cGxvYWQvaW50ZXJudmwyLTUtMmItdmwtcmV3YXJkLW1vZGVsIFwKICAtLXJlcG8tdHlwZSBtb2RlbCBcCiAgLS1jb21taXQtbWVzc2FnZSAiVXBsb2FkIFByb21wdENhcDUwIEludGVyblZMMi41LTJCIHJld2FyZCBtb2RlbCIKYGBgCgojIyBOb3RlcwoKVGhlIGhpZ2ggcmF3IFJMQUlGLVYgcmVzdWx0IHNob3VsZCBiZSBpbnRlcnByZXRlZCBhcyBzdHJvbmcgaW4tZG9tYWluIHJld2FyZCBhZGFwdGF0aW9uLCBub3QgYXMgYSBjbGFpbSBvZiBicm9hZCBjcm9zcy1kb21haW4gZ2VuZXJhbGl6YXRpb24uIFRoZSBmaW5hbCBQcm9tcHRDYXA1MCBjaGVja3BvaW50IGlzIHNlbGVjdGVkIGJlY2F1c2UgaXQgZ2l2ZXMgYSBjbGVhbmVyIGRhdGEtc2VsZWN0aW9uIHN0b3J5IHdoaWxlIHJldGFpbmluZyBzdHJvbmcgVkxSZXdhcmRCZW5jaCBwZXJmb3JtYW5jZS4gRnVydGhlciB3b3JrIHNob3VsZCBwcmlvcml0aXplIG9wdGltaXphdGlvbiBzdGFiaWxpdHksIGluY2x1ZGluZyBsb3dlciBsZWFybmluZyByYXRlcywgd2FybXVwLCBncmFkaWVudCBjbGlwcGluZywgY2hlY2twb2ludCBzZWxlY3Rpb24sIGFuZCBtdWx0aS1zZWVkIHZhbGlkYXRpb24uCgpMYXJnZSBjaGVja3BvaW50cywgb3JpZ2luYWwgZGF0YXNldHMsIGZ1bGwgdHJhaW5pbmcgbG9ncywgYW5kIHByaXZhdGUgYXNzZXNzbWVudCBkb2N1bWVudHMgYXJlIGludGVudGlvbmFsbHkgbm90IHN0b3JlZCBpbiB0aGlzIEdpdEh1YiByZXBvc2l0b3J5LiBDb21wYWN0IHN1bW1hcmllcywgcmVwb3J0IGZpZ3VyZXMsIGFuZCByZXByb2R1Y2liaWxpdHkgc2NyaXB0cyBhcmUga2VwdCBoZXJlOyBtb2RlbCBjaGVja3BvaW50IGZpbGVzIGJlbG9uZyBpbiB0aGUgSHVnZ2luZyBGYWNlIG1vZGVsIHJlcG9zaXRvcnkgbGlzdGVkIGFib3ZlLgoKIyMgTGljZW5zZSBhbmQgQXR0cmlidXRpb24KClRoZSByZXBvc2l0b3J5IGNvZGUgaXMgcmVsZWFzZWQgdW5kZXIgdGhlIE1JVCBMaWNlbnNlLiBUaGUgYmFzZSBtb2RlbCwgZGF0YXNldHMsIGFuZCBiZW5jaG1hcmsgZm9sbG93IHRoZWlyIG93biB1cHN0cmVhbSBsaWNlbnNlcyBhbmQgdGVybXMgb2YgdXNlLgo=
+# VL Reward Model Exam
+
+This repository contains the code and public experiment artifacts for a 2026-05 research assessment on vision-language reward modeling.
+
+The main model is an InternVL2.5-2B based reward model trained on RLAIF-V preference pairs and evaluated on VLRewardBench. It keeps the base VLM frozen, trains LoRA adapters on the language-model linear layers, and adds a linear numeric score head for pairwise response ranking.
+
+## Deliverables
+
+- Final Chinese report: [`reports/VL_REWARD_MODEL_REPORT_CN.pdf`](reports/VL_REWARD_MODEL_REPORT_CN.pdf)
+- LaTeX source for the report: [`reports/VL_REWARD_MODEL_REPORT_CN.tex`](reports/VL_REWARD_MODEL_REPORT_CN.tex)
+- Experiment result summary: [`RESULTS.md`](RESULTS.md)
+- Hugging Face model repo: <https://huggingface.co/canfaneat/internvl2-5-2b-vl-reward-model>
+- GitHub code repo: <https://github.com/canfaneat/vl-reward-model-exam>
+
+## Main Result
+
+| Setting | Training data | VLRewardBench full accuracy |
+| --- | --- | ---: |
+| InternVL2.5-2B base generative judge | none | 46.51% |
+| Head-only sanity model | RLAIF-V 128 pairs | 47.79% |
+| Raw RLAIF-V 1k reward model | first 1024 pairs | 74.66% |
+| Strict query+image audit ablation | 4096 pairs | 70.17% |
+| PromptCap50 reward model | RLAIF-V 4096 pairs | 71.69% |
+| PromptCap50 reward model, seed 123 | same data/config | 61.27% |
+
+The recommended submitted checkpoint is:
+
+```text
+outputs/checkpoints/D_PromptCap50NoBench_4k_Linear
+```
+
+It uses:
+
+- base model: `OpenGVLab/InternVL2_5-2B`
+- training data: `trl-lib/rlaif-v`
+- sample selection: PromptCap50 over RLAIF-V prompts
+- LoRA: `r=8`, `alpha=16`, `dropout=0.05`
+- score head: linear numeric score head
+- pooling: final valid token
+- training pairs: 4096
+- epochs: 1
+- learning rate: `1e-4`
+- max image tiles: 2
+- seed: 42
+
+VLRewardBench is used only for evaluation and analysis. Its samples, human rankings, and candidate responses are not used as reward-model training samples.
+
+The seed-123 rerun uses the same PromptCap50 data and hyperparameters but does not form a stable reward scale: the final 512 training steps have mean `score_chosen - score_rejected` of `0.0008` and positive-gap rate of `50.98%`. This is kept as a stability note; the submitted checkpoint is the seed-42 run.
+
+## Method
+
+The reward model scores one candidate response at a time:
+
+```text
+image + question + candidate response
+  -> InternVL2.5-2B backbone
+  -> final valid-token hidden state
+  -> Linear(hidden_size, 1)
+  -> reward score
+```
+
+For each RLAIF-V preference pair, the model computes:
+
+```text
+score_chosen = RM(image, question, chosen_response)
+score_rejected = RM(image, question, rejected_response)
+```
+
+The training loss is:
+
+```text
+loss = -log sigmoid(score_chosen - score_rejected - margin)
+```
+
+The main experiments use `margin=0.0`.
+
+## Data-Centric Experiments
+
+The project includes data auditing and sampling experiments because RLAIF-V and VLRewardBench are in the same broad multimodal preference ecosystem. The main checks are:
+
+- image MD5 exact overlap
+- image dHash near-overlap
+- normalized query exact overlap
+- response exact overlap
+- prompt frequency concentration
+- effective prompt count based on entropy
+
+The final model uses PromptCap50: when scanning RLAIF-V, no prompt is allowed to contribute more than 50 samples before the 4096-pair subset is formed. This selection uses RLAIF-V internal prompt frequency only; benchmark fields are not used to choose the final training subset.
+
+Report figures are generated by:
+
+```bash
+python scripts/plot_data_centric_figures.py
+```
+
+Generated local figures:
+
+```text
+artifacts/figures/data_centric/benchmark_style_table.png
+artifacts/figures/data_centric/prompt_concentration_vs_accuracy.png
+artifacts/figures/data_centric/promptcap_strength_curve.png
+artifacts/figures/data_centric/data_selection_source_accuracy.png
+```
+
+## Environment
+
+The local environment used for the experiments:
+
+```text
+Python 3.10.20
+PyTorch 2.7.0+cu126
+Transformers 4.46.3
+GPU: NVIDIA A800 80GB PCIe
+```
+
+Activate the environment:
+
+```bash
+source scripts/activate_env.sh
+python scripts/check_env.py
+```
+
+Expected local paths:
+
+```text
+models/reward-model-exam/OpenGVLab/InternVL2_5-2B
+datasets/reward-model-exam/rlaif-v
+datasets/reward-model-exam/VL-RewardBench
+```
+
+Download helper:
+
+```bash
+source scripts/activate_env.sh
+export HF_ENDPOINT=https://hf-mirror.com
+python scripts/download_assets.py --assets model benchmark --max-workers 8
+```
+
+## Build PromptCap Indices
+
+```bash
+source scripts/activate_env.sh
+python scripts/build_prompt_cap_indices.py \
+  --cap 50 \
+  --limit 4096 \
+  --output-prefix artifacts/report_assets/rlaifv_promptcap50_nobench_4k
+```
+
+The resulting indices file is:
+
+```text
+artifacts/report_assets/rlaifv_promptcap50_nobench_4k.indices.txt
+```
+
+## Train
+
+```bash
+source scripts/activate_env.sh
+python -u scripts/train_reward_head.py \
+  --include-indices artifacts/report_assets/rlaifv_promptcap50_nobench_4k.indices.txt \
+  --epochs 1 \
+  --max-tiles 2 \
+  --lr 1e-4 \
+  --use-lora \
+  --lora-r 8 \
+  --lora-alpha 16 \
+  --lora-dropout 0.05 \
+  --score-head-type linear \
+  --pooling final \
+  --output-dir outputs/checkpoints/D_PromptCap50NoBench_4k_Linear \
+  --log-path outputs/logs/train_D_PromptCap50NoBench_4k_Linear.jsonl
+```
+
+Long runs were launched in `tmux`, for example:
+
+```bash
+tmux new-session -d -s train_D_PromptCap50NoBench_4k_Linear "bash -lc 'cd /path/to/vl-reward-model-exam && source scripts/activate_env.sh && python -u scripts/train_reward_head.py ...'"
+```
+
+## Evaluate
+
+```bash
+source scripts/activate_env.sh
+python -u scripts/eval_reward_head.py \
+  --score-head outputs/checkpoints/D_PromptCap50NoBench_4k_Linear/score_head_final.pt \
+  --lora-adapter outputs/checkpoints/D_PromptCap50NoBench_4k_Linear/lora_final \
+  --limit 0 \
+  --max-tiles 2 \
+  --score-head-type linear \
+  --pooling final \
+  --output outputs/eval/D_PromptCap50NoBench_4k_Linear_vlrb_full.jsonl \
+  --summary outputs/eval/D_PromptCap50NoBench_4k_Linear_vlrb_full_summary.json
+```
+
+## Summaries
+
+Generate compact CSV summaries:
+
+```bash
+python scripts/summarize_eval_summary.py \
+  --summary outputs/eval/D_PromptCap50NoBench_4k_Linear_vlrb_full_summary.json \
+  --output-prefix artifacts/report_assets/D_PromptCap50NoBench_4k_Linear_vlrb_full
+
+python scripts/data_similarity_and_diversity_audit.py
+```
+
+## Hugging Face Upload Package
+
+The upload package contains the LoRA adapter, score head, training metadata, and model card. The base model weights are not duplicated.
+
+```bash
+source scripts/activate_env.sh
+python scripts/prepare_hf_upload.py \
+  --checkpoint-dir outputs/checkpoints/D_PromptCap50NoBench_4k_Linear \
+  --model-card model_cards/internvl2-5-2b-vl-reward-model.md \
+  --output-dir outputs/hf_upload/internvl2-5-2b-vl-reward-model
+```
+
+Expected package files:
+
+```text
+outputs/hf_upload/internvl2-5-2b-vl-reward-model/README.md
+outputs/hf_upload/internvl2-5-2b-vl-reward-model/config.json
+outputs/hf_upload/internvl2-5-2b-vl-reward-model/training_meta.json
+outputs/hf_upload/internvl2-5-2b-vl-reward-model/score_head_final.pt
+outputs/hf_upload/internvl2-5-2b-vl-reward-model/lora_final/adapter_config.json
+outputs/hf_upload/internvl2-5-2b-vl-reward-model/lora_final/adapter_model.safetensors
+```
+
+The public Hugging Face repository is the expected location for these checkpoint files. If a network blocks Hugging Face LFS/S3 uploads, the same local package can be uploaded from another network with:
+
+```bash
+source scripts/activate_env.sh
+huggingface-cli login
+hf upload canfaneat/internvl2-5-2b-vl-reward-model \
+  outputs/hf_upload/internvl2-5-2b-vl-reward-model \
+  --repo-type model \
+  --commit-message "Upload PromptCap50 InternVL2.5-2B reward model"
+```
+
+## Notes
+
+The high raw RLAIF-V result should be interpreted as strong in-domain reward adaptation, not as a claim of broad cross-domain generalization. The final PromptCap50 checkpoint is selected because it gives a cleaner data-selection story while retaining strong VLRewardBench performance. Further work should prioritize optimization stability, including lower learning rates, warmup, gradient clipping, checkpoint selection, and multi-seed validation.
+
+Large checkpoints, original datasets, full training logs, and private assessment documents are intentionally not stored in this GitHub repository. Compact summaries, report figures, and reproducibility scripts are kept here; model checkpoint files belong in the Hugging Face model repository listed above.
+
+## License and Attribution
+
+The repository code is released under the MIT License. The base model, datasets, and benchmark follow their own upstream licenses and terms of use.

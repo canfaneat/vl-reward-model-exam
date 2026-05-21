@@ -1,1 +1,67 @@
-IyBFeHBlcmltZW50IFJlc3VsdHMKClRoaXMgZmlsZSBjb2xsZWN0cyB0aGUgcHVibGljLWZhY2luZyBleHBlcmltZW50IHJlc3VsdHMgZm9yIHRoZSBJbnRlcm5WTDIuNS0yQiB2aXNpb24tbGFuZ3VhZ2UgcmV3YXJkIG1vZGVsIHByb2plY3QuIFRoZSBmdWxsIGFuYWx5c2lzIGFuZCBDaGluZXNlIHJlcG9ydCBhcmUgaW4gW2ByZXBvcnRzL1ZMX1JFV0FSRF9NT0RFTF9SRVBPUlRfQ04ucGRmYF0ocmVwb3J0cy9WTF9SRVdBUkRfTU9ERUxfUkVQT1JUX0NOLnBkZikuCgojIyBNYWluIFNjb3JlCgpWTFJld2FyZEJlbmNoIGZ1bGwgc2V0IGNvbnRhaW5zIDEyNDcgZXZhbHVhdGlvbiBleGFtcGxlcyBpbiB0aGlzIHNldHVwLgoKfCBTZXR0aW5nIHwgVHJhaW5pbmcgZGF0YSB8IEFjY3VyYWN5IHwKfCAtLS0gfCAtLS0gfCAtLS06IHwKfCBJbnRlcm5WTDIuNS0yQiBiYXNlIGdlbmVyYXRpdmUganVkZ2UgfCBub25lIHwgNDYuNTElIHwKfCBIZWFkLW9ubHkgc2FuaXR5IG1vZGVsIHwgUkxBSUYtViAxMjggcGFpcnMgfCA0Ny43OSUgfAp8IFJhdyBSTEFJRi1WIHJld2FyZCBtb2RlbCB8IGZpcnN0IDEwMjQgcGFpcnMgfCA3NC42NiUgfAp8IEltYWdlLW9ubHkgcmVmaW5lZCBhYmxhdGlvbiB8IDQwOTYgcGFpcnMgfCA2Ni43MiUgfAp8IFN0cmljdCBxdWVyeStpbWFnZSBhdWRpdCBhYmxhdGlvbiB8IDQwOTYgcGFpcnMgfCA3MC4xNyUgfAp8IFByb21wdENhcDUwIHJld2FyZCBtb2RlbCB8IFJMQUlGLVYgNDA5NiBwYWlycyB8IDcxLjY5JSB8CnwgUHJvbXB0Q2FwMTAgcmV3YXJkIG1vZGVsIHwgUkxBSUYtViA0MDk2IHBhaXJzIHwgNzAuNzMlIHwKfCBQcm9tcHRDYXAyMCByZXdhcmQgbW9kZWwgfCBSTEFJRi1WIDQwOTYgcGFpcnMgfCA2MC42MyUgfAp8IE1MUC1oZWFkIGFibGF0aW9uIHwgUHJvbXB0Q2FwMjAgNDA5NiBwYWlycyB8IDUwLjQ0JSB8CgpUaGUgc3VibWl0dGVkIGNoZWNrcG9pbnQgaXMgdGhlIFByb21wdENhcDUwIHNlZWQtNDIgcnVuOgoKYGBgdGV4dApvdXRwdXRzL2NoZWNrcG9pbnRzL0RfUHJvbXB0Q2FwNTBOb0JlbmNoXzRrX0xpbmVhcgpgYGAKCiMjIERhdGEgU2VsZWN0aW9uIFN1bW1hcnkKClByb21wdENhcCBzZWxlY3RzIHRyYWluaW5nIHNhbXBsZXMgdXNpbmcgb25seSBSTEFJRi1WIGludGVybmFsIHByb21wdCBmcmVxdWVuY2llcy4gSXQgZG9lcyBub3QgdXNlIFZMUmV3YXJkQmVuY2ggc2FtcGxlcywgbGFiZWxzLCBodW1hbiByYW5raW5ncywgb3IgY2FuZGlkYXRlIHJlc3BvbnNlcyBhcyByZXdhcmQtbW9kZWwgdHJhaW5pbmcgZGF0YS4KCnwgRGF0YSBzdHJhdGVneSB8IEVmZmVjdGl2ZSBwcm9tcHQgfCBUb3AtMjAgcHJvbXB0IG1hc3MgfCBRdWVyeSBvdmVybGFwIHJhdGUgfCBBY2N1cmFjeSB8CnwgLS0tIHwgLS0tOiB8IC0tLTogfCAtLS06IHwgLS0tOiB8CnwgUmF3IGZpcnN0IDEwMjQgfCAyMTYuMzEgfCA0MS41MCUgfCA0Ni4zOSUgfCA3NC42NiUgfAp8IEltYWdlLW9ubHkgcmVmaW5lZCA0MDk2IHwgNDA3LjIxIHwgNDAuMTYlIHwgNDQuOTUlIHwgNjYuNzIlIHwKfCBTdHJpY3QgcXVlcnkraW1hZ2UgNDA5NiB8IDE3NjguNzEgfCAxNi42NyUgfCAwLjAwJSB8IDcwLjE3JSB8CnwgUHJvbXB0Q2FwNTAgNDA5NiB8IDgxMS44OSB8IDIzLjYzJSB8IDMwLjg4JSB8IDcxLjY5JSB8CnwgUHJvbXB0Q2FwMjAgNDA5NiB8IDE3MzMuODggfCA5Ljc3JSB8IDE2LjA0JSB8IDYwLjYzJSB8CnwgUHJvbXB0Q2FwMTAgNDA5NiB8IDI0NDAuNDQgfCA0Ljg4JSB8IDguOTYlIHwgNzAuNzMlIHwKClRoZSByYXcgMWsgcnVuIHJlYWNoZWQgdGhlIGhpZ2hlc3Qgc2luZ2xlIGFjY3VyYWN5IGVhcmx5IGluIHRoZSBwcm9qZWN0LCBidXQgaXQgYWxzbyBoYWQgc3Ryb25nZXIgcHJvbXB0LXRlbXBsYXRlIGNvbmNlbnRyYXRpb24uIFByb21wdENhcDUwIHdhcyBzZWxlY3RlZCBmb3IgdGhlIGZpbmFsIGNoZWNrcG9pbnQgYmVjYXVzZSBpdCBrZWVwcyB0aGUgc2NvcmUgYWJvdmUgNzAlIHdoaWxlIHJlZHVjaW5nIGhpZ2gtZnJlcXVlbmN5IHByb21wdCBjb25jZW50cmF0aW9uLgoKIyMgU3RydWN0dXJlIGFuZCBTdGFiaWxpdHkKCnwgRXhwZXJpbWVudCB8IERhdGEgfCBBY2N1cmFjeSB8IE5vdGUgfAp8IC0tLSB8IC0tLSB8IC0tLTogfCAtLS0gfAp8IEZpbmFsLXRva2VuIHBvb2xpbmcgKyBsaW5lYXIgaGVhZCB8IFByb21wdENhcDIwIDFrIHwgNjEuMDMlIHwgVXNlcyB0aGUgZmluYWwgdmFsaWQtdG9rZW4gaGlkZGVuIHN0YXRlIHwKfCBGaW5hbCttZWFuIGNvbmNhdCBwb29saW5nICsgbGluZWFyIGhlYWQgfCBQcm9tcHRDYXAyMCAxayB8IDYwLjE0JSB8IEFkZHMgdGV4dCBtZWFuIHBvb2xpbmcgfAp8IE1MUCBzY29yZSBoZWFkIHwgUHJvbXB0Q2FwMjAgNGsgfCA1MC40NCUgfCBNb3JlIGNvbXBsZXggaGVhZCBkaWQgbm90IGhlbHAgaW4gdGhpcyBzZXR1cCB8CnwgUHJvbXB0Q2FwNTAgc2VlZCA0MiB8IFByb21wdENhcDUwIDRrIHwgNzEuNjklIHwgU3VibWl0dGVkIGNoZWNrcG9pbnQgfAp8IFByb21wdENhcDUwIHNlZWQgMTIzIHwgUHJvbXB0Q2FwNTAgNGsgfCA2MS4yNyUgfCBEaWFnbm9zdGljIHJlcnVuLCB3ZWFrIHJld2FyZC1zY2FsZSBmb3JtYXRpb24gfAoKVGhlIHNlZWQtMTIzIGRpYWdub3N0aWMgaGFkIG1lYW4gYHNjb3JlX2Nob3NlbiAtIHNjb3JlX3JlamVjdGVkYCBvZiBgMC4wMDA4YCBvdmVyIHRoZSBsYXN0IDUxMiB0cmFpbmluZyBzdGVwcyBhbmQgYSBwb3NpdGl2ZS1nYXAgcmF0ZSBvZiBgNTAuOTglYC4gVGhlIHNlZWQtNDIgc3VibWl0dGVkIGNoZWNrcG9pbnQgaGFkIG1lYW4gZ2FwIGAwLjM0MTFgIGFuZCBwb3NpdGl2ZS1nYXAgcmF0ZSBgNjMuNjclYCBvdmVyIHRoZSBzYW1lIHdpbmRvdy4KCiMjIFB1YmxpYyBBcnRpZmFjdHMKCkNvbXBhY3QgcmVzdWx0IHN1bW1hcmllcyBhbmQgZmlndXJlcyBhcmUgaW5jbHVkZWQgZm9yIGluc3BlY3Rpb246CgotIGBhcnRpZmFjdHMvcmVwb3J0X2Fzc2V0cy9yZXN1bHRzLmNzdmAKLSBgYXJ0aWZhY3RzL3JlcG9ydF9hc3NldHMvRF9Qcm9tcHRDYXA1ME5vQmVuY2hfNGtfTGluZWFyX3ZscmJfZnVsbC5vdmVydmlldy5jc3ZgCi0gYGFydGlmYWN0cy9yZXBvcnRfYXNzZXRzL0RfUHJvbXB0Q2FwNTBOb0JlbmNoXzRrX0xpbmVhcl92bHJiX2Z1bGwuYnlfc291cmNlLmNzdmAKLSBgYXJ0aWZhY3RzL3JlcG9ydF9hc3NldHMvZGF0YV9zaW1pbGFyaXR5X2RpdmVyc2l0eS5zdW1tYXJ5LmNzdmAKLSBgYXJ0aWZhY3RzL2ZpZ3VyZXMvZGF0YV9jZW50cmljL2JlbmNobWFya19zdHlsZV90YWJsZS5wbmdgCi0gYGFydGlmYWN0cy9maWd1cmVzL2RhdGFfY2VudHJpYy9wcm9tcHRfY29uY2VudHJhdGlvbl92c19hY2N1cmFjeS5wbmdgCi0gYGFydGlmYWN0cy9maWd1cmVzL2RhdGFfY2VudHJpYy9wcm9tcHRjYXBfc3RyZW5ndGhfY3VydmUucG5nYAotIGBhcnRpZmFjdHMvZmlndXJlcy9kYXRhX2NlbnRyaWMvZGF0YV9zZWxlY3Rpb25fc291cmNlX2FjY3VyYWN5LnBuZ2AKCkZ1bGwgdHJhaW5pbmcgbG9ncywgcmF3IGRhdGFzZXRzLCBsb2NhbCBjaGVja3BvaW50cywgYW5kIHByaXZhdGUgYXNzZXNzbWVudCBmaWxlcyBhcmUgaW50ZW50aW9uYWxseSBleGNsdWRlZCBmcm9tIEdpdEh1Yi4gVGhlIEh1Z2dpbmcgRmFjZSBtb2RlbCByZXBvc2l0b3J5IGlzIHVzZWQgZm9yIHRoZSBMb1JBIGFkYXB0ZXIgYW5kIHNjb3JlLWhlYWQgY2hlY2twb2ludCBmaWxlcy4K
+# Experiment Results
+
+This file collects the public-facing experiment results for the InternVL2.5-2B vision-language reward model project. The full analysis and Chinese report are in [`reports/VL_REWARD_MODEL_REPORT_CN.pdf`](reports/VL_REWARD_MODEL_REPORT_CN.pdf).
+
+## Main Score
+
+VLRewardBench full set contains 1247 evaluation examples in this setup.
+
+| Setting | Training data | Accuracy |
+| --- | --- | ---: |
+| InternVL2.5-2B base generative judge | none | 46.51% |
+| Head-only sanity model | RLAIF-V 128 pairs | 47.79% |
+| Raw RLAIF-V reward model | first 1024 pairs | 74.66% |
+| Image-only refined ablation | 4096 pairs | 66.72% |
+| Strict query+image audit ablation | 4096 pairs | 70.17% |
+| PromptCap50 reward model | RLAIF-V 4096 pairs | 71.69% |
+| PromptCap10 reward model | RLAIF-V 4096 pairs | 70.73% |
+| PromptCap20 reward model | RLAIF-V 4096 pairs | 60.63% |
+| MLP-head ablation | PromptCap20 4096 pairs | 50.44% |
+
+The submitted checkpoint is the PromptCap50 seed-42 run:
+
+```text
+outputs/checkpoints/D_PromptCap50NoBench_4k_Linear
+```
+
+## Data Selection Summary
+
+PromptCap selects training samples using only RLAIF-V internal prompt frequencies. It does not use VLRewardBench samples, labels, human rankings, or candidate responses as reward-model training data.
+
+| Data strategy | Effective prompt | Top-20 prompt mass | Query overlap rate | Accuracy |
+| --- | ---: | ---: | ---: | ---: |
+| Raw first 1024 | 216.31 | 41.50% | 46.39% | 74.66% |
+| Image-only refined 4096 | 407.21 | 40.16% | 44.95% | 66.72% |
+| Strict query+image 4096 | 1768.71 | 16.67% | 0.00% | 70.17% |
+| PromptCap50 4096 | 811.89 | 23.63% | 30.88% | 71.69% |
+| PromptCap20 4096 | 1733.88 | 9.77% | 16.04% | 60.63% |
+| PromptCap10 4096 | 2440.44 | 4.88% | 8.96% | 70.73% |
+
+The raw 1k run reached the highest single accuracy early in the project, but it also had stronger prompt-template concentration. PromptCap50 was selected for the final checkpoint because it keeps the score above 70% while reducing high-frequency prompt concentration.
+
+## Structure and Stability
+
+| Experiment | Data | Accuracy | Note |
+| --- | --- | ---: | --- |
+| Final-token pooling + linear head | PromptCap20 1k | 61.03% | Uses the final valid-token hidden state |
+| Final+mean concat pooling + linear head | PromptCap20 1k | 60.14% | Adds text mean pooling |
+| MLP score head | PromptCap20 4k | 50.44% | More complex head did not help in this setup |
+| PromptCap50 seed 42 | PromptCap50 4k | 71.69% | Submitted checkpoint |
+| PromptCap50 seed 123 | PromptCap50 4k | 61.27% | Diagnostic rerun, weak reward-scale formation |
+
+The seed-123 diagnostic had mean `score_chosen - score_rejected` of `0.0008` over the last 512 training steps and a positive-gap rate of `50.98%`. The seed-42 submitted checkpoint had mean gap `0.3411` and positive-gap rate `63.67%` over the same window.
+
+## Public Artifacts
+
+Compact result summaries and figures are included for inspection:
+
+- `artifacts/report_assets/results.csv`
+- `artifacts/report_assets/D_PromptCap50NoBench_4k_Linear_vlrb_full.overview.csv`
+- `artifacts/report_assets/D_PromptCap50NoBench_4k_Linear_vlrb_full.by_source.csv`
+- `artifacts/report_assets/data_similarity_diversity.summary.csv`
+- `artifacts/figures/data_centric/benchmark_style_table.png`
+- `artifacts/figures/data_centric/prompt_concentration_vs_accuracy.png`
+- `artifacts/figures/data_centric/promptcap_strength_curve.png`
+- `artifacts/figures/data_centric/data_selection_source_accuracy.png`
+
+Full training logs, raw datasets, local checkpoints, and private assessment files are intentionally excluded from GitHub. The Hugging Face model repository is used for the LoRA adapter and score-head checkpoint files.

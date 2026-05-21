@@ -1,1 +1,159 @@
-ewogICJzZWxlY3Rpb24iOiAicHJvbXB0X2NhcF8yMCIsCiAgImNhbmRpZGF0ZV9saW1pdCI6IDgxOTIsCiAgInRhcmdldF9zaXplIjogNDA5NiwKICAicHJvbXB0X2NhcCI6IDIwLAogICJleGNsdWRlX2luZGljZXMiOiAiYXJ0aWZhY3RzL3JlcG9ydF9hc3NldHMvZGVkdXBfcmxhaWZ2ODE5Ml92bHJiLnJlZmluZWQuZXhjbHVkZV9pbmRpY2VzLnR4dCIsCiAgImV4Y2x1ZGVfaW5kaWNlc19uIjogMTQ3LAogICJzZWxlY3RlZF9uIjogNDA5NiwKICAibWluX2lkeCI6IDAsCiAgIm1heF9pZHgiOiA3MTA2LAogICJtZWFuX2lkeCI6IDMwNjYuMjI1NTg1OTM3NSwKICAidW5pcXVlX3Byb21wdF9uIjogMjY5MSwKICAidG9wMjBfcHJvbXB0X21hc3MiOiAwLjA5NzY1NjI1LAogICJwcm9tcHRfd29yZF9tZWFuIjogOC41NTI5Nzg1MTU2MjUsCiAgImNob3Nlbl9sZW5fbWVhbiI6IDMzNi43OTEyNTk3NjU2MjUsCiAgInJlamVjdGVkX2xlbl9tZWFuIjogMzM4LjA4Mzk4NDM3NSwKICAic2tpcHBlZF9leGNsdWRlZF9iZWZvcmVfdGFyZ2V0IjogMTI2LAogICJza2lwcGVkX3Byb21wdF9jYXBfYmVmb3JlX3RhcmdldCI6IDI4ODUsCiAgInRvcF9zZWxlY3RlZF9wcm9tcHRzIjogWwogICAgWwogICAgICAiUGxlYXNlIGRlc2NyaWJlIHRoaXMgYXJ0d29yayB0aG9yb3VnaGx5LiIsCiAgICAgIDIwCiAgICBdLAogICAgWwogICAgICAiRGV0YWlsIHRoZSBpbWFnZSdzIGNvbXBvbmVudHMgd2l0aCBwYXJ0aWN1bGFyIGZvY3VzIG9uIGVhY2ggZW50aXR5LiIsCiAgICAgIDIwCiAgICBdLAogICAgWwogICAgICAiQ3JlYXRlIGEgdGhvcm91Z2ggZGVzY3JpcHRpb24gZGVzY3JpYmluZyB0aGUgZ2l2ZW4gaW1hZ2UuIEluY2x1ZGUgdGhlIHRleHQgY29udGVudHMgYW5kIHRoZSBpbmZvcm1hdGlvbiB0aGV5IGNvbnZleSBpbiB0aGUgZGVzY3JpcHRpb24uIiwKICAgICAgMjAKICAgIF0sCiAgICBbCiAgICAgICJXaGF0IGFyZSB0aGUga2V5IGZlYXR1cmVzIHlvdSBvYnNlcnZlIGluIHRoZSBpbWFnZT8iLAogICAgICAyMAogICAgXSwKICAgIFsKICAgICAgIkV4cGxhaW4gdGhlIGVsZW1lbnRzIG9mIHRoZSBpbWFnZSB3aXRoIHRob3JvdWdoIGF0dGVudGlvbiB0byBkZXRhaWwuIiwKICAgICAgMjAKICAgIF0sCiAgICBbCiAgICAgICJHaXZlIGEgY29tcHJlaGVuc2l2ZSBkZXNjcmlwdGlvbiBvZiB0aGlzIGFydHdvcmssIGZyb20gaXRzIHZpc3VhbCBlbGVtZW50cyB0byBpdHMgY29uY2VwdHVhbCBtZWFuaW5nLiIsCiAgICAgIDIwCiAgICBdLAogICAgWwogICAgICAiVGVsbCBtZSB3aGF0IGNhdGNoZXMgeW91ciBleWUgaW4gdGhlIGltYWdlLCBhbmQgZGVzY3JpYmUgdGhvc2UgZWxlbWVudHMgaW4gZGVwdGguIiwKICAgICAgMjAKICAgIF0sCiAgICBbCiAgICAgICJQcm92aWRlIGEgZGV0YWlsZWQgbmFycmF0aXZlIG9mIHRoZSBpbWFnZSwgZW1waGFzaXppbmcgdGhlIHZpc2libGUgY2VsZWJyaXRpZXMgYW5kIHRoZSBzY2VuZS4iLAogICAgICAyMAogICAgXSwKICAgIFsKICAgICAgIkV4cGxhaW4gdGhlIGltYWdlJ3MgdmFyaW91cyBjb21wb25lbnRzIGluIGRlcHRoLiIsCiAgICAgIDIwCiAgICBdLAogICAgWwogICAgICAiRGV0YWlsIHRoZSB0ZXh0cyBhbmQgb3RoZXIgY29tcG9uZW50cyBpbiB0aGUgaW1hZ2UgaW4gZGVwdGgsIGV4cGxhaW5pbmcgdGhlaXIgcmVsZXZhbmNlIHRvIHRoZSBvdmVyYWxsIHBpY3R1cmUuIiwKICAgICAgMjAKICAgIF0sCiAgICBbCiAgICAgICJDYW4geW91IHBvaW50IG91dCB0aGUgZGV0YWlscyB0aGF0IG1ha2UgdGhpcyBpbWFnZSB1bmlxdWU/IiwKICAgICAgMjAKICAgIF0sCiAgICBbCiAgICAgICJEZXNjcmliZSB0aGUga2V5IGZlYXR1cmVzIG9mIHRoZSBpbWFnZSBpbiBncmVhdCBkZXRhaWwuIiwKICAgICAgMjAKICAgIF0sCiAgICBbCiAgICAgICJDcmVhdGUgYSBkZXRhaWxlZCBkZXNjcmlwdGlvbiBkZXNjcmliaW5nIHRoZSBlbGVtZW50cyBvZiB0aGUgZ2l2ZW4gd29ybGR3aWRlIGxhbmRtYXJrIGltYWdlLiBJZGVudGlmeSB0aGUgbmFtZSBvZiB0aGUgbGFuZG1hcmsgYW5kIGRlc2NyaWJlIHRoZSBvYmplY3RzLCBjb2xvcnMsIHBlcnNwZWN0aXZlcywgZXRjLiIsCiAgICAgIDIwCiAgICBdLAogICAgWwogICAgICAiUHJvdmlkZSBhbiBpbnRyaWNhdGUgZGVzY3JpcHRpb24gb2YgZXZlcnkgZW50aXR5IGluIHRoZSBpbWFnZS4iLAogICAgICAyMAogICAgXSwKICAgIFsKICAgICAgIldoYXQgYXJlIHRoZSBtYWluIGVsZW1lbnRzIGluIHRoaXMgaW1hZ2U/IERlc2NyaWJlIHRoZW0gdGhvcm91Z2hseS4iLAogICAgICAyMAogICAgXSwKICAgIFsKICAgICAgIkNyZWF0ZSBhIGRldGFpbGVkIGRlc2NyaXB0aW9uIGRlc2NyaWJpbmcgdGhlIGNvbnRlbnRzIG9mIHRoZSBnaXZlbiBhcnQgaW1hZ2UuIEluY2x1ZGUgdGhlIG9iamVjdHMsIGNvbG9ycywgYXJ0IHN0eWxlLCBhcnQgZ2VucmUsIGV0Yy4iLAogICAgICAyMAogICAgXSwKICAgIFsKICAgICAgIklkZW50aWZ5IGFuZCBkZXNjcmliZSBlYWNoIG9iamVjdCBpbiB0aGUgaW1hZ2UgaW4gZGV0YWlsLiIsCiAgICAgIDIwCiAgICBdLAogICAgWwogICAgICAiV2hhdCB0eXBlIG9mIGJvb2sgaXMgdGhpcz8iLAogICAgICAyMAogICAgXSwKICAgIFsKICAgICAgIkV4cGxhaW4gd2hhdCdzIGhhcHBlbmluZyBpbiB0aGUgaW1hZ2Ugd2l0aCBhcyBtdWNoIGRldGFpbCBhcyBwb3NzaWJsZS4iLAogICAgICAyMAogICAgXSwKICAgIFsKICAgICAgIkRlc2NyaWJlIHRoaXMgbGFuZG1hcmsgaW4gZGV0YWlsLCBoaWdobGlnaHRpbmcgaXRzIHVuaXF1ZSBhc3BlY3RzLCBsb2NhdGlvbiwgYW5kIHRoZSBleHBlcmllbmNlIG9mIHZpc2l0aW5nIGl0LiIsCiAgICAgIDIwCiAgICBdCiAgXSwKICAiaW5kZXhfYnVja2V0X2NvdW50cyI6IFsKICAgIFsKICAgICAgIjAtNTExIiwKICAgICAgNTA0CiAgICBdLAogICAgWwogICAgICAiNTEyLTEwMjMiLAogICAgICA0MzQKICAgIF0sCiAgICBbCiAgICAgICIxMDI0LTE1MzUiLAogICAgICAzMzMKICAgIF0sCiAgICBbCiAgICAgICIxNTM2LTIwNDciLAogICAgICAzMjAKICAgIF0sCiAgICBbCiAgICAgICIyMDQ4LTI1NTkiLAogICAgICAzMTIKICAgIF0sCiAgICBbCiAgICAgICIyNTYwLTMwNzEiLAogICAgICAyODUKICAgIF0sCiAgICBbCiAgICAgICIzNTg0LTQwOTUiLAogICAgICAyNzMKICAgIF0sCiAgICBbCiAgICAgICIzMDcyLTM1ODMiLAogICAgICAyNzAKICAgIF0sCiAgICBbCiAgICAgICI0MDk2LTQ2MDciLAogICAgICAyNDkKICAgIF0sCiAgICBbCiAgICAgICI1NjMyLTYxNDMiLAogICAgICAyNDgKICAgIF0sCiAgICBbCiAgICAgICI0NjA4LTUxMTkiLAogICAgICAyMzEKICAgIF0sCiAgICBbCiAgICAgICI2NjU2LTcxNjciLAogICAgICAyMzEKICAgIF0sCiAgICBbCiAgICAgICI1MTIwLTU2MzEiLAogICAgICAyMTAKICAgIF0sCiAgICBbCiAgICAgICI2MTQ0LTY2NTUiLAogICAgICAxOTYKICAgIF0KICBdCn0=
+{
+  "selection": "prompt_cap_20",
+  "candidate_limit": 8192,
+  "target_size": 4096,
+  "prompt_cap": 20,
+  "exclude_indices": "artifacts/report_assets/dedup_rlaifv8192_vlrb.refined.exclude_indices.txt",
+  "exclude_indices_n": 147,
+  "selected_n": 4096,
+  "min_idx": 0,
+  "max_idx": 7106,
+  "mean_idx": 3066.2255859375,
+  "unique_prompt_n": 2691,
+  "top20_prompt_mass": 0.09765625,
+  "prompt_word_mean": 8.552978515625,
+  "chosen_len_mean": 336.791259765625,
+  "rejected_len_mean": 338.083984375,
+  "skipped_excluded_before_target": 126,
+  "skipped_prompt_cap_before_target": 2885,
+  "top_selected_prompts": [
+    [
+      "Please describe this artwork thoroughly.",
+      20
+    ],
+    [
+      "Detail the image's components with particular focus on each entity.",
+      20
+    ],
+    [
+      "Create a thorough description describing the given image. Include the text contents and the information they convey in the description.",
+      20
+    ],
+    [
+      "What are the key features you observe in the image?",
+      20
+    ],
+    [
+      "Explain the elements of the image with thorough attention to detail.",
+      20
+    ],
+    [
+      "Give a comprehensive description of this artwork, from its visual elements to its conceptual meaning.",
+      20
+    ],
+    [
+      "Tell me what catches your eye in the image, and describe those elements in depth.",
+      20
+    ],
+    [
+      "Provide a detailed narrative of the image, emphasizing the visible celebrities and the scene.",
+      20
+    ],
+    [
+      "Explain the image's various components in depth.",
+      20
+    ],
+    [
+      "Detail the texts and other components in the image in depth, explaining their relevance to the overall picture.",
+      20
+    ],
+    [
+      "Can you point out the details that make this image unique?",
+      20
+    ],
+    [
+      "Describe the key features of the image in great detail.",
+      20
+    ],
+    [
+      "Create a detailed description describing the elements of the given worldwide landmark image. Identify the name of the landmark and describe the objects, colors, perspectives, etc.",
+      20
+    ],
+    [
+      "Provide an intricate description of every entity in the image.",
+      20
+    ],
+    [
+      "What are the main elements in this image? Describe them thoroughly.",
+      20
+    ],
+    [
+      "Create a detailed description describing the contents of the given art image. Include the objects, colors, art style, art genre, etc.",
+      20
+    ],
+    [
+      "Identify and describe each object in the image in detail.",
+      20
+    ],
+    [
+      "What type of book is this?",
+      20
+    ],
+    [
+      "Explain what's happening in the image with as much detail as possible.",
+      20
+    ],
+    [
+      "Describe this landmark in detail, highlighting its unique aspects, location, and the experience of visiting it.",
+      20
+    ]
+  ],
+  "index_bucket_counts": [
+    [
+      "0-511",
+      504
+    ],
+    [
+      "512-1023",
+      434
+    ],
+    [
+      "1024-1535",
+      333
+    ],
+    [
+      "1536-2047",
+      320
+    ],
+    [
+      "2048-2559",
+      312
+    ],
+    [
+      "2560-3071",
+      285
+    ],
+    [
+      "3584-4095",
+      273
+    ],
+    [
+      "3072-3583",
+      270
+    ],
+    [
+      "4096-4607",
+      249
+    ],
+    [
+      "5632-6143",
+      248
+    ],
+    [
+      "4608-5119",
+      231
+    ],
+    [
+      "6656-7167",
+      231
+    ],
+    [
+      "5120-5631",
+      210
+    ],
+    [
+      "6144-6655",
+      196
+    ]
+  ]
+}

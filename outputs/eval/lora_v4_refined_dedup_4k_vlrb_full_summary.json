@@ -1,1 +1,119 @@
-ewogICJuIjogMTI0NywKICAiYWNjdXJhY3kiOiAwLjY2NzIwMTI4MzA3OTM5MDUsCiAgInNjb3JlX2hlYWQiOiAib3V0cHV0cy9jaGVja3BvaW50cy9sb3JhX3Y0X3JlZmluZWRfZGVkdXBfNGsvc2NvcmVfaGVhZF9maW5hbC5wdCIsCiAgImxvcmFfYWRhcHRlciI6ICJvdXRwdXRzL2NoZWNrcG9pbnRzL2xvcmFfdjRfcmVmaW5lZF9kZWR1cF80ay9sb3JhX2ZpbmFsIiwKICAibWF4X3RpbGVzIjogMiwKICAiZWxhcHNlZF9zZWMiOiAzMzMzLjA0MDc1NDU1NjY1NiwKICAiY3VkYV9tYXhfbWVtX2diIjogNS45OTgxMDIxODgxMTAzNTIsCiAgImJ5X3F1ZXJ5X3NvdXJjZSI6IHsKICAgICIiOiB7CiAgICAgICJuIjogMzE3LAogICAgICAiYWNjdXJhY3kiOiAwLjYxMTk4NzM4MTcwMzQ3CiAgICB9LAogICAgIkNPQ08iOiB7CiAgICAgICJuIjogNjMsCiAgICAgICJhY2N1cmFjeSI6IDAuNzQ2MDMxNzQ2MDMxNzQ2CiAgICB9LAogICAgIkdRQSI6IHsKICAgICAgIm4iOiAyNiwKICAgICAgImFjY3VyYWN5IjogMC41Mzg0NjE1Mzg0NjE1Mzg0CiAgICB9LAogICAgIkdvb2dsZS1MYW5kbWFyayI6IHsKICAgICAgIm4iOiA0LAogICAgICAiYWNjdXJhY3kiOiAwLjI1CiAgICB9LAogICAgIkxDUy01NThLIjogewogICAgICAibiI6IDQxLAogICAgICAiYWNjdXJhY3kiOiAwLjY1ODUzNjU4NTM2NTg1MzcKICAgIH0sCiAgICAiTFJWSW5zdHJ1Y3Rpb24iOiB7CiAgICAgICJuIjogMSwKICAgICAgImFjY3VyYWN5IjogMS4wCiAgICB9LAogICAgIk1vdmllTmV0IjogewogICAgICAibiI6IDIsCiAgICAgICJhY2N1cmFjeSI6IDEuMAogICAgfSwKICAgICJPQ1ItVlFBIjogewogICAgICAibiI6IDQsCiAgICAgICJhY2N1cmFjeSI6IDEuMAogICAgfSwKICAgICJPSy1WUUEiOiB7CiAgICAgICJuIjogMzIsCiAgICAgICJhY2N1cmFjeSI6IDAuNzE4NzUKICAgIH0sCiAgICAiUE9WSURfcHJlZmVyZW5jZV9kYXRhX2Zvcl9WTExNcyI6IHsKICAgICAgIm4iOiA0NDgsCiAgICAgICJhY2N1cmFjeSI6IDAuNzM4ODM5Mjg1NzE0Mjg1NwogICAgfSwKICAgICJUZXh0VlFBIjogewogICAgICAibiI6IDE0LAogICAgICAiYWNjdXJhY3kiOiAwLjU3MTQyODU3MTQyODU3MTQKICAgIH0sCiAgICAiVlFBdjIiOiB7CiAgICAgICJuIjogMzUsCiAgICAgICJhY2N1cmFjeSI6IDAuNzcxNDI4NTcxNDI4NTcxNQogICAgfSwKICAgICJjb2NvIjogewogICAgICAibiI6IDQwLAogICAgICAiYWNjdXJhY3kiOiAwLjUKICAgIH0sCiAgICAiamFpbGJyZWFrLUZyYXVkIjogewogICAgICAibiI6IDEsCiAgICAgICJhY2N1cmFjeSI6IDAuMAogICAgfSwKICAgICJqYWlsYnJlYWstdHlwby1FY29ub21pY0hhcm0iOiB7CiAgICAgICJuIjogMSwKICAgICAgImFjY3VyYWN5IjogMS4wCiAgICB9LAogICAgImphaWxicmVhay10eXBvLUhhdGVTcGVlY2giOiB7CiAgICAgICJuIjogMSwKICAgICAgImFjY3VyYWN5IjogMC4wCiAgICB9LAogICAgImphaWxicmVhay10eXBvLUlsbGVnYWxfQWN0aXZpdGl5IjogewogICAgICAibiI6IDIsCiAgICAgICJhY2N1cmFjeSI6IDAuMAogICAgfSwKICAgICJqYWlsYnJlYWstdHlwby1NYWx3YXJlX0dlbmVyYXRpb24iOiB7CiAgICAgICJuIjogMSwKICAgICAgImFjY3VyYWN5IjogMC4wCiAgICB9LAogICAgImphaWxicmVhay10eXBvLVBoeXNpY2FsX0hhcm0iOiB7CiAgICAgICJuIjogMSwKICAgICAgImFjY3VyYWN5IjogMC4wCiAgICB9LAogICAgInBvbGl0aWNzLUdvdl9EZWNpc2lvbiI6IHsKICAgICAgIm4iOiAxLAogICAgICAiYWNjdXJhY3kiOiAxLjAKICAgIH0sCiAgICAic2hhcmVncHQ0di10ZXh0dnFhIjogewogICAgICAibiI6IDMsCiAgICAgICJhY2N1cmFjeSI6IDAuMzMzMzMzMzMzMzMzMzMzMwogICAgfSwKICAgICJzaGFyZWdwdDR2LXdlYi1jZWxlYnJpdHkiOiB7CiAgICAgICJuIjogNywKICAgICAgImFjY3VyYWN5IjogMC41NzE0Mjg1NzE0Mjg1NzE0CiAgICB9LAogICAgInNoYXJlZ3B0NHYtd2ViLWxhbmRtYXJrIjogewogICAgICAibiI6IDUsCiAgICAgICJhY2N1cmFjeSI6IDAuNgogICAgfSwKICAgICJzaGFyZWdwdDR2LXdpa2lhcnQiOiB7CiAgICAgICJuIjogMSwKICAgICAgImFjY3VyYWN5IjogMS4wCiAgICB9LAogICAgInN2aXQtY29tcGxleF9yZWFzb25pbmciOiB7CiAgICAgICJuIjogMSwKICAgICAgImFjY3VyYWN5IjogMC4wCiAgICB9LAogICAgInZxYXYyIjogewogICAgICAibiI6IDI0LAogICAgICAiYWNjdXJhY3kiOiAwLjU4MzMzMzMzMzMzMzMzMzQKICAgIH0sCiAgICAid2lsZHZpc2lvbi1iYXR0bGUiOiB7CiAgICAgICJuIjogMTcxLAogICAgICAiYWNjdXJhY3kiOiAwLjYzMTU3ODk0NzM2ODQyMQogICAgfQogIH0KfQ==
+{
+  "n": 1247,
+  "accuracy": 0.6672012830793905,
+  "score_head": "outputs/checkpoints/lora_v4_refined_dedup_4k/score_head_final.pt",
+  "lora_adapter": "outputs/checkpoints/lora_v4_refined_dedup_4k/lora_final",
+  "max_tiles": 2,
+  "elapsed_sec": 3333.040754556656,
+  "cuda_max_mem_gb": 5.998102188110352,
+  "by_query_source": {
+    "": {
+      "n": 317,
+      "accuracy": 0.61198738170347
+    },
+    "COCO": {
+      "n": 63,
+      "accuracy": 0.746031746031746
+    },
+    "GQA": {
+      "n": 26,
+      "accuracy": 0.5384615384615384
+    },
+    "Google-Landmark": {
+      "n": 4,
+      "accuracy": 0.25
+    },
+    "LCS-558K": {
+      "n": 41,
+      "accuracy": 0.6585365853658537
+    },
+    "LRVInstruction": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "MovieNet": {
+      "n": 2,
+      "accuracy": 1.0
+    },
+    "OCR-VQA": {
+      "n": 4,
+      "accuracy": 1.0
+    },
+    "OK-VQA": {
+      "n": 32,
+      "accuracy": 0.71875
+    },
+    "POVID_preference_data_for_VLLMs": {
+      "n": 448,
+      "accuracy": 0.7388392857142857
+    },
+    "TextVQA": {
+      "n": 14,
+      "accuracy": 0.5714285714285714
+    },
+    "VQAv2": {
+      "n": 35,
+      "accuracy": 0.7714285714285715
+    },
+    "coco": {
+      "n": 40,
+      "accuracy": 0.5
+    },
+    "jailbreak-Fraud": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "jailbreak-typo-EconomicHarm": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "jailbreak-typo-HateSpeech": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "jailbreak-typo-Illegal_Activitiy": {
+      "n": 2,
+      "accuracy": 0.0
+    },
+    "jailbreak-typo-Malware_Generation": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "jailbreak-typo-Physical_Harm": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "politics-Gov_Decision": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "sharegpt4v-textvqa": {
+      "n": 3,
+      "accuracy": 0.3333333333333333
+    },
+    "sharegpt4v-web-celebrity": {
+      "n": 7,
+      "accuracy": 0.5714285714285714
+    },
+    "sharegpt4v-web-landmark": {
+      "n": 5,
+      "accuracy": 0.6
+    },
+    "sharegpt4v-wikiart": {
+      "n": 1,
+      "accuracy": 1.0
+    },
+    "svit-complex_reasoning": {
+      "n": 1,
+      "accuracy": 0.0
+    },
+    "vqav2": {
+      "n": 24,
+      "accuracy": 0.5833333333333334
+    },
+    "wildvision-battle": {
+      "n": 171,
+      "accuracy": 0.631578947368421
+    }
+  }
+}

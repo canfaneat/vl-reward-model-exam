@@ -1,1 +1,69 @@
-IyEvdXNyL2Jpbi9lbnYgYmFzaApzZXQgLWV1byBwaXBlZmFpbAoKY2QgIi9yb290L3ByaXZhdGVfZGF0YS9wcm9qZWN0cy9yZXdhcmQgbW9kZWwiCgpXQUlUX1NVTU1BUlk9Im91dHB1dHMvZXZhbC9EX1Byb21wdENhcDIwTm9CZW5jaF80a19MaW5lYXJfdmxyYl9mdWxsX3N1bW1hcnkuanNvbiIKCndoaWxlIFtbICEgLXMgIiR7V0FJVF9TVU1NQVJZfSIgXV07IGRvCiAgZWNobyAiJChkYXRlIC11ICcrJVktJW0tJWQgJUg6JU06JVMgVVRDJykgd2FpdGluZyBmb3IgJHtXQUlUX1NVTU1BUll9IgogIHNsZWVwIDEyMApkb25lCgpzb3VyY2Ugc2NyaXB0cy9hY3RpdmF0ZV9lbnYuc2gKZXhwb3J0IEhGX0VORFBPSU5UPSIke0hGX0VORFBPSU5UOi1odHRwczovL2hmLW1pcnJvci5jb219IgoKcnVuX29uZSgpIHsKICBsb2NhbCBuYW1lPSIkMSIKICBsb2NhbCBpbmRpY2VzPSIkMiIKICBsb2NhbCBvdXRfZGlyPSJvdXRwdXRzL2NoZWNrcG9pbnRzLyR7bmFtZX0iCiAgbG9jYWwgdHJhaW5fbG9nPSJvdXRwdXRzL2xvZ3MvdHJhaW5fJHtuYW1lfS5qc29ubCIKICBsb2NhbCB0bXV4X3RyYWluX2xvZz0ib3V0cHV0cy9sb2dzL3RtdXhfdHJhaW5fJHtuYW1lfS5sb2ciCiAgbG9jYWwgZXZhbF9qc29ubD0ib3V0cHV0cy9ldmFsLyR7bmFtZX1fdmxyYl9mdWxsLmpzb25sIgogIGxvY2FsIGV2YWxfc3VtbWFyeT0ib3V0cHV0cy9ldmFsLyR7bmFtZX1fdmxyYl9mdWxsX3N1bW1hcnkuanNvbiIKICBsb2NhbCB0bXV4X2V2YWxfbG9nPSJvdXRwdXRzL2xvZ3MvdG11eF9ldmFsXyR7bmFtZX1fZnVsbC5sb2ciCgogIHB5dGhvbiAtdSBzY3JpcHRzL3RyYWluX3Jld2FyZF9oZWFkLnB5IFwKICAgIC0taW5jbHVkZS1pbmRpY2VzICIke2luZGljZXN9IiBcCiAgICAtLWxpbWl0IDQwOTYgXAogICAgLS1zaGFyZC1saW1pdCAyIFwKICAgIC0tZXBvY2hzIDEgXAogICAgLS1tYXgtdGlsZXMgMiBcCiAgICAtLWxyIDFlLTQgXAogICAgLS11c2UtbG9yYSBcCiAgICAtLWxvcmEtciA4IFwKICAgIC0tbG9yYS1hbHBoYSAxNiBcCiAgICAtLWxvcmEtZHJvcG91dCAwLjA1IFwKICAgIC0tcG9vbGluZyBmaW5hbCBcCiAgICAtLXNjb3JlLWhlYWQtdHlwZSBsaW5lYXIgXAogICAgLS1vdXRwdXQtZGlyICIke291dF9kaXJ9IiBcCiAgICAtLWxvZy1wYXRoICIke3RyYWluX2xvZ30iIFwKICAgIDI+JjEgfCB0ZWUgIiR7dG11eF90cmFpbl9sb2d9IgoKICBweXRob24gLXUgc2NyaXB0cy9ldmFsX3Jld2FyZF9oZWFkLnB5IFwKICAgIC0tc2NvcmUtaGVhZCAiJHtvdXRfZGlyfS9zY29yZV9oZWFkX2ZpbmFsLnB0IiBcCiAgICAtLWxvcmEtYWRhcHRlciAiJHtvdXRfZGlyfS9sb3JhX2ZpbmFsIiBcCiAgICAtLWxpbWl0IDAgXAogICAgLS1tYXgtdGlsZXMgMiBcCiAgICAtLXBvb2xpbmcgZmluYWwgXAogICAgLS1zY29yZS1oZWFkLXR5cGUgbGluZWFyIFwKICAgIC0tb3V0cHV0ICIke2V2YWxfanNvbmx9IiBcCiAgICAtLXN1bW1hcnkgIiR7ZXZhbF9zdW1tYXJ5fSIgXAogICAgMj4mMSB8IHRlZSAiJHt0bXV4X2V2YWxfbG9nfSIKCiAgcHl0aG9uIHNjcmlwdHMvc3VtbWFyaXplX2V2YWxfc3VtbWFyeS5weSBcCiAgICAtLXN1bW1hcnkgIiR7ZXZhbF9zdW1tYXJ5fSIgXAogICAgLS1vdXRwdXQtcHJlZml4ICJhcnRpZmFjdHMvcmVwb3J0X2Fzc2V0cy8ke25hbWV9X3ZscmJfZnVsbCIgXAogICAgMj4mMSB8IHRlZSAtYSAiJHt0bXV4X2V2YWxfbG9nfSIKCiAgcHl0aG9uIHNjcmlwdHMvY29sbGVjdF9yZXN1bHRzLnB5IFwKICAgIC0tZXZhbC1kaXIgb3V0cHV0cy9ldmFsIFwKICAgIC0tb3V0cHV0LXByZWZpeCBhcnRpZmFjdHMvcmVwb3J0X2Fzc2V0cy9yZXN1bHRzIFwKICAgIDI+JjEgfCB0ZWUgLWEgIiR7dG11eF9ldmFsX2xvZ30iCgogIHB5dGhvbiBzY3JpcHRzL2RhdGFfc2ltaWxhcml0eV9hbmRfZGl2ZXJzaXR5X2F1ZGl0LnB5IFwKICAgIDI+JjEgfCB0ZWUgLWEgIiR7dG11eF9ldmFsX2xvZ30iCn0KCnJ1bl9vbmUgIkRfUHJvbXB0Q2FwNTBOb0JlbmNoXzRrX0xpbmVhciIgImFydGlmYWN0cy9yZXBvcnRfYXNzZXRzL3JsYWlmdl9wcm9tcHRjYXA1MF9ub2JlbmNoXzRrLmluZGljZXMudHh0IgpydW5fb25lICJEX1Byb21wdENhcDEwTm9CZW5jaF80a19MaW5lYXIiICJhcnRpZmFjdHMvcmVwb3J0X2Fzc2V0cy9ybGFpZnZfcHJvbXB0Y2FwMTBfbm9iZW5jaF80ay5pbmRpY2VzLnR4dCIK
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "/root/private_data/projects/reward model"
+
+WAIT_SUMMARY="outputs/eval/D_PromptCap20NoBench_4k_Linear_vlrb_full_summary.json"
+
+while [[ ! -s "${WAIT_SUMMARY}" ]]; do
+  echo "$(date -u '+%Y-%m-%d %H:%M:%S UTC') waiting for ${WAIT_SUMMARY}"
+  sleep 120
+done
+
+source scripts/activate_env.sh
+export HF_ENDPOINT="${HF_ENDPOINT:-https://hf-mirror.com}"
+
+run_one() {
+  local name="$1"
+  local indices="$2"
+  local out_dir="outputs/checkpoints/${name}"
+  local train_log="outputs/logs/train_${name}.jsonl"
+  local tmux_train_log="outputs/logs/tmux_train_${name}.log"
+  local eval_jsonl="outputs/eval/${name}_vlrb_full.jsonl"
+  local eval_summary="outputs/eval/${name}_vlrb_full_summary.json"
+  local tmux_eval_log="outputs/logs/tmux_eval_${name}_full.log"
+
+  python -u scripts/train_reward_head.py \
+    --include-indices "${indices}" \
+    --limit 4096 \
+    --shard-limit 2 \
+    --epochs 1 \
+    --max-tiles 2 \
+    --lr 1e-4 \
+    --use-lora \
+    --lora-r 8 \
+    --lora-alpha 16 \
+    --lora-dropout 0.05 \
+    --pooling final \
+    --score-head-type linear \
+    --output-dir "${out_dir}" \
+    --log-path "${train_log}" \
+    2>&1 | tee "${tmux_train_log}"
+
+  python -u scripts/eval_reward_head.py \
+    --score-head "${out_dir}/score_head_final.pt" \
+    --lora-adapter "${out_dir}/lora_final" \
+    --limit 0 \
+    --max-tiles 2 \
+    --pooling final \
+    --score-head-type linear \
+    --output "${eval_jsonl}" \
+    --summary "${eval_summary}" \
+    2>&1 | tee "${tmux_eval_log}"
+
+  python scripts/summarize_eval_summary.py \
+    --summary "${eval_summary}" \
+    --output-prefix "artifacts/report_assets/${name}_vlrb_full" \
+    2>&1 | tee -a "${tmux_eval_log}"
+
+  python scripts/collect_results.py \
+    --eval-dir outputs/eval \
+    --output-prefix artifacts/report_assets/results \
+    2>&1 | tee -a "${tmux_eval_log}"
+
+  python scripts/data_similarity_and_diversity_audit.py \
+    2>&1 | tee -a "${tmux_eval_log}"
+}
+
+run_one "D_PromptCap50NoBench_4k_Linear" "artifacts/report_assets/rlaifv_promptcap50_nobench_4k.indices.txt"
+run_one "D_PromptCap10NoBench_4k_Linear" "artifacts/report_assets/rlaifv_promptcap10_nobench_4k.indices.txt"

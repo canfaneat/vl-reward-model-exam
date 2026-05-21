@@ -1,1 +1,61 @@
-ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGFyZ3BhcnNlCmltcG9ydCBjc3YKaW1wb3J0IGpzb24KaW1wb3J0IG1hdGgKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCgoKZGVmIGxvYWRfcm93cyhwYXRoOiBQYXRoKSAtPiBsaXN0W2RpY3RdOgogICAgcmV0dXJuIFtqc29uLmxvYWRzKGxpbmUpIGZvciBsaW5lIGluIHBhdGgucmVhZF90ZXh0KGVuY29kaW5nPSJ1dGYtOCIpLnNwbGl0bGluZXMoKSBpZiBsaW5lLnN0cmlwKCldCgoKZGVmIGFkanVzdGVkX3ByZWQocm93OiBkaWN0LCBhbHBoYTogZmxvYXQpIC0+IGludDoKICAgIGxlbjAgPSBtYXgoMSwgbGVuKHJvd1sicmVzcG9uc2UwIl0pKQogICAgbGVuMSA9IG1heCgxLCBsZW4ocm93WyJyZXNwb25zZTEiXSkpCiAgICBzY29yZTAgPSBmbG9hdChyb3dbInNjb3JlMCJdKSAtIGFscGhhICogbWF0aC5sb2cobGVuMCkKICAgIHNjb3JlMSA9IGZsb2F0KHJvd1sic2NvcmUxIl0pIC0gYWxwaGEgKiBtYXRoLmxvZyhsZW4xKQogICAgcmV0dXJuIDAgaWYgc2NvcmUwID49IHNjb3JlMSBlbHNlIDEKCgpkZWYgbWFpbigpIC0+IE5vbmU6CiAgICBwYXJzZXIgPSBhcmdwYXJzZS5Bcmd1bWVudFBhcnNlcigpCiAgICBwYXJzZXIuYWRkX2FyZ3VtZW50KCItLWV2YWwtanNvbmwiLCByZXF1aXJlZD1UcnVlKQogICAgcGFyc2VyLmFkZF9hcmd1bWVudCgiLS1hbHBoYXMiLCBkZWZhdWx0PSItMC4yMCwtMC4xMCwtMC4wNSwtMC4wMiwwLDAuMDIsMC4wNSwwLjEwLDAuMjAiKQogICAgcGFyc2VyLmFkZF9hcmd1bWVudCgiLS1vdXRwdXQiLCByZXF1aXJlZD1UcnVlKQogICAgYXJncyA9IHBhcnNlci5wYXJzZV9hcmdzKCkKCiAgICByb3dzID0gbG9hZF9yb3dzKFBhdGgoYXJncy5ldmFsX2pzb25sKSkKICAgIGFscGhhcyA9IFtmbG9hdChpdGVtKSBmb3IgaXRlbSBpbiBhcmdzLmFscGhhcy5zcGxpdCgiLCIpIGlmIGl0ZW0uc3RyaXAoKV0KICAgIG91dF9yb3dzID0gW10KICAgIGZvciBhbHBoYSBpbiBhbHBoYXM6CiAgICAgICAgY29ycmVjdCA9IDAKICAgICAgICBwcmVkX2xvbmdlciA9IDAKICAgICAgICBmb3Igcm93IGluIHJvd3M6CiAgICAgICAgICAgIHByZWQgPSBhZGp1c3RlZF9wcmVkKHJvdywgYWxwaGEpCiAgICAgICAgICAgIGNvcnJlY3QgKz0gaW50KHByZWQgPT0gaW50KHJvd1sidGFyZ2V0Il0pKQogICAgICAgICAgICBsZW5fcHJlZCA9IGxlbihyb3dbInJlc3BvbnNlMCJdKSBpZiBwcmVkID09IDAgZWxzZSBsZW4ocm93WyJyZXNwb25zZTEiXSkKICAgICAgICAgICAgbGVuX290aGVyID0gbGVuKHJvd1sicmVzcG9uc2UxIl0pIGlmIHByZWQgPT0gMCBlbHNlIGxlbihyb3dbInJlc3BvbnNlMCJdKQogICAgICAgICAgICBwcmVkX2xvbmdlciArPSBpbnQobGVuX3ByZWQgPiBsZW5fb3RoZXIpCiAgICAgICAgb3V0X3Jvd3MuYXBwZW5kKAogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiYWxwaGEiOiBhbHBoYSwKICAgICAgICAgICAgICAgICJuIjogbGVuKHJvd3MpLAogICAgICAgICAgICAgICAgImFjY3VyYWN5IjogY29ycmVjdCAvIGxlbihyb3dzKSwKICAgICAgICAgICAgICAgICJhY2N1cmFjeV9wZXJjZW50IjogMTAwICogY29ycmVjdCAvIGxlbihyb3dzKSwKICAgICAgICAgICAgICAgICJwcmVkX2xvbmdlcl9yYXRlIjogcHJlZF9sb25nZXIgLyBsZW4ocm93cyksCiAgICAgICAgICAgIH0KICAgICAgICApCgogICAgb3V0cHV0ID0gUGF0aChhcmdzLm91dHB1dCkKICAgIG91dHB1dC5wYXJlbnQubWtkaXIocGFyZW50cz1UcnVlLCBleGlzdF9vaz1UcnVlKQogICAgd2l0aCBvdXRwdXQub3BlbigidyIsIGVuY29kaW5nPSJ1dGYtOCIsIG5ld2xpbmU9IiIpIGFzIGY6CiAgICAgICAgd3JpdGVyID0gY3N2LkRpY3RXcml0ZXIoZiwgZmllbGRuYW1lcz1saXN0KG91dF9yb3dzWzBdLmtleXMoKSkpCiAgICAgICAgd3JpdGVyLndyaXRlaGVhZGVyKCkKICAgICAgICB3cml0ZXIud3JpdGVyb3dzKG91dF9yb3dzKQogICAgcHJpbnQoanNvbi5kdW1wcyhvdXRfcm93cywgZW5zdXJlX2FzY2lpPUZhbHNlLCBpbmRlbnQ9MikpCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIG1haW4oKQo=
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import math
+from pathlib import Path
+
+
+def load_rows(path: Path) -> list[dict]:
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def adjusted_pred(row: dict, alpha: float) -> int:
+    len0 = max(1, len(row["response0"]))
+    len1 = max(1, len(row["response1"]))
+    score0 = float(row["score0"]) - alpha * math.log(len0)
+    score1 = float(row["score1"]) - alpha * math.log(len1)
+    return 0 if score0 >= score1 else 1
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--eval-jsonl", required=True)
+    parser.add_argument("--alphas", default="-0.20,-0.10,-0.05,-0.02,0,0.02,0.05,0.10,0.20")
+    parser.add_argument("--output", required=True)
+    args = parser.parse_args()
+
+    rows = load_rows(Path(args.eval_jsonl))
+    alphas = [float(item) for item in args.alphas.split(",") if item.strip()]
+    out_rows = []
+    for alpha in alphas:
+        correct = 0
+        pred_longer = 0
+        for row in rows:
+            pred = adjusted_pred(row, alpha)
+            correct += int(pred == int(row["target"]))
+            len_pred = len(row["response0"]) if pred == 0 else len(row["response1"])
+            len_other = len(row["response1"]) if pred == 0 else len(row["response0"])
+            pred_longer += int(len_pred > len_other)
+        out_rows.append(
+            {
+                "alpha": alpha,
+                "n": len(rows),
+                "accuracy": correct / len(rows),
+                "accuracy_percent": 100 * correct / len(rows),
+                "pred_longer_rate": pred_longer / len(rows),
+            }
+        )
+
+    output = Path(args.output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(out_rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(out_rows)
+    print(json.dumps(out_rows, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()

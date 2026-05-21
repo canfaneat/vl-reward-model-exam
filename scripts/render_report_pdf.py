@@ -1,1 +1,377 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJSZW5kZXIgdGhlIENoaW5lc2UgTWFya2Rvd24gcmVwb3J0IHRvIGEgY29tcGFjdCBQREYuCgpUaGlzIGludGVudGlvbmFsbHkga2VlcHMgdGhlIHJlbmRlcmVyIHNtYWxsIGFuZCBsb2NhbC4gIFRoZSBhc3Nlc3NtZW50IG9ubHkKcmVxdWlyZXMgYSBQREYgcmVwb3J0LCBhbmQgdGhpcyBhdm9pZHMgcHVsbGluZyBpbiBhIGZ1bGwgVGVYIGluc3RhbGxhdGlvbi4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgaHRtbAppbXBvcnQgcmUKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCgpmcm9tIFBJTCBpbXBvcnQgSW1hZ2UgYXMgUElMSW1hZ2UKZnJvbSByZXBvcnRsYWIubGliIGltcG9ydCBjb2xvcnMKZnJvbSByZXBvcnRsYWIubGliLmVudW1zIGltcG9ydCBUQV9DRU5URVIsIFRBX0xFRlQKZnJvbSByZXBvcnRsYWIubGliLnBhZ2VzaXplcyBpbXBvcnQgQTQKZnJvbSByZXBvcnRsYWIubGliLnN0eWxlcyBpbXBvcnQgUGFyYWdyYXBoU3R5bGUsIGdldFNhbXBsZVN0eWxlU2hlZXQKZnJvbSByZXBvcnRsYWIubGliLnVuaXRzIGltcG9ydCBjbQpmcm9tIHJlcG9ydGxhYi5wZGZiYXNlIGltcG9ydCBwZGZtZXRyaWNzCmZyb20gcmVwb3J0bGFiLnBkZmJhc2UuY2lkZm9udHMgaW1wb3J0IFVuaWNvZGVDSURGb250CmZyb20gcmVwb3J0bGFiLnBsYXR5cHVzIGltcG9ydCAoCiAgICBJbWFnZSwKICAgIEtlZXBUb2dldGhlciwKICAgIExpc3RGbG93YWJsZSwKICAgIExpc3RJdGVtLAogICAgUGFnZUJyZWFrLAogICAgUGFyYWdyYXBoLAogICAgUHJlZm9ybWF0dGVkLAogICAgU2ltcGxlRG9jVGVtcGxhdGUsCiAgICBTcGFjZXIsCiAgICBUYWJsZSwKICAgIFRhYmxlU3R5bGUsCikKCgpST09UID0gUGF0aChfX2ZpbGVfXykucmVzb2x2ZSgpLnBhcmVudHNbMV0KUkVQT1JUX01EID0gUk9PVCAvICJkb2NzIiAvICJSRVBPUlRfRklOQUxfQ04ubWQiClJFUE9SVF9QREYgPSBST09UIC8gImRvY3MiIC8gIlJFUE9SVF9GSU5BTF9DTi5wZGYiClBBR0VfV0lEVEgsIFBBR0VfSEVJR0hUID0gQTQKTEVGVF9NQVJHSU4gPSBSSUdIVF9NQVJHSU4gPSAxLjU1ICogY20KVE9QX01BUkdJTiA9IDEuMzUgKiBjbQpCT1RUT01fTUFSR0lOID0gMS4zNSAqIGNtCkFWQUlMQUJMRV9XSURUSCA9IFBBR0VfV0lEVEggLSBMRUZUX01BUkdJTiAtIFJJR0hUX01BUkdJTgoKCmRlZiBjbGVhbl9pbmxpbmUodGV4dDogc3RyKSAtPiBzdHI6CiAgICB0ZXh0ID0gaHRtbC5lc2NhcGUodGV4dCkKICAgIHRleHQgPSByZS5zdWIociJcKlwqKC4rPylcKlwqIiwgciI8Yj5cMTwvYj4iLCB0ZXh0KQogICAgdGV4dCA9IHJlLnN1YihyImAoW15gXSspYCIsIHInPGZvbnQgbmFtZT0iQ291cmllciI+XDE8L2ZvbnQ+JywgdGV4dCkKICAgIHJldHVybiB0ZXh0CgoKZGVmIGlzX3RhYmxlKGxpbmVzOiBsaXN0W3N0cl0sIGk6IGludCkgLT4gYm9vbDoKICAgIHJldHVybiAoCiAgICAgICAgaSArIDEgPCBsZW4obGluZXMpCiAgICAgICAgYW5kIGxpbmVzW2ldLmxzdHJpcCgpLnN0YXJ0c3dpdGgoInwiKQogICAgICAgIGFuZCBsaW5lc1tpICsgMV0ubHN0cmlwKCkuc3RhcnRzd2l0aCgifCIpCiAgICAgICAgYW5kIHNldChsaW5lc1tpICsgMV0uc3RyaXAoKS5yZXBsYWNlKCJ8IiwgIiIpLnJlcGxhY2UoIiAiLCAiIikpIDw9IHsiLSIsICI6In0KICAgICkKCgpkZWYgcGFyc2VfdGFibGUobGluZXM6IGxpc3Rbc3RyXSwgaTogaW50KSAtPiB0dXBsZVtsaXN0W2xpc3Rbc3RyXV0sIGludF06CiAgICByb3dzOiBsaXN0W2xpc3Rbc3RyXV0gPSBbXQogICAgd2hpbGUgaSA8IGxlbihsaW5lcykgYW5kIGxpbmVzW2ldLmxzdHJpcCgpLnN0YXJ0c3dpdGgoInwiKToKICAgICAgICBsaW5lID0gbGluZXNbaV0uc3RyaXAoKQogICAgICAgIGNlbGxzID0gW2Muc3RyaXAoKSBmb3IgYyBpbiBsaW5lLnN0cmlwKCJ8Iikuc3BsaXQoInwiKV0KICAgICAgICBpZiBub3QgKHNldChsaW5lLnJlcGxhY2UoInwiLCAiIikucmVwbGFjZSgiICIsICIiKSkgPD0geyItIiwgIjoifSk6CiAgICAgICAgICAgIHJvd3MuYXBwZW5kKGNlbGxzKQogICAgICAgIGkgKz0gMQogICAgcmV0dXJuIHJvd3MsIGkKCgpkZWYgY29sX3dpZHRocyhyb3dzOiBsaXN0W2xpc3Rbc3RyXV0pIC0+IGxpc3RbZmxvYXRdOgogICAgbiA9IG1heChsZW4ocikgZm9yIHIgaW4gcm93cykKICAgIGhlYWRlciA9IFtjLnN0cmlwKCkubG93ZXIoKSBmb3IgYyBpbiByb3dzWzBdXSBpZiByb3dzIGVsc2UgW10KCiAgICAjIFBhcGVyLXN0eWxlIHRhYmxlcyByZWFkIGJldHRlciB3aGVuIG1ldGhvZC9kZXNjcmlwdGlvbiBjb2x1bW5zIGFyZSB3aWRlcgogICAgIyBhbmQgbWV0cmljIGNvbHVtbnMgc3RheSBjb21wYWN0LiAgVGhlIHJ1bGVzIGJlbG93IGFyZSBrZXllZCBieSB0YWJsZSBzaGFwZQogICAgIyBhbmQgaGVhZGVyIG5hbWVzIHJhdGhlciB0aGFuIGJ5IGEgc2luZ2xlIHRhYmxlIHRpdGxlLCBzbyBsYXRlciByZXBvcnQgZWRpdHMKICAgICMgc3RpbGwga2VlcCBzZW5zaWJsZSB3aWR0aHMuCiAgICBpZiBuID09IDI6CiAgICAgICAgcmV0dXJuIFtBVkFJTEFCTEVfV0lEVEggKiAwLjMwLCBBVkFJTEFCTEVfV0lEVEggKiAwLjcwXQogICAgaWYgbiA9PSAzOgogICAgICAgIHJldHVybiBbQVZBSUxBQkxFX1dJRFRIICogMC4yNCwgQVZBSUxBQkxFX1dJRFRIICogMC40MiwgQVZBSUxBQkxFX1dJRFRIICogMC4zNF0KICAgIGlmIG4gPT0gNDoKICAgICAgICBpZiBhbnkoImFjY3VyYWN5IiBpbiBoIG9yICJzY29yZSIgaW4gaCBmb3IgaCBpbiBoZWFkZXIpOgogICAgICAgICAgICByZXR1cm4gWwogICAgICAgICAgICAgICAgQVZBSUxBQkxFX1dJRFRIICogMC4yOCwKICAgICAgICAgICAgICAgIEFWQUlMQUJMRV9XSURUSCAqIDAuMjYsCiAgICAgICAgICAgICAgICBBVkFJTEFCTEVfV0lEVEggKiAwLjE3LAogICAgICAgICAgICAgICAgQVZBSUxBQkxFX1dJRFRIICogMC4yOSwKICAgICAgICAgICAgXQogICAgICAgIHJldHVybiBbQVZBSUxBQkxFX1dJRFRIICogMC4yNSwgQVZBSUxBQkxFX1dJRFRIICogMC4yNSwgQVZBSUxBQkxFX1dJRFRIICogMC4yMCwgQVZBSUxBQkxFX1dJRFRIICogMC4zMF0KICAgIGlmIG4gPT0gNToKICAgICAgICByZXR1cm4gWwogICAgICAgICAgICBBVkFJTEFCTEVfV0lEVEggKiAwLjI4LAogICAgICAgICAgICBBVkFJTEFCTEVfV0lEVEggKiAwLjE4LAogICAgICAgICAgICBBVkFJTEFCTEVfV0lEVEggKiAwLjE4LAogICAgICAgICAgICBBVkFJTEFCTEVfV0lEVEggKiAwLjE4LAogICAgICAgICAgICBBVkFJTEFCTEVfV0lEVEggKiAwLjE4LAogICAgICAgIF0KCiAgICBtYXhfY2hhcnMgPSBbMV0gKiBuCiAgICBmb3Igcm93IGluIHJvd3M6CiAgICAgICAgZm9yIGlkeCwgY2VsbCBpbiBlbnVtZXJhdGUocm93KToKICAgICAgICAgICAgbWF4X2NoYXJzW2lkeF0gPSBtYXgobWF4X2NoYXJzW2lkeF0sIG1pbihsZW4oY2VsbCksIDQwKSkKCiAgICAjIEdpdmUgZXhwbGFuYXRpb24gY29sdW1ucyBhIGxpdHRsZSBtb3JlIHJvb20gd2l0aG91dCBoYXJkLWNvZGluZyB0YWJsZXMuCiAgICB0b3RhbCA9IHN1bShtYXhfY2hhcnMpCiAgICB3aWR0aHMgPSBbQVZBSUxBQkxFX1dJRFRIICogYyAvIHRvdGFsIGZvciBjIGluIG1heF9jaGFyc10KICAgIG1pbl93ID0gMS42ICogY20KICAgIGlmIGFueSh3IDwgbWluX3cgZm9yIHcgaW4gd2lkdGhzKSBhbmQgbiAqIG1pbl93IDw9IEFWQUlMQUJMRV9XSURUSDoKICAgICAgICBkZWZpY2l0ID0gc3VtKG1heCgwLCBtaW5fdyAtIHcpIGZvciB3IGluIHdpZHRocykKICAgICAgICB3aWR0aHMgPSBbbWF4KG1pbl93LCB3KSBmb3IgdyBpbiB3aWR0aHNdCiAgICAgICAgd2lkZSA9IFtqIGZvciBqLCB3IGluIGVudW1lcmF0ZSh3aWR0aHMpIGlmIHcgPiBtaW5fd10KICAgICAgICB3aWRlX3RvdGFsID0gc3VtKHdpZHRoc1tqXSAtIG1pbl93IGZvciBqIGluIHdpZGUpCiAgICAgICAgaWYgd2lkZV90b3RhbCA+IDA6CiAgICAgICAgICAgIGZvciBqIGluIHdpZGU6CiAgICAgICAgICAgICAgICB3aWR0aHNbal0gLT0gZGVmaWNpdCAqICh3aWR0aHNbal0gLSBtaW5fdykgLyB3aWRlX3RvdGFsCiAgICByZXR1cm4gd2lkdGhzCgoKZGVmIG1ha2VfdGFibGUocm93czogbGlzdFtsaXN0W3N0cl1dLCBzdHlsZXM6IGRpY3Rbc3RyLCBQYXJhZ3JhcGhTdHlsZV0pIC0+IFRhYmxlOgogICAgbiA9IG1heChsZW4ocikgZm9yIHIgaW4gcm93cykKICAgIG5vcm1hbGl6ZWQgPSBbciArIFsiIl0gKiAobiAtIGxlbihyKSkgZm9yIHIgaW4gcm93c10KICAgIGRhdGEgPSBbXQogICAgZm9yIHJpZHgsIHJvdyBpbiBlbnVtZXJhdGUobm9ybWFsaXplZCk6CiAgICAgICAgc3R5bGUgPSBzdHlsZXNbInRhYmxlX2hlYWRlciJdIGlmIHJpZHggPT0gMCBlbHNlIHN0eWxlc1sidGFibGVfY2VsbCJdCiAgICAgICAgZGF0YS5hcHBlbmQoW1BhcmFncmFwaChjbGVhbl9pbmxpbmUoY2VsbCksIHN0eWxlKSBmb3IgY2VsbCBpbiByb3ddKQogICAgdGFibGUgPSBUYWJsZShkYXRhLCBjb2xXaWR0aHM9Y29sX3dpZHRocyhub3JtYWxpemVkKSwgcmVwZWF0Um93cz0xLCBoQWxpZ249IkxFRlQiKQogICAgdGFibGUuc2V0U3R5bGUoCiAgICAgICAgVGFibGVTdHlsZSgKICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgKCJCQUNLR1JPVU5EIiwgKDAsIDApLCAoLTEsIDApLCBjb2xvcnMuSGV4Q29sb3IoIiNGNEZBRkYiKSksCiAgICAgICAgICAgICAgICAoIlRFWFRDT0xPUiIsICgwLCAwKSwgKC0xLCAwKSwgY29sb3JzLkhleENvbG9yKCIjMTMyOTNEIikpLAogICAgICAgICAgICAgICAgKCJMSU5FQUJPVkUiLCAoMCwgMCksICgtMSwgMCksIDAuOSwgY29sb3JzLkhleENvbG9yKCIjMTgzQjU2IikpLAogICAgICAgICAgICAgICAgKCJMSU5FQkVMT1ciLCAoMCwgMCksICgtMSwgMCksIDAuNDUsIGNvbG9ycy5IZXhDb2xvcigiIzg4QzZEQyIpKSwKICAgICAgICAgICAgICAgICgiTElORUJFTE9XIiwgKDAsIC0xKSwgKC0xLCAtMSksIDAuOCwgY29sb3JzLkhleENvbG9yKCIjMTgzQjU2IikpLAogICAgICAgICAgICAgICAgKCJST1dCQUNLR1JPVU5EUyIsICgwLCAxKSwgKC0xLCAtMSksIFtjb2xvcnMud2hpdGUsIGNvbG9ycy5IZXhDb2xvcigiI0ZCRkRGRiIpXSksCiAgICAgICAgICAgICAgICAoIlZBTElHTiIsICgwLCAwKSwgKC0xLCAtMSksICJUT1AiKSwKICAgICAgICAgICAgICAgICgiTEVGVFBBRERJTkciLCAoMCwgMCksICgtMSwgLTEpLCA0LjUpLAogICAgICAgICAgICAgICAgKCJSSUdIVFBBRERJTkciLCAoMCwgMCksICgtMSwgLTEpLCA0LjUpLAogICAgICAgICAgICAgICAgKCJUT1BQQURESU5HIiwgKDAsIDApLCAoLTEsIC0xKSwgNC4wKSwKICAgICAgICAgICAgICAgICgiQk9UVE9NUEFERElORyIsICgwLCAwKSwgKC0xLCAtMSksIDQuMCksCiAgICAgICAgICAgIF0KICAgICAgICApCiAgICApCiAgICByZXR1cm4gdGFibGUKCgpkZWYgbWFrZV9pbWFnZShtZF9saW5lOiBzdHIsIGJhc2VfZGlyOiBQYXRoLCBzdHlsZXM6IGRpY3Rbc3RyLCBQYXJhZ3JhcGhTdHlsZV0pOgogICAgbWF0Y2ggPSByZS5tYXRjaChyIiFcWyguKj8pXF1cKCguKj8pXCkiLCBtZF9saW5lLnN0cmlwKCkpCiAgICBpZiBub3QgbWF0Y2g6CiAgICAgICAgcmV0dXJuIFtdCiAgICBjYXB0aW9uLCByZWxfcGF0aCA9IG1hdGNoLmdyb3VwcygpCiAgICBpbWFnZV9wYXRoID0gKGJhc2VfZGlyIC8gcmVsX3BhdGgpLnJlc29sdmUoKQogICAgaWYgbm90IGltYWdlX3BhdGguZXhpc3RzKCk6CiAgICAgICAgcmV0dXJuIFtQYXJhZ3JhcGgoZiLlm77lg4/nvLrlpLHvvJp7aHRtbC5lc2NhcGUoc3RyKGltYWdlX3BhdGgpKX0iLCBzdHlsZXNbImJvZHkiXSldCgogICAgd2l0aCBQSUxJbWFnZS5vcGVuKGltYWdlX3BhdGgpIGFzIGltZzoKICAgICAgICB3aWR0aCwgaGVpZ2h0ID0gaW1nLnNpemUKICAgIG1heF93aWR0aCA9IEFWQUlMQUJMRV9XSURUSAogICAgbWF4X2hlaWdodCA9IDEwLjUgKiBjbQogICAgc2NhbGUgPSBtaW4obWF4X3dpZHRoIC8gd2lkdGgsIG1heF9oZWlnaHQgLyBoZWlnaHQsIDEuMCkKICAgIGZsb3dhYmxlcyA9IFsKICAgICAgICBTcGFjZXIoMSwgMC4xNSAqIGNtKSwKICAgICAgICBJbWFnZShzdHIoaW1hZ2VfcGF0aCksIHdpZHRoPXdpZHRoICogc2NhbGUsIGhlaWdodD1oZWlnaHQgKiBzY2FsZSwgaEFsaWduPSJDRU5URVIiKSwKICAgIF0KICAgIGlmIGNhcHRpb246CiAgICAgICAgZmxvd2FibGVzLmFwcGVuZChQYXJhZ3JhcGgoY2xlYW5faW5saW5lKGNhcHRpb24pLCBzdHlsZXNbImNhcHRpb24iXSkpCiAgICBmbG93YWJsZXMuYXBwZW5kKFNwYWNlcigxLCAwLjE1ICogY20pKQogICAgcmV0dXJuIFtLZWVwVG9nZXRoZXIoZmxvd2FibGVzKV0KCgpkZWYgYnVpbGRfc3R5bGVzKCkgLT4gZGljdFtzdHIsIFBhcmFncmFwaFN0eWxlXToKICAgIHBkZm1ldHJpY3MucmVnaXN0ZXJGb250KFVuaWNvZGVDSURGb250KCJTVFNvbmctTGlnaHQiKSkKICAgIHNhbXBsZSA9IGdldFNhbXBsZVN0eWxlU2hlZXQoKQogICAgYmFzZSA9IFBhcmFncmFwaFN0eWxlKAogICAgICAgICJDTkJhc2UiLAogICAgICAgIHBhcmVudD1zYW1wbGVbIk5vcm1hbCJdLAogICAgICAgIGZvbnROYW1lPSJTVFNvbmctTGlnaHQiLAogICAgICAgIGZvbnRTaXplPTEwLjAsCiAgICAgICAgbGVhZGluZz0xNS4yLAogICAgICAgIHdvcmRXcmFwPSJDSksiLAogICAgICAgIGFsaWdubWVudD1UQV9MRUZULAogICAgICAgIHNwYWNlQWZ0ZXI9NSwKICAgICkKICAgIHJldHVybiB7CiAgICAgICAgInRpdGxlIjogUGFyYWdyYXBoU3R5bGUoCiAgICAgICAgICAgICJUaXRsZSIsCiAgICAgICAgICAgIHBhcmVudD1iYXNlLAogICAgICAgICAgICBmb250U2l6ZT0xOC4yLAogICAgICAgICAgICBsZWFkaW5nPTI0LAogICAgICAgICAgICBhbGlnbm1lbnQ9VEFfQ0VOVEVSLAogICAgICAgICAgICBzcGFjZUFmdGVyPTEyLAogICAgICAgICAgICB0ZXh0Q29sb3I9Y29sb3JzLkhleENvbG9yKCIjMEYyRjQ0IiksCiAgICAgICAgKSwKICAgICAgICAiaDIiOiBQYXJhZ3JhcGhTdHlsZSgKICAgICAgICAgICAgIkgyIiwKICAgICAgICAgICAgcGFyZW50PWJhc2UsCiAgICAgICAgICAgIGZvbnRTaXplPTE0LjIsCiAgICAgICAgICAgIGxlYWRpbmc9MjAsCiAgICAgICAgICAgIHNwYWNlQmVmb3JlPTEyLAogICAgICAgICAgICBzcGFjZUFmdGVyPTcsCiAgICAgICAgICAgIHRleHRDb2xvcj1jb2xvcnMuSGV4Q29sb3IoIiMwRjVENzMiKSwKICAgICAgICApLAogICAgICAgICJoMyI6IFBhcmFncmFwaFN0eWxlKAogICAgICAgICAgICAiSDMiLAogICAgICAgICAgICBwYXJlbnQ9YmFzZSwKICAgICAgICAgICAgZm9udFNpemU9MTIuMCwKICAgICAgICAgICAgbGVhZGluZz0xNywKICAgICAgICAgICAgc3BhY2VCZWZvcmU9OCwKICAgICAgICAgICAgc3BhY2VBZnRlcj01LAogICAgICAgICAgICB0ZXh0Q29sb3I9Y29sb3JzLkhleENvbG9yKCIjMjI2QTczIiksCiAgICAgICAgKSwKICAgICAgICAiYm9keSI6IGJhc2UsCiAgICAgICAgImNhcHRpb24iOiBQYXJhZ3JhcGhTdHlsZSgKICAgICAgICAgICAgIkNhcHRpb24iLAogICAgICAgICAgICBwYXJlbnQ9YmFzZSwKICAgICAgICAgICAgZm9udFNpemU9OC41LAogICAgICAgICAgICBsZWFkaW5nPTExLjUsCiAgICAgICAgICAgIGFsaWdubWVudD1UQV9DRU5URVIsCiAgICAgICAgICAgIHRleHRDb2xvcj1jb2xvcnMuSGV4Q29sb3IoIiM1MjYxNkIiKSwKICAgICAgICAgICAgc3BhY2VBZnRlcj02LAogICAgICAgICksCiAgICAgICAgInRhYmxlX2NlbGwiOiBQYXJhZ3JhcGhTdHlsZSgKICAgICAgICAgICAgIlRhYmxlQ2VsbCIsCiAgICAgICAgICAgIHBhcmVudD1iYXNlLAogICAgICAgICAgICBmb250U2l6ZT03LjM1LAogICAgICAgICAgICBsZWFkaW5nPTEwLjQsCiAgICAgICAgICAgIHdvcmRXcmFwPSJDSksiLAogICAgICAgICksCiAgICAgICAgInRhYmxlX2hlYWRlciI6IFBhcmFncmFwaFN0eWxlKAogICAgICAgICAgICAiVGFibGVIZWFkZXIiLAogICAgICAgICAgICBwYXJlbnQ9YmFzZSwKICAgICAgICAgICAgZm9udFNpemU9Ny40NSwKICAgICAgICAgICAgbGVhZGluZz0xMC40LAogICAgICAgICAgICB3b3JkV3JhcD0iQ0pLIiwKICAgICAgICAgICAgdGV4dENvbG9yPWNvbG9ycy5IZXhDb2xvcigiIzEzMjkzRCIpLAogICAgICAgICksCiAgICAgICAgImNvZGUiOiBQYXJhZ3JhcGhTdHlsZSgKICAgICAgICAgICAgIkNvZGUiLAogICAgICAgICAgICBwYXJlbnQ9c2FtcGxlWyJDb2RlIl0sCiAgICAgICAgICAgIGZvbnROYW1lPSJDb3VyaWVyIiwKICAgICAgICAgICAgZm9udFNpemU9Ny4wLAogICAgICAgICAgICBsZWFkaW5nPTkuMiwKICAgICAgICAgICAgbGVmdEluZGVudD02LAogICAgICAgICAgICByaWdodEluZGVudD02LAogICAgICAgICAgICBiYWNrQ29sb3I9Y29sb3JzLkhleENvbG9yKCIjRjZGQUZEIiksCiAgICAgICAgICAgIGJvcmRlckNvbG9yPWNvbG9ycy5IZXhDb2xvcigiI0Q1RUFGNSIpLAogICAgICAgICAgICBib3JkZXJXaWR0aD0wLjQsCiAgICAgICAgICAgIGJvcmRlclBhZGRpbmc9NSwKICAgICAgICAgICAgc3BhY2VCZWZvcmU9NCwKICAgICAgICAgICAgc3BhY2VBZnRlcj03LAogICAgICAgICksCiAgICB9CgoKZGVmIHJlbmRlcigpIC0+IE5vbmU6CiAgICBzdHlsZXMgPSBidWlsZF9zdHlsZXMoKQogICAgbGluZXMgPSBSRVBPUlRfTUQucmVhZF90ZXh0KGVuY29kaW5nPSJ1dGYtOCIpLnNwbGl0bGluZXMoKQogICAgc3RvcnkgPSBbXQogICAgYmFzZV9kaXIgPSBSRVBPUlRfTUQucGFyZW50CiAgICBpID0gMAogICAgaW5fY29kZSA9IEZhbHNlCiAgICBjb2RlX2xpbmVzOiBsaXN0W3N0cl0gPSBbXQogICAgcGFyYV9saW5lczogbGlzdFtzdHJdID0gW10KCiAgICBkZWYgZmx1c2hfcGFyYSgpIC0+IE5vbmU6CiAgICAgICAgbm9ubG9jYWwgcGFyYV9saW5lcwogICAgICAgIGlmIHBhcmFfbGluZXM6CiAgICAgICAgICAgIHRleHQgPSAiICIuam9pbihsaW5lLnN0cmlwKCkgZm9yIGxpbmUgaW4gcGFyYV9saW5lcyBpZiBsaW5lLnN0cmlwKCkpCiAgICAgICAgICAgIGlmIHRleHQ6CiAgICAgICAgICAgICAgICBzdG9yeS5hcHBlbmQoUGFyYWdyYXBoKGNsZWFuX2lubGluZSh0ZXh0KSwgc3R5bGVzWyJib2R5Il0pKQogICAgICAgICAgICBwYXJhX2xpbmVzID0gW10KCiAgICB3aGlsZSBpIDwgbGVuKGxpbmVzKToKICAgICAgICBsaW5lID0gbGluZXNbaV0KICAgICAgICBzdHJpcHBlZCA9IGxpbmUuc3RyaXAoKQoKICAgICAgICBpZiBzdHJpcHBlZC5zdGFydHN3aXRoKCJgYGAiKToKICAgICAgICAgICAgaWYgaW5fY29kZToKICAgICAgICAgICAgICAgIHN0b3J5LmFwcGVuZChQcmVmb3JtYXR0ZWQoIlxuIi5qb2luKGNvZGVfbGluZXMpLCBzdHlsZXNbImNvZGUiXSwgbWF4TGluZUxlbmd0aD04OCkpCiAgICAgICAgICAgICAgICBjb2RlX2xpbmVzID0gW10KICAgICAgICAgICAgICAgIGluX2NvZGUgPSBGYWxzZQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgZmx1c2hfcGFyYSgpCiAgICAgICAgICAgICAgICBpbl9jb2RlID0gVHJ1ZQogICAgICAgICAgICBpICs9IDEKICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgaWYgaW5fY29kZToKICAgICAgICAgICAgY29kZV9saW5lcy5hcHBlbmQobGluZSkKICAgICAgICAgICAgaSArPSAxCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgIGlmIG5vdCBzdHJpcHBlZDoKICAgICAgICAgICAgZmx1c2hfcGFyYSgpCiAgICAgICAgICAgIHN0b3J5LmFwcGVuZChTcGFjZXIoMSwgMC4wNiAqIGNtKSkKICAgICAgICAgICAgaSArPSAxCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgIGlmIHN0cmlwcGVkLnN0YXJ0c3dpdGgoIiMgIik6CiAgICAgICAgICAgIGZsdXNoX3BhcmEoKQogICAgICAgICAgICBzdG9yeS5hcHBlbmQoUGFyYWdyYXBoKGNsZWFuX2lubGluZShzdHJpcHBlZFsyOl0pLCBzdHlsZXNbInRpdGxlIl0pKQogICAgICAgICAgICBpICs9IDEKICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgaWYgc3RyaXBwZWQuc3RhcnRzd2l0aCgiIyMgIik6CiAgICAgICAgICAgIGZsdXNoX3BhcmEoKQogICAgICAgICAgICBpZiBzdG9yeToKICAgICAgICAgICAgICAgIHN0b3J5LmFwcGVuZChTcGFjZXIoMSwgMC4wOCAqIGNtKSkKICAgICAgICAgICAgc3RvcnkuYXBwZW5kKFBhcmFncmFwaChjbGVhbl9pbmxpbmUoc3RyaXBwZWRbMzpdKSwgc3R5bGVzWyJoMiJdKSkKICAgICAgICAgICAgaSArPSAxCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgIGlmIHN0cmlwcGVkLnN0YXJ0c3dpdGgoIiMjIyAiKToKICAgICAgICAgICAgZmx1c2hfcGFyYSgpCiAgICAgICAgICAgIHN0b3J5LmFwcGVuZChQYXJhZ3JhcGgoY2xlYW5faW5saW5lKHN0cmlwcGVkWzQ6XSksIHN0eWxlc1siaDMiXSkpCiAgICAgICAgICAgIGkgKz0gMQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICBpZiBzdHJpcHBlZC5zdGFydHN3aXRoKCIhWyIpOgogICAgICAgICAgICBmbHVzaF9wYXJhKCkKICAgICAgICAgICAgc3RvcnkuZXh0ZW5kKG1ha2VfaW1hZ2Uoc3RyaXBwZWQsIGJhc2VfZGlyLCBzdHlsZXMpKQogICAgICAgICAgICBpICs9IDEKICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgaWYgaXNfdGFibGUobGluZXMsIGkpOgogICAgICAgICAgICBmbHVzaF9wYXJhKCkKICAgICAgICAgICAgcm93cywgaSA9IHBhcnNlX3RhYmxlKGxpbmVzLCBpKQogICAgICAgICAgICBzdG9yeS5hcHBlbmQobWFrZV90YWJsZShyb3dzLCBzdHlsZXMpKQogICAgICAgICAgICBzdG9yeS5hcHBlbmQoU3BhY2VyKDEsIDAuMTggKiBjbSkpCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgIGlmIHJlLm1hdGNoKHIiXlxkK1wuXHMrIiwgc3RyaXBwZWQpOgogICAgICAgICAgICBmbHVzaF9wYXJhKCkKICAgICAgICAgICAgaXRlbXMgPSBbXQogICAgICAgICAgICB3aGlsZSBpIDwgbGVuKGxpbmVzKSBhbmQgcmUubWF0Y2gociJeXGQrXC5ccysiLCBsaW5lc1tpXS5zdHJpcCgpKToKICAgICAgICAgICAgICAgIGl0ZW1fdGV4dCA9IHJlLnN1YihyIl5cZCtcLlxzKyIsICIiLCBsaW5lc1tpXS5zdHJpcCgpKQogICAgICAgICAgICAgICAgaXRlbXMuYXBwZW5kKExpc3RJdGVtKFBhcmFncmFwaChjbGVhbl9pbmxpbmUoaXRlbV90ZXh0KSwgc3R5bGVzWyJib2R5Il0pLCBsZWZ0SW5kZW50PTEyKSkKICAgICAgICAgICAgICAgIGkgKz0gMQogICAgICAgICAgICBzdG9yeS5hcHBlbmQoTGlzdEZsb3dhYmxlKGl0ZW1zLCBidWxsZXRUeXBlPSIxIiwgc3RhcnQ9IjEiLCBsZWZ0SW5kZW50PTE4KSkKICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgaWYgc3RyaXBwZWQuc3RhcnRzd2l0aCgiLSAiKToKICAgICAgICAgICAgZmx1c2hfcGFyYSgpCiAgICAgICAgICAgIGl0ZW1zID0gW10KICAgICAgICAgICAgd2hpbGUgaSA8IGxlbihsaW5lcykgYW5kIGxpbmVzW2ldLnN0cmlwKCkuc3RhcnRzd2l0aCgiLSAiKToKICAgICAgICAgICAgICAgIGl0ZW1fdGV4dCA9IGxpbmVzW2ldLnN0cmlwKClbMjpdCiAgICAgICAgICAgICAgICBpdGVtcy5hcHBlbmQoTGlzdEl0ZW0oUGFyYWdyYXBoKGNsZWFuX2lubGluZShpdGVtX3RleHQpLCBzdHlsZXNbImJvZHkiXSksIGxlZnRJbmRlbnQ9MTIpKQogICAgICAgICAgICAgICAgaSArPSAxCiAgICAgICAgICAgIHN0b3J5LmFwcGVuZChMaXN0Rmxvd2FibGUoaXRlbXMsIGJ1bGxldFR5cGU9ImJ1bGxldCIsIGxlZnRJbmRlbnQ9MTgpKQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICBwYXJhX2xpbmVzLmFwcGVuZChsaW5lKQogICAgICAgIGkgKz0gMQoKICAgIGZsdXNoX3BhcmEoKQoKICAgIGRvYyA9IFNpbXBsZURvY1RlbXBsYXRlKAogICAgICAgIHN0cihSRVBPUlRfUERGKSwKICAgICAgICBwYWdlc2l6ZT1BNCwKICAgICAgICBsZWZ0TWFyZ2luPUxFRlRfTUFSR0lOLAogICAgICAgIHJpZ2h0TWFyZ2luPVJJR0hUX01BUkdJTiwKICAgICAgICB0b3BNYXJnaW49VE9QX01BUkdJTiwKICAgICAgICBib3R0b21NYXJnaW49Qk9UVE9NX01BUkdJTiwKICAgICAgICB0aXRsZT0iSW50ZXJuVkwyLjUtMkIg5aSa5qih5oCB5aWW5Yqx5qih5Z6L6K6t57uD5LiO5pWw5o2u6YCJ5oupIiwKICAgICAgICBhdXRob3I9ImNhbmZhbmVhdCIsCiAgICApCiAgICBkb2MuYnVpbGQoc3RvcnkpCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHJlbmRlcigpCiAgICBwcmludChSRVBPUlRfUERGKQo=
+#!/usr/bin/env python3
+"""Render the Chinese Markdown report to a compact PDF.
+
+This intentionally keeps the renderer small and local.  The assessment only
+requires a PDF report, and this avoids pulling in a full TeX installation.
+"""
+
+from __future__ import annotations
+
+import html
+import re
+from pathlib import Path
+
+from PIL import Image as PILImage
+from reportlab.lib import colors
+from reportlab.lib.enums import TA_CENTER, TA_LEFT
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import cm
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
+from reportlab.platypus import (
+    Image,
+    KeepTogether,
+    ListFlowable,
+    ListItem,
+    PageBreak,
+    Paragraph,
+    Preformatted,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
+)
+
+
+ROOT = Path(__file__).resolve().parents[1]
+REPORT_MD = ROOT / "docs" / "REPORT_FINAL_CN.md"
+REPORT_PDF = ROOT / "docs" / "REPORT_FINAL_CN.pdf"
+PAGE_WIDTH, PAGE_HEIGHT = A4
+LEFT_MARGIN = RIGHT_MARGIN = 1.55 * cm
+TOP_MARGIN = 1.35 * cm
+BOTTOM_MARGIN = 1.35 * cm
+AVAILABLE_WIDTH = PAGE_WIDTH - LEFT_MARGIN - RIGHT_MARGIN
+
+
+def clean_inline(text: str) -> str:
+    text = html.escape(text)
+    text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
+    text = re.sub(r"`([^`]+)`", r'<font name="Courier">\1</font>', text)
+    return text
+
+
+def is_table(lines: list[str], i: int) -> bool:
+    return (
+        i + 1 < len(lines)
+        and lines[i].lstrip().startswith("|")
+        and lines[i + 1].lstrip().startswith("|")
+        and set(lines[i + 1].strip().replace("|", "").replace(" ", "")) <= {"-", ":"}
+    )
+
+
+def parse_table(lines: list[str], i: int) -> tuple[list[list[str]], int]:
+    rows: list[list[str]] = []
+    while i < len(lines) and lines[i].lstrip().startswith("|"):
+        line = lines[i].strip()
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if not (set(line.replace("|", "").replace(" ", "")) <= {"-", ":"}):
+            rows.append(cells)
+        i += 1
+    return rows, i
+
+
+def col_widths(rows: list[list[str]]) -> list[float]:
+    n = max(len(r) for r in rows)
+    header = [c.strip().lower() for c in rows[0]] if rows else []
+
+    # Paper-style tables read better when method/description columns are wider
+    # and metric columns stay compact.  The rules below are keyed by table shape
+    # and header names rather than by a single table title, so later report edits
+    # still keep sensible widths.
+    if n == 2:
+        return [AVAILABLE_WIDTH * 0.30, AVAILABLE_WIDTH * 0.70]
+    if n == 3:
+        return [AVAILABLE_WIDTH * 0.24, AVAILABLE_WIDTH * 0.42, AVAILABLE_WIDTH * 0.34]
+    if n == 4:
+        if any("accuracy" in h or "score" in h for h in header):
+            return [
+                AVAILABLE_WIDTH * 0.28,
+                AVAILABLE_WIDTH * 0.26,
+                AVAILABLE_WIDTH * 0.17,
+                AVAILABLE_WIDTH * 0.29,
+            ]
+        return [AVAILABLE_WIDTH * 0.25, AVAILABLE_WIDTH * 0.25, AVAILABLE_WIDTH * 0.20, AVAILABLE_WIDTH * 0.30]
+    if n == 5:
+        return [
+            AVAILABLE_WIDTH * 0.28,
+            AVAILABLE_WIDTH * 0.18,
+            AVAILABLE_WIDTH * 0.18,
+            AVAILABLE_WIDTH * 0.18,
+            AVAILABLE_WIDTH * 0.18,
+        ]
+
+    max_chars = [1] * n
+    for row in rows:
+        for idx, cell in enumerate(row):
+            max_chars[idx] = max(max_chars[idx], min(len(cell), 40))
+
+    # Give explanation columns a little more room without hard-coding tables.
+    total = sum(max_chars)
+    widths = [AVAILABLE_WIDTH * c / total for c in max_chars]
+    min_w = 1.6 * cm
+    if any(w < min_w for w in widths) and n * min_w <= AVAILABLE_WIDTH:
+        deficit = sum(max(0, min_w - w) for w in widths)
+        widths = [max(min_w, w) for w in widths]
+        wide = [j for j, w in enumerate(widths) if w > min_w]
+        wide_total = sum(widths[j] - min_w for j in wide)
+        if wide_total > 0:
+            for j in wide:
+                widths[j] -= deficit * (widths[j] - min_w) / wide_total
+    return widths
+
+
+def make_table(rows: list[list[str]], styles: dict[str, ParagraphStyle]) -> Table:
+    n = max(len(r) for r in rows)
+    normalized = [r + [""] * (n - len(r)) for r in rows]
+    data = []
+    for ridx, row in enumerate(normalized):
+        style = styles["table_header"] if ridx == 0 else styles["table_cell"]
+        data.append([Paragraph(clean_inline(cell), style) for cell in row])
+    table = Table(data, colWidths=col_widths(normalized), repeatRows=1, hAlign="LEFT")
+    table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F4FAFF")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.HexColor("#13293D")),
+                ("LINEABOVE", (0, 0), (-1, 0), 0.9, colors.HexColor("#183B56")),
+                ("LINEBELOW", (0, 0), (-1, 0), 0.45, colors.HexColor("#88C6DC")),
+                ("LINEBELOW", (0, -1), (-1, -1), 0.8, colors.HexColor("#183B56")),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#FBFDFF")]),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 4.5),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 4.5),
+                ("TOPPADDING", (0, 0), (-1, -1), 4.0),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4.0),
+            ]
+        )
+    )
+    return table
+
+
+def make_image(md_line: str, base_dir: Path, styles: dict[str, ParagraphStyle]):
+    match = re.match(r"!\[(.*?)\]\((.*?)\)", md_line.strip())
+    if not match:
+        return []
+    caption, rel_path = match.groups()
+    image_path = (base_dir / rel_path).resolve()
+    if not image_path.exists():
+        return [Paragraph(f"图像缺失：{html.escape(str(image_path))}", styles["body"])]
+
+    with PILImage.open(image_path) as img:
+        width, height = img.size
+    max_width = AVAILABLE_WIDTH
+    max_height = 10.5 * cm
+    scale = min(max_width / width, max_height / height, 1.0)
+    flowables = [
+        Spacer(1, 0.15 * cm),
+        Image(str(image_path), width=width * scale, height=height * scale, hAlign="CENTER"),
+    ]
+    if caption:
+        flowables.append(Paragraph(clean_inline(caption), styles["caption"]))
+    flowables.append(Spacer(1, 0.15 * cm))
+    return [KeepTogether(flowables)]
+
+
+def build_styles() -> dict[str, ParagraphStyle]:
+    pdfmetrics.registerFont(UnicodeCIDFont("STSong-Light"))
+    sample = getSampleStyleSheet()
+    base = ParagraphStyle(
+        "CNBase",
+        parent=sample["Normal"],
+        fontName="STSong-Light",
+        fontSize=10.0,
+        leading=15.2,
+        wordWrap="CJK",
+        alignment=TA_LEFT,
+        spaceAfter=5,
+    )
+    return {
+        "title": ParagraphStyle(
+            "Title",
+            parent=base,
+            fontSize=18.2,
+            leading=24,
+            alignment=TA_CENTER,
+            spaceAfter=12,
+            textColor=colors.HexColor("#0F2F44"),
+        ),
+        "h2": ParagraphStyle(
+            "H2",
+            parent=base,
+            fontSize=14.2,
+            leading=20,
+            spaceBefore=12,
+            spaceAfter=7,
+            textColor=colors.HexColor("#0F5D73"),
+        ),
+        "h3": ParagraphStyle(
+            "H3",
+            parent=base,
+            fontSize=12.0,
+            leading=17,
+            spaceBefore=8,
+            spaceAfter=5,
+            textColor=colors.HexColor("#226A73"),
+        ),
+        "body": base,
+        "caption": ParagraphStyle(
+            "Caption",
+            parent=base,
+            fontSize=8.5,
+            leading=11.5,
+            alignment=TA_CENTER,
+            textColor=colors.HexColor("#52616B"),
+            spaceAfter=6,
+        ),
+        "table_cell": ParagraphStyle(
+            "TableCell",
+            parent=base,
+            fontSize=7.35,
+            leading=10.4,
+            wordWrap="CJK",
+        ),
+        "table_header": ParagraphStyle(
+            "TableHeader",
+            parent=base,
+            fontSize=7.45,
+            leading=10.4,
+            wordWrap="CJK",
+            textColor=colors.HexColor("#13293D"),
+        ),
+        "code": ParagraphStyle(
+            "Code",
+            parent=sample["Code"],
+            fontName="Courier",
+            fontSize=7.0,
+            leading=9.2,
+            leftIndent=6,
+            rightIndent=6,
+            backColor=colors.HexColor("#F6FAFD"),
+            borderColor=colors.HexColor("#D5EAF5"),
+            borderWidth=0.4,
+            borderPadding=5,
+            spaceBefore=4,
+            spaceAfter=7,
+        ),
+    }
+
+
+def render() -> None:
+    styles = build_styles()
+    lines = REPORT_MD.read_text(encoding="utf-8").splitlines()
+    story = []
+    base_dir = REPORT_MD.parent
+    i = 0
+    in_code = False
+    code_lines: list[str] = []
+    para_lines: list[str] = []
+
+    def flush_para() -> None:
+        nonlocal para_lines
+        if para_lines:
+            text = " ".join(line.strip() for line in para_lines if line.strip())
+            if text:
+                story.append(Paragraph(clean_inline(text), styles["body"]))
+            para_lines = []
+
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+
+        if stripped.startswith("```"):
+            if in_code:
+                story.append(Preformatted("\n".join(code_lines), styles["code"], maxLineLength=88))
+                code_lines = []
+                in_code = False
+            else:
+                flush_para()
+                in_code = True
+            i += 1
+            continue
+
+        if in_code:
+            code_lines.append(line)
+            i += 1
+            continue
+
+        if not stripped:
+            flush_para()
+            story.append(Spacer(1, 0.06 * cm))
+            i += 1
+            continue
+
+        if stripped.startswith("# "):
+            flush_para()
+            story.append(Paragraph(clean_inline(stripped[2:]), styles["title"]))
+            i += 1
+            continue
+
+        if stripped.startswith("## "):
+            flush_para()
+            if story:
+                story.append(Spacer(1, 0.08 * cm))
+            story.append(Paragraph(clean_inline(stripped[3:]), styles["h2"]))
+            i += 1
+            continue
+
+        if stripped.startswith("### "):
+            flush_para()
+            story.append(Paragraph(clean_inline(stripped[4:]), styles["h3"]))
+            i += 1
+            continue
+
+        if stripped.startswith("!["):
+            flush_para()
+            story.extend(make_image(stripped, base_dir, styles))
+            i += 1
+            continue
+
+        if is_table(lines, i):
+            flush_para()
+            rows, i = parse_table(lines, i)
+            story.append(make_table(rows, styles))
+            story.append(Spacer(1, 0.18 * cm))
+            continue
+
+        if re.match(r"^\d+\.\s+", stripped):
+            flush_para()
+            items = []
+            while i < len(lines) and re.match(r"^\d+\.\s+", lines[i].strip()):
+                item_text = re.sub(r"^\d+\.\s+", "", lines[i].strip())
+                items.append(ListItem(Paragraph(clean_inline(item_text), styles["body"]), leftIndent=12))
+                i += 1
+            story.append(ListFlowable(items, bulletType="1", start="1", leftIndent=18))
+            continue
+
+        if stripped.startswith("- "):
+            flush_para()
+            items = []
+            while i < len(lines) and lines[i].strip().startswith("- "):
+                item_text = lines[i].strip()[2:]
+                items.append(ListItem(Paragraph(clean_inline(item_text), styles["body"]), leftIndent=12))
+                i += 1
+            story.append(ListFlowable(items, bulletType="bullet", leftIndent=18))
+            continue
+
+        para_lines.append(line)
+        i += 1
+
+    flush_para()
+
+    doc = SimpleDocTemplate(
+        str(REPORT_PDF),
+        pagesize=A4,
+        leftMargin=LEFT_MARGIN,
+        rightMargin=RIGHT_MARGIN,
+        topMargin=TOP_MARGIN,
+        bottomMargin=BOTTOM_MARGIN,
+        title="InternVL2.5-2B 多模态奖励模型训练与数据选择",
+        author="canfaneat",
+    )
+    doc.build(story)
+
+
+if __name__ == "__main__":
+    render()
+    print(REPORT_PDF)

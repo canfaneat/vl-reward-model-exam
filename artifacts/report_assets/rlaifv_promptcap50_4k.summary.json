@@ -1,1 +1,147 @@
-ewogICJzZWxlY3Rpb24iOiAicHJvbXB0X2NhcF81MCIsCiAgImNhbmRpZGF0ZV9saW1pdCI6IDgxOTIsCiAgInRhcmdldF9zaXplIjogNDA5NiwKICAicHJvbXB0X2NhcCI6IDUwLAogICJleGNsdWRlX2luZGljZXMiOiAiYXJ0aWZhY3RzL3JlcG9ydF9hc3NldHMvZGVkdXBfcmxhaWZ2ODE5Ml92bHJiLnJlZmluZWQuZXhjbHVkZV9pbmRpY2VzLnR4dCIsCiAgImV4Y2x1ZGVfaW5kaWNlc19uIjogMTQ3LAogICJzZWxlY3RlZF9uIjogNDA5NiwKICAibWluX2lkeCI6IDAsCiAgIm1heF9pZHgiOiA1MzUzLAogICJtZWFuX2lkeCI6IDIzNjUuOTIxMzg2NzE4NzUsCiAgInVuaXF1ZV9wcm9tcHRfbiI6IDIxMjYsCiAgInRvcDIwX3Byb21wdF9tYXNzIjogMC4yMzY4MTY0MDYyNSwKICAicHJvbXB0X3dvcmRfbWVhbiI6IDkuNTYyNzQ0MTQwNjI1LAogICJjaG9zZW5fbGVuX21lYW4iOiAzOTMuODg1NzQyMTg3NSwKICAicmVqZWN0ZWRfbGVuX21lYW4iOiAzOTMuMDI2MTIzMDQ2ODc1LAogICJza2lwcGVkX2V4Y2x1ZGVkX2JlZm9yZV90YXJnZXQiOiA5MiwKICAic2tpcHBlZF9wcm9tcHRfY2FwX2JlZm9yZV90YXJnZXQiOiAxMTY2LAogICJ0b3Bfc2VsZWN0ZWRfcHJvbXB0cyI6IFsKICAgIFsKICAgICAgIkRldGFpbCB0aGUgaW1hZ2UncyBjb21wb25lbnRzIHdpdGggcGFydGljdWxhciBmb2N1cyBvbiBlYWNoIGVudGl0eS4iLAogICAgICA1MAogICAgXSwKICAgIFsKICAgICAgIldoYXQgYXJlIHRoZSBrZXkgZmVhdHVyZXMgeW91IG9ic2VydmUgaW4gdGhlIGltYWdlPyIsCiAgICAgIDUwCiAgICBdLAogICAgWwogICAgICAiRXhwbGFpbiB0aGUgZWxlbWVudHMgb2YgdGhlIGltYWdlIHdpdGggdGhvcm91Z2ggYXR0ZW50aW9uIHRvIGRldGFpbC4iLAogICAgICA1MAogICAgXSwKICAgIFsKICAgICAgIlRlbGwgbWUgd2hhdCBjYXRjaGVzIHlvdXIgZXllIGluIHRoZSBpbWFnZSwgYW5kIGRlc2NyaWJlIHRob3NlIGVsZW1lbnRzIGluIGRlcHRoLiIsCiAgICAgIDUwCiAgICBdLAogICAgWwogICAgICAiRXhwbGFpbiB0aGUgaW1hZ2UncyB2YXJpb3VzIGNvbXBvbmVudHMgaW4gZGVwdGguIiwKICAgICAgNTAKICAgIF0sCiAgICBbCiAgICAgICJDYW4geW91IHBvaW50IG91dCB0aGUgZGV0YWlscyB0aGF0IG1ha2UgdGhpcyBpbWFnZSB1bmlxdWU/IiwKICAgICAgNTAKICAgIF0sCiAgICBbCiAgICAgICJEZXNjcmliZSB0aGUga2V5IGZlYXR1cmVzIG9mIHRoZSBpbWFnZSBpbiBncmVhdCBkZXRhaWwuIiwKICAgICAgNTAKICAgIF0sCiAgICBbCiAgICAgICJQcm92aWRlIGFuIGludHJpY2F0ZSBkZXNjcmlwdGlvbiBvZiBldmVyeSBlbnRpdHkgaW4gdGhlIGltYWdlLiIsCiAgICAgIDUwCiAgICBdLAogICAgWwogICAgICAiV2hhdCBhcmUgdGhlIG1haW4gZWxlbWVudHMgaW4gdGhpcyBpbWFnZT8gRGVzY3JpYmUgdGhlbSB0aG9yb3VnaGx5LiIsCiAgICAgIDUwCiAgICBdLAogICAgWwogICAgICAiSWRlbnRpZnkgYW5kIGRlc2NyaWJlIGVhY2ggb2JqZWN0IGluIHRoZSBpbWFnZSBpbiBkZXRhaWwuIiwKICAgICAgNTAKICAgIF0sCiAgICBbCiAgICAgICJFeHBsYWluIHdoYXQncyBoYXBwZW5pbmcgaW4gdGhlIGltYWdlIHdpdGggYXMgbXVjaCBkZXRhaWwgYXMgcG9zc2libGUuIiwKICAgICAgNTAKICAgIF0sCiAgICBbCiAgICAgICJXaGF0IGlzIHRoZSBzZXR0aW5nIG9yIGVudmlyb25tZW50IGluIHdoaWNoIHRoZSBpbWFnZSB0YWtlcyBwbGFjZT8iLAogICAgICA1MAogICAgXSwKICAgIFsKICAgICAgIkl0ZW1pemUgdGhlIGVsZW1lbnRzIHlvdSBpZGVudGlmeSBpbiB0aGUgaW1hZ2UgYW5kIGRlc2NyaWJlIHRoZW0gdGhvcm91Z2hseS4iLAogICAgICA1MAogICAgXSwKICAgIFsKICAgICAgIldoYXQgYXJlIHRoZSBtYWluIG9iamVjdHMgb3Igc3ViamVjdHMgaW4gdGhlIGltYWdlPyBQbGVhc2UgZGVzY3JpYmUgdGhlbSBpbiBkZXRhaWwuIiwKICAgICAgNTAKICAgIF0sCiAgICBbCiAgICAgICJIb3cgZG8gdGhlIGVsZW1lbnRzIGluIHRoZSBpbWFnZSByZWxhdGUgdG8gZWFjaCBvdGhlciBpbiB0ZXJtcyBvZiBwb3NpdGlvbmluZyBvciBjb21wb3NpdGlvbj8iLAogICAgICA1MAogICAgXSwKICAgIFsKICAgICAgIkNvbnZleSB0aGUgc3BlY2lmaWNzIG9mIHRoZSBpbWFnZSB3aXRoIG1ldGljdWxvdXMgYXR0ZW50aW9uIHRvIGRldGFpbC4iLAogICAgICA1MAogICAgXSwKICAgIFsKICAgICAgIlBsZWFzZSBkZXNjcmliZSB0aGlzIGFydHdvcmsgdGhvcm91Z2hseS4iLAogICAgICA0NgogICAgXSwKICAgIFsKICAgICAgIkdpdmUgYSB0aG9yb3VnaCBkZXNjcmlwdGlvbiBvZiB0aGUgaW1hZ2UsIGZvY3VzaW5nIG9uIHRoZSBsYW5kbWFyayBpdCBzaG93cy4iLAogICAgICA0NQogICAgXSwKICAgIFsKICAgICAgIkluc3BlY3QgdGhpcyBpbWFnZSBhbmQgcHJvdmlkZSBhIGRldGFpbGVkIGRlc2NyaXB0aW9uIG9mIHRoZSBzZXR0aW5nIGFuZCBhbnkgb2JqZWN0cyBvciBjaGFyYWN0ZXJzLiIsCiAgICAgIDQxCiAgICBdLAogICAgWwogICAgICAiRGV0YWlsIHRoZSB0ZXh0cyBhbmQgb3RoZXIgY29tcG9uZW50cyBpbiB0aGUgaW1hZ2UgaW4gZGVwdGgsIGV4cGxhaW5pbmcgdGhlaXIgcmVsZXZhbmNlIHRvIHRoZSBvdmVyYWxsIHBpY3R1cmUuIiwKICAgICAgMzgKICAgIF0KICBdLAogICJpbmRleF9idWNrZXRfY291bnRzIjogWwogICAgWwogICAgICAiMC01MTEiLAogICAgICA1MDQKICAgIF0sCiAgICBbCiAgICAgICI1MTItMTAyMyIsCiAgICAgIDUwNAogICAgXSwKICAgIFsKICAgICAgIjEwMjQtMTUzNSIsCiAgICAgIDUwMgogICAgXSwKICAgIFsKICAgICAgIjE1MzYtMjA0NyIsCiAgICAgIDQ3MAogICAgXSwKICAgIFsKICAgICAgIjIwNDgtMjU1OSIsCiAgICAgIDM4NAogICAgXSwKICAgIFsKICAgICAgIjM1ODQtNDA5NSIsCiAgICAgIDMzNQogICAgXSwKICAgIFsKICAgICAgIjI1NjAtMzA3MSIsCiAgICAgIDMyMwogICAgXSwKICAgIFsKICAgICAgIjMwNzItMzU4MyIsCiAgICAgIDMxOQogICAgXSwKICAgIFsKICAgICAgIjQ2MDgtNTExOSIsCiAgICAgIDMxOQogICAgXSwKICAgIFsKICAgICAgIjQwOTYtNDYwNyIsCiAgICAgIDMxMgogICAgXSwKICAgIFsKICAgICAgIjUxMjAtNTYzMSIsCiAgICAgIDEyNAogICAgXQogIF0KfQ==
+{
+  "selection": "prompt_cap_50",
+  "candidate_limit": 8192,
+  "target_size": 4096,
+  "prompt_cap": 50,
+  "exclude_indices": "artifacts/report_assets/dedup_rlaifv8192_vlrb.refined.exclude_indices.txt",
+  "exclude_indices_n": 147,
+  "selected_n": 4096,
+  "min_idx": 0,
+  "max_idx": 5353,
+  "mean_idx": 2365.92138671875,
+  "unique_prompt_n": 2126,
+  "top20_prompt_mass": 0.23681640625,
+  "prompt_word_mean": 9.562744140625,
+  "chosen_len_mean": 393.8857421875,
+  "rejected_len_mean": 393.026123046875,
+  "skipped_excluded_before_target": 92,
+  "skipped_prompt_cap_before_target": 1166,
+  "top_selected_prompts": [
+    [
+      "Detail the image's components with particular focus on each entity.",
+      50
+    ],
+    [
+      "What are the key features you observe in the image?",
+      50
+    ],
+    [
+      "Explain the elements of the image with thorough attention to detail.",
+      50
+    ],
+    [
+      "Tell me what catches your eye in the image, and describe those elements in depth.",
+      50
+    ],
+    [
+      "Explain the image's various components in depth.",
+      50
+    ],
+    [
+      "Can you point out the details that make this image unique?",
+      50
+    ],
+    [
+      "Describe the key features of the image in great detail.",
+      50
+    ],
+    [
+      "Provide an intricate description of every entity in the image.",
+      50
+    ],
+    [
+      "What are the main elements in this image? Describe them thoroughly.",
+      50
+    ],
+    [
+      "Identify and describe each object in the image in detail.",
+      50
+    ],
+    [
+      "Explain what's happening in the image with as much detail as possible.",
+      50
+    ],
+    [
+      "What is the setting or environment in which the image takes place?",
+      50
+    ],
+    [
+      "Itemize the elements you identify in the image and describe them thoroughly.",
+      50
+    ],
+    [
+      "What are the main objects or subjects in the image? Please describe them in detail.",
+      50
+    ],
+    [
+      "How do the elements in the image relate to each other in terms of positioning or composition?",
+      50
+    ],
+    [
+      "Convey the specifics of the image with meticulous attention to detail.",
+      50
+    ],
+    [
+      "Please describe this artwork thoroughly.",
+      46
+    ],
+    [
+      "Give a thorough description of the image, focusing on the landmark it shows.",
+      45
+    ],
+    [
+      "Inspect this image and provide a detailed description of the setting and any objects or characters.",
+      41
+    ],
+    [
+      "Detail the texts and other components in the image in depth, explaining their relevance to the overall picture.",
+      38
+    ]
+  ],
+  "index_bucket_counts": [
+    [
+      "0-511",
+      504
+    ],
+    [
+      "512-1023",
+      504
+    ],
+    [
+      "1024-1535",
+      502
+    ],
+    [
+      "1536-2047",
+      470
+    ],
+    [
+      "2048-2559",
+      384
+    ],
+    [
+      "3584-4095",
+      335
+    ],
+    [
+      "2560-3071",
+      323
+    ],
+    [
+      "3072-3583",
+      319
+    ],
+    [
+      "4608-5119",
+      319
+    ],
+    [
+      "4096-4607",
+      312
+    ],
+    [
+      "5120-5631",
+      124
+    ]
+  ]
+}

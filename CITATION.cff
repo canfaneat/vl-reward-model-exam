@@ -1,1 +1,16 @@
-Y2ZmLXZlcnNpb246IDEuMi4wCm1lc3NhZ2U6ICJJZiB5b3UgdXNlIHRoaXMgcmVwb3NpdG9yeSwgcGxlYXNlIGNpdGUgaXQgdXNpbmcgdGhlIG1ldGFkYXRhIGJlbG93LiIKdGl0bGU6ICJWTCBSZXdhcmQgTW9kZWwgRXhhbTogSW50ZXJuVkwyLjUtMkIgUmV3YXJkIE1vZGVsaW5nIHdpdGggUHJvbXB0Q2FwIgphdXRob3JzOgogIC0gbmFtZTogImNhbmZhbmVhdCIKZGF0ZS1yZWxlYXNlZDogIjIwMjYtMDUtMjEiCnZlcnNpb246ICIwLjEuMCIKdXJsOiAiaHR0cHM6Ly9naXRodWIuY29tL2NhbmZhbmVhdC92bC1yZXdhcmQtbW9kZWwtZXhhbSIKcmVwb3NpdG9yeS1jb2RlOiAiaHR0cHM6Ly9naXRodWIuY29tL2NhbmZhbmVhdC92bC1yZXdhcmQtbW9kZWwtZXhhbSIKa2V5d29yZHM6CiAgLSB2aXNpb24tbGFuZ3VhZ2UgbW9kZWwKICAtIHJld2FyZCBtb2RlbAogIC0gSW50ZXJuVkwKICAtIExvUkEKICAtIFZMUmV3YXJkQmVuY2gKICAtIFJMQUlGLVYK
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "VL Reward Model Exam: InternVL2.5-2B Reward Modeling with PromptCap"
+authors:
+  - name: "canfaneat"
+date-released: "2026-05-21"
+version: "0.1.0"
+url: "https://github.com/canfaneat/vl-reward-model-exam"
+repository-code: "https://github.com/canfaneat/vl-reward-model-exam"
+keywords:
+  - vision-language model
+  - reward model
+  - InternVL
+  - LoRA
+  - VLRewardBench
+  - RLAIF-V
