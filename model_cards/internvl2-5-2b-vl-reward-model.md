@@ -10,13 +10,13 @@ tags:
   - vlrewardbench
 ---
 
-# InternVL2.5-2B VL Reward Model
+# InternVL2.5-2B 多模态奖励模型
 
-This repository contains a LoRA-based vision-language reward model for pairwise response ranking.
+本仓库包含一个基于 `OpenGVLab/InternVL2_5-2B` 的视觉语言奖励模型，用于图像、问题与候选回答之间的 pairwise response ranking。模型保留 InternVL2.5-2B 的基础图文表征能力，在语言模型线性层上训练 LoRA adapter，并在最后一个有效 token 的 hidden state 后接线性 score head 输出 reward score。
 
-The model is built from `OpenGVLab/InternVL2_5-2B`. It adds a linear numeric score head on the final valid-token hidden state and trains LoRA adapters on the language-model linear layers. The uploaded files contain only the LoRA adapter, score head, training metadata, and configuration. The base model weights are not duplicated.
+上传文件只包含 LoRA adapter、score head、训练配置和元信息，不重复上传 InternVL2.5-2B 基础模型权重。使用时需要先加载基础模型，再加载本仓库中的 `lora_final/` 与 `score_head_final.pt`。
 
-## Model
+## 模型结构
 
 - Base model: `OpenGVLab/InternVL2_5-2B`
 - Reward head: linear numeric score head
@@ -26,17 +26,17 @@ The model is built from `OpenGVLab/InternVL2_5-2B`. It adds a linear numeric sco
 - LoRA alpha: 16
 - LoRA dropout: 0.05
 
-## Training Data
+## 训练数据与边界
 
 - Training data: `trl-lib/rlaif-v`
-- Training subset: 4096 preference pairs selected by PromptCap50
+- Training subset: PromptCap50 选择的 4096 条 preference pairs
 - Benchmark: `MMInstruction/VL-RewardBench`
 
-PromptCap50 means that the training subset is selected by scanning RLAIF-V and limiting each normalized prompt to at most 50 examples. This is an internal training-set frequency control strategy; VLRewardBench fields are not used to select this final training subset.
+PromptCap50 指按 RLAIF-V 原始顺序扫描样本，并限制同一个归一化 prompt 最多保留 50 条样本。该数据选择策略只使用 RLAIF-V 内部 prompt 频率；VLRewardBench 字段不参与最终训练子集选择。
 
-VLRewardBench samples, human rankings, and candidate responses were not used as reward-model training samples.
+训练中没有使用 VLRewardBench 的样本、human ranking 或候选回答作为 reward-model training samples。
 
-## Training Configuration
+## 训练配置
 
 ```json
 {
@@ -55,22 +55,22 @@ VLRewardBench samples, human rankings, and candidate responses were not used as 
 }
 ```
 
-## Evaluation
+## 评测结果
 
-VLRewardBench full set, 1247 examples:
+VLRewardBench full set，共 1247 条样本：
 
-| Model | Accuracy |
+| 模型 / 实验设置 | Accuracy |
 | --- | ---: |
-| Base InternVL2.5-2B generative judge, strict parser | 46.51% |
+| Base InternVL2.5-2B generative judge | 46.51% |
 | Head-only sanity model, RLAIF-V 128 pairs | 47.79% |
 | Raw RLAIF-V 1k reward model | 74.66% |
 | Strict query+image audit ablation, 4096 pairs | 70.17% |
 | PromptCap50 reward model, 4096 pairs | 71.69% |
 | PromptCap50 reward model, seed 123 | 61.27% |
 
-The uploaded checkpoint is the PromptCap50 seed-42 reward model.
+本仓库上传的 checkpoint 为 PromptCap50 seed-42 reward model，对应 full benchmark accuracy `71.69%`。
 
-Source-level highlights for the uploaded checkpoint:
+主模型 source-level 结果节选：
 
 | Source | N | Accuracy |
 | --- | ---: | ---: |
@@ -81,11 +81,15 @@ Source-level highlights for the uploaded checkpoint:
 | OK-VQA | 32 | 87.50% |
 | VQAv2 | 35 | 80.00% |
 
-## Usage
+## 使用方式
 
-Use the repository code at `https://github.com/canfaneat/vl-reward-model-exam` to load the base model, LoRA adapter, and score head.
+代码仓库位于：
 
-Example evaluation command:
+```text
+https://github.com/canfaneat/vl-reward-model-exam
+```
+
+评测时加载基础模型、LoRA adapter 和 score head。示例命令：
 
 ```bash
 python -u scripts/eval_reward_head.py \
@@ -97,18 +101,22 @@ python -u scripts/eval_reward_head.py \
   --pooling final
 ```
 
-## Limitations
+完整复现命令、数据审计脚本、PromptCap 构造脚本和报告见 GitHub 仓库。
 
-This model is a research assessment artifact. RLAIF-V and VLRewardBench are in the same broad multimodal preference ecosystem, so the score should be interpreted as in-domain reward-model adaptation rather than proof of broad cross-domain generalization.
+## 文件结构
 
-Data auditing found no direct use of VLRewardBench samples or labels as training samples, but prompt templates and task types are naturally similar across public multimodal preference datasets. This is why the repository includes data similarity audits and PromptCap sampling experiments.
+```text
+README.md
+config.json
+training_meta.json
+score_head_final.pt
+lora_final/README.md
+lora_final/adapter_config.json
+lora_final/adapter_model.safetensors
+```
 
-A seed-123 rerun with the same PromptCap50 data and hyperparameters reached 61.27%. Its final 512 training steps had mean `score_chosen - score_rejected` of `0.0008` and positive-gap rate of `50.98%`, indicating that this run did not form a stable reward scale. Future work should prioritize learning-rate scheduling, warmup, gradient clipping, checkpoint selection, and multi-seed validation before adding more complex score heads.
+## 说明
 
-## Files
+该模型是考核项目中的研究型交付物。RLAIF-V 与 VLRewardBench 同处多模态偏好判断任务生态，因此结果应解释为同域 preference data 下的 reward-model adaptation，而不是广泛跨域泛化能力的结论。
 
-- `lora_final/adapter_model.safetensors`
-- `lora_final/adapter_config.json`
-- `score_head_final.pt`
-- `training_meta.json`
-- `config.json`
+项目同时保留了数据相似性审计、PromptCap 数据选择实验和 seed 诊断。seed=123 在相同数据和超参数下得到 `61.27%`，最后 512 step 的 `score_chosen - score_rejected` 平均值为 `0.0008`，positive gap rate 为 `50.98%`，说明单 epoch LoRA reward 训练存在优化敏感性。后续改进方向包括 learning-rate scheduling、warmup、gradient clipping、checkpoint selection 和多 seed 验证。
